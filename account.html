@@ -531,22 +531,43 @@ ul { list-style: none; margin: 0; padding: 0; }
   });
 
   // ========== SIGN UP ==========
+  // ========== SIGN UP ==========
   document.getElementById("signup-btn").addEventListener("click", async () => {
     const firstName = document.getElementById("su-first").value.trim();
     const lastName = document.getElementById("su-last").value.trim();
     const email = document.getElementById("su-email").value.trim();
     const password = document.getElementById("su-password").value;
+    const phone = document.getElementById("su-phone").value.trim();
+    const address = document.getElementById("su-address").value.trim();
+    const city = document.getElementById("su-city").value.trim();
+    const country = document.getElementById("su-country").value;
+    const postalCode = document.getElementById("su-postal").value.trim();
+
     const errorEl = document.getElementById("signup-error");
     const successEl = document.getElementById("signup-success");
     errorEl.style.display = "none";
     successEl.style.display = "none";
-    if (!firstName || !lastName || !email || !password) return;
+
+    if (!firstName || !lastName || !email || !password) {
+      errorEl.textContent = "Please fill in all required fields (*).";
+      errorEl.style.display = "block";
+      return;
+    }
+    if (password.length < 8) {
+      errorEl.textContent = "Password must be at least 8 characters.";
+      errorEl.style.display = "block";
+      return;
+    }
 
     showSpinner("signup-spinner");
     const btn = document.getElementById("signup-btn");
     btn.disabled = true;
 
-    const result = await apiPost("createProfile", { firstName, lastName, email, password });
+    const result = await apiPost("createProfile", {
+      firstName, lastName, email, password,
+      phone, address, city, country, postalCode,
+    });
+
     hideSpinner("signup-spinner");
     btn.disabled = false;
 
@@ -556,13 +577,25 @@ ul { list-style: none; margin: 0; padding: 0; }
       return;
     }
 
+    successEl.textContent = result.message || "Account created! A confirmation email has been sent. You can now sign in.";
     successEl.style.display = "block";
-    // Switch to sign-in tab after 1.5s
+
+    // Clear form
+    document.getElementById("su-first").value = "";
+    document.getElementById("su-last").value = "";
+    document.getElementById("su-email").value = "";
+    document.getElementById("su-password").value = "";
+    document.getElementById("su-phone").value = "";
+    document.getElementById("su-address").value = "";
+    document.getElementById("su-city").value = "";
+    document.getElementById("su-postal").value = "";
+
+    // Switch to sign-in tab after 2s
     setTimeout(() => {
       document.querySelector(".tab-btn[data-tab='signin']").click();
       document.getElementById("si-email").value = email;
       successEl.style.display = "none";
-    }, 1500);
+    }, 2000);
   });
 
   // ========== TAB SWITCHING ==========
