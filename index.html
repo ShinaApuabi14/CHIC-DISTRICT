@@ -898,7 +898,7 @@
     <div class="wrap">
       <div class="links">
         <select aria-label="Language"><option>English</option><option>Français</option><option>Español</option></select>
-        <select aria-label="Currency"><option>USD</option><option>EUR</option><option>GBP</option></select>
+        <select aria-label="Currency"><option>NGN</option><option>USD</option><option>EUR</option><option>GBP</option></select>
       </div>
       <div class="links">
         <a href="account.html">My Account</a>
@@ -1491,8 +1491,8 @@
 
       function cardHTML(p) {
         const price = p.salePrice
-          ? `<span class="was">$${p.price.toFixed(2)}</span>$${p.salePrice.toFixed(2)}`
-          : `$${p.price.toFixed(2)}`;
+        ? `<span class="was">₦${p.price.toFixed(2)}</span>₦${p.salePrice.toFixed(2)}`
+        : `₦${p.price.toFixed(2)}`;
         const tag = p.salePrice
           ? `<span class="product-tag sale">Sale</span>`
           : p.isNew ? `<span class="product-tag new">New</span>` : "";
