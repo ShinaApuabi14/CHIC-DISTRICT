@@ -2,35 +2,35 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop All — Marigold & Co.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>Shop All — Chic District & Co.</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 /* ==========================================================================
-   MARIGOLD & CO. — Kids' clothing shop
+   CHIC DISTRICT & CO. — Women's clothing shop
    Design tokens
    Color:
      --cream        #FBF7F0  page background
-     --ink          #2B2A28  primary text
+     --ink          #555350  primary text
      --marigold     #D9A441  primary brand accent
      --marigold-dk  #B87F2A  hover / pressed accent
-     --blush        #E7A9A0  secondary accent (sale tags, girls)
-     --sage         #93A67F  secondary accent (new tags, boys)
+     --blush        #E7A9A0  secondary accent (sale tags)
+     --sage         #93A67F  secondary accent (new tags)
      --line         #E7E0D2  hairline borders
      --white        #FFFFFF
    Type:
-     --font-display "Baloo 2"   headlines, rounded + friendly, kid-appropriate
-     --font-body    "Inter"     body copy
-     --font-mono    "IBM Plex Mono" prices, SKUs, page numbers (tabular data)
-   Signature element: the marigold-flower mark (••••) used as section eyebrows,
-   the "new" tag bloom, and the current-page indicator in pagination.
+     --font-display 'Lato'  headlines
+     --font-body    'Lato'  body copy
+     --font-mono    'Lato'  prices, SKUs
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&display=swap');
 
 :root {
   --cream: #FBF7F0;
   --cream-deep: #F3ECDD;
-  --ink: #2B2A28;
+  --ink: #555350;
   --ink-soft: #6b6660;
   --marigold: #D9A441;
   --marigold-dk: #B87F2A;
@@ -39,11 +39,9 @@
   --sage: #93A67F;
   --line: #E7E0D2;
   --white: #FFFFFF;
-
-  --font-display: 'Baloo 2', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
-
+  --font-display: 'Lato', 'Helvetica Neue', sans-serif;
+  --font-body: 'Lato', system-ui, sans-serif;
+  --font-mono: 'Lato', monospace;
   --radius-sm: 6px;
   --radius-md: 14px;
   --radius-lg: 28px;
@@ -61,6 +59,15 @@ body {
   background: var(--cream);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+.logo-img {
+  height: 84px;
+  width: 84px;
+  display: block;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 img { max-width: 100%; display: block; }
@@ -83,19 +90,16 @@ ul { list-style: none; margin: 0; padding: 0; }
   * { animation: none !important; transition: none !important; }
 }
 
-/* ---------- Signature: marigold-bloom mark ---------- */
-.bloom {
+/* ---------- Signature: chic geometric mark ---------- */
+.chic-mark {
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
-.bloom::before {
-  content: "";
-  width: 9px;
-  height: 9px;
-  border-radius: 50% 50% 50% 0;
-  background: var(--marigold);
-  transform: rotate(45deg);
+.chic-mark::before {
+  content: "◆";
+  color: var(--marigold);
+  font-size: 10px;
   flex: none;
 }
 
@@ -147,25 +151,14 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .logo {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 26px;
   display: flex;
   align-items: center;
   gap: 10px;
   color: var(--ink);
   white-space: nowrap;
-}
-.logo-mark {
-  width: 38px;
-  height: 38px;
-  border-radius: 50% 50% 50% 4px;
-  background: var(--marigold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-size: 18px;
-  transform: rotate(-8deg);
+  letter-spacing: -0.5px;
 }
 .main-nav {
   display: flex;
@@ -227,7 +220,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   gap: 8px;
   padding: 14px 30px;
   border-radius: var(--radius-sm);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 13.5px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -246,63 +239,6 @@ ul { list-style: none; margin: 0; padding: 0; }
 .btn-block { width: 100%; justify-content: center; }
 .btn-sm { padding: 10px 18px; font-size: 12px; }
 
-/* ---------- Hero ---------- */
-.hero {
-  background: linear-gradient(180deg, var(--cream-deep), var(--cream) 70%);
-  overflow: hidden;
-}
-.hero .wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 40px;
-  min-height: 520px;
-}
-.hero-copy .eyebrow { margin-bottom: 14px; display: block; }
-.hero-copy h1 {
-  font-family: var(--font-display);
-  font-size: clamp(38px, 5vw, 60px);
-  line-height: 1.02;
-  margin: 0 0 6px;
-  font-weight: 800;
-}
-.hero-copy h1 span {
-  color: var(--marigold-dk);
-  display: block;
-}
-.hero-copy p {
-  color: var(--ink-soft);
-  max-width: 40ch;
-  line-height: 1.6;
-  margin: 18px 0 30px;
-}
-.hero-visual {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  aspect-ratio: 4/5;
-  box-shadow: var(--shadow-card-hover);
-}
-.hero-visual img { width: 100%; height: 100%; object-fit: cover; }
-.hero-visual::after {
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(0deg, rgba(43,42,40,.25), transparent 40%);
-}
-.hero-dots {
-  position: absolute;
-  right: 18px; top: 50%;
-  transform: translateY(-50%);
-  display: flex; flex-direction: column; gap: 10px;
-  z-index: 2;
-}
-.hero-dots span {
-  width: 9px; height: 9px; border-radius: 50%;
-  background: rgba(255,255,255,.55);
-  border: 1px solid rgba(255,255,255,.8);
-}
-.hero-dots span.active { background: var(--marigold); border-color: var(--marigold); }
-
 /* ---------- Section heading ---------- */
 .section-head {
   text-align: center;
@@ -311,32 +247,16 @@ ul { list-style: none; margin: 0; padding: 0; }
 .section-head .eyebrow { justify-content: center; }
 .section-head h2 {
   font-family: var(--font-display);
-  font-size: clamp(26px, 3vw, 36px);
+  font-size: clamp(28px, 3.5vw, 40px);
   margin: 10px 0 8px;
   font-weight: 700;
+  letter-spacing: -0.5px;
 }
-.section-head p { color: var(--ink-soft); margin: 0; }
+.section-head p { color: var(--ink-soft); margin: 0; font-weight: 300; font-size: 15px; }
 
 section.band { padding: 76px 0; }
 
-/* ---------- Product grid / carousel row ---------- */
-.product-row {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.row-arrow {
-  flex: none;
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  background: var(--white);
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: var(--shadow-card);
-}
-.row-arrow:hover { border-color: var(--marigold); color: var(--marigold-dk); }
-
+/* ---------- Product grid ---------- */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -425,6 +345,8 @@ section.band { padding: 76px 0; }
   font-size: 14.5px;
   margin: 0 0 8px;
   line-height: 1.3;
+  font-family: var(--font-display);
+  letter-spacing: -0.2px;
 }
 .product-price {
   font-family: var(--font-mono);
@@ -437,61 +359,6 @@ section.band { padding: 76px 0; }
   text-decoration: line-through;
   font-weight: 500;
   margin-right: 6px;
-}
-
-/* ---------- Promo banners (2-up + big panel) ---------- */
-.promo-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 26px;
-}
-.promo-stack { display: grid; gap: 26px; }
-.promo-panel {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  min-height: 260px;
-  display: flex;
-  align-items: center;
-  padding: 40px;
-}
-.promo-panel.tall { min-height: 546px; }
-.promo-panel img.bg {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%; object-fit: cover;
-  z-index: 0;
-}
-.promo-panel .scrim {
-  position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(251,247,240,.94) 38%, rgba(251,247,240,.15));
-  z-index: 1;
-}
-.promo-panel .content { position: relative; z-index: 2; max-width: 260px; }
-.promo-panel .eyebrow { display: block; margin-bottom: 8px; }
-.promo-panel h3 {
-  font-family: var(--font-display);
-  font-size: 28px;
-  margin: 0 0 4px;
-  font-weight: 700;
-  line-height: 1.1;
-}
-.promo-panel h3.accent { color: var(--marigold-dk); }
-.promo-panel a.shop-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  margin-top: 14px;
-  font-weight: 700; font-size: 13px;
-  border-bottom: 2px solid var(--ink);
-  padding-bottom: 2px;
-}
-.promo-watermark {
-  position: absolute;
-  bottom: -18px; left: 20px;
-  font-family: var(--font-display);
-  font-size: 74px;
-  font-weight: 800;
-  color: rgba(43,42,40,.05);
-  z-index: 1;
-  white-space: nowrap;
 }
 
 /* ---------- Footer ---------- */
@@ -568,12 +435,19 @@ section.band { padding: 76px 0; }
   font-size: 12.5px;
   color: var(--ink-soft);
 }
-.payments { display: flex; gap: 10px; font-family: var(--font-mono); font-size: 11px; }
-.payments span {
-  border: 1px solid var(--line); border-radius: 4px; padding: 3px 8px; background: var(--white);
-  display: flex; align-items: center; justify-content: center;
+.payments {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: #333;
 }
-.payments img { height: 16px; width: auto; display: block; }
+.payments img {
+  height: 24px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
 
 /* ============================================================
    SHOP / CATALOG PAGE
@@ -711,7 +585,7 @@ section.band { padding: 76px 0; }
   padding: 80px 20px;
   color: var(--ink-soft);
 }
-.empty-state .bloom { justify-content: center; margin-bottom: 10px; }
+.empty-state .chic-mark { justify-content: center; margin-bottom: 10px; }
 
 /* ---------- Pagination ---------- */
 .pagination {
@@ -769,13 +643,31 @@ section.band { padding: 76px 0; }
 .filters-mobile-toggle { display: none; }
 .filters-backdrop { display: none; }
 
+/* Mobile nav drawer */
+.mobile-nav {
+  position: fixed; inset: 0; z-index: 70;
+  display: none;
+}
+.mobile-nav.open { display: block; }
+.mobile-nav .backdrop { position: absolute; inset: 0; background: rgba(43,42,40,.45); }
+.mobile-nav .panel {
+  position: absolute; top: 0; left: 0; bottom: 0;
+  width: 280px; max-width: 84vw;
+  background: var(--white);
+  padding: 26px;
+  overflow-y: auto;
+}
+.mobile-nav .panel a {
+  display: block;
+  padding: 12px 0;
+  font-weight: 600;
+  border-bottom: 1px solid var(--line);
+}
+.mobile-nav-close { background: none; border: none; font-size: 22px; margin-bottom: 16px; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
-  .hero .wrap { grid-template-columns: 1fr; min-height: auto; padding-top: 40px; }
-  .hero-visual { aspect-ratio: 16/10; order: -1; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
-  .promo-grid { grid-template-columns: 1fr; }
-  .promo-panel.tall { min-height: 320px; }
   .footer-top { grid-template-columns: 1fr 1fr; }
   .shop-layout { grid-template-columns: 1fr; }
   .catalog-grid { grid-template-columns: repeat(2, 1fr); }
@@ -812,327 +704,11 @@ section.band { padding: 76px 0; }
   .footer-top { grid-template-columns: 1fr; padding: 44px 0 30px; }
   .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
   section.band { padding: 52px 0; }
-  .row-arrow { display: none; }
 }
 
 @media (max-width: 480px) {
   .catalog-grid { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: 1fr 1fr; }
-}
-
-/* Mobile nav drawer (index/shop) */
-.mobile-nav {
-  position: fixed; inset: 0; z-index: 70;
-  display: none;
-}
-.mobile-nav.open { display: block; }
-.mobile-nav .backdrop { position: absolute; inset: 0; background: rgba(43,42,40,.45); }
-.mobile-nav .panel {
-  position: absolute; top: 0; left: 0; bottom: 0;
-  width: 280px; max-width: 84vw;
-  background: var(--white);
-  padding: 26px;
-  overflow-y: auto;
-}
-.mobile-nav .panel a {
-  display: block;
-  padding: 12px 0;
-  font-weight: 600;
-  border-bottom: 1px solid var(--line);
-}
-.mobile-nav-close { background: none; border: none; font-size: 22px; margin-bottom: 16px; }
-
-/* ============================================================
-   ACCOUNT / WISHLIST / CHECKOUT / PAYMENT PAGES
-   ============================================================ */
-
-.page-head {
-  padding: 44px 0 8px;
-}
-.page-head h1 {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 3.4vw, 40px);
-  font-weight: 700;
-  margin: 6px 0 6px;
-}
-.page-head p { color: var(--ink-soft); margin: 0 0 10px; }
-
-/* ---- step indicator (checkout / payment) ---- */
-.step-track {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 20px 0 40px;
-  flex-wrap: wrap;
-}
-.step-track .step {
-  display: flex; align-items: center; gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--ink-soft);
-}
-.step-track .step .num {
-  width: 26px; height: 26px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  display: flex; align-items: center; justify-content: center;
-  background: var(--white);
-}
-.step-track .step.active { color: var(--ink); }
-.step-track .step.active .num { background: var(--marigold); border-color: var(--marigold); }
-.step-track .step.done .num { background: var(--sage); border-color: var(--sage); color: var(--white); }
-.step-track .divider { width: 30px; height: 1px; background: var(--line); }
-
-/* ---- account page: tabs ---- */
-.auth-tabs {
-  display: flex;
-  gap: 6px;
-  background: var(--cream-deep);
-  border-radius: 12px;
-  padding: 5px;
-  max-width: 360px;
-  margin-bottom: 30px;
-}
-.auth-tabs button {
-  flex: 1;
-  border: none;
-  background: transparent;
-  padding: 10px 14px;
-  border-radius: 9px;
-  font-weight: 700;
-  font-size: 13.5px;
-  color: var(--ink-soft);
-}
-.auth-tabs button.active { background: var(--white); color: var(--ink); box-shadow: var(--shadow-card); }
-
-.auth-panels { max-width: 420px; }
-.auth-panel { display: none; }
-.auth-panel.active { display: block; }
-
-.form-field { margin-bottom: 16px; }
-.form-field label {
-  display: block;
-  font-size: 12.5px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: var(--ink-soft);
-}
-.form-field input,
-.form-field select,
-.form-field textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  font-family: inherit;
-  font-size: 14px;
-  background: var(--white);
-}
-.form-field input:focus,
-.form-field select:focus,
-.form-field textarea:focus { border-color: var(--marigold); outline: none; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.form-note { font-size: 12.5px; color: var(--ink-soft); margin-top: 14px; }
-.form-note a { color: var(--marigold-dk); font-weight: 600; }
-
-/* ---- account dashboard ---- */
-.account-layout {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 40px;
-  padding-bottom: 90px;
-  align-items: start;
-}
-.account-menu {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-}
-.account-menu a {
-  display: flex; align-items: center; gap: 10px;
-  padding: 14px 18px;
-  font-weight: 600;
-  font-size: 13.5px;
-  border-bottom: 1px solid var(--line);
-}
-.account-menu a:last-child { border-bottom: none; }
-.account-menu a.active { background: var(--marigold-pale); color: var(--ink); }
-.account-menu a:hover:not(.active) { background: var(--cream-deep); }
-
-.summary-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 34px; }
-.summary-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 22px;
-}
-.summary-card .num { font-family: var(--font-display); font-size: 30px; font-weight: 700; color: var(--marigold-dk); }
-.summary-card .label { font-size: 12.5px; color: var(--ink-soft); margin-top: 4px; }
-
-.data-table { width: 100%; border-collapse: collapse; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-md); overflow: hidden; }
-.data-table th {
-  text-align: left;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  color: var(--ink-soft);
-  background: var(--cream-deep);
-  padding: 12px 16px;
-}
-.data-table td { padding: 14px 16px; border-top: 1px solid var(--line); font-size: 13.5px; }
-.status-pill {
-  display: inline-block;
-  padding: 4px 11px;
-  border-radius: 20px;
-  font-size: 11.5px;
-  font-weight: 700;
-  font-family: var(--font-mono);
-}
-.status-pill.shipped { background: #E4E9DC; color: #4d5c3f; }
-.status-pill.processing { background: #F2D98A; color: #6b4f0e; }
-.status-pill.delivered { background: #D8E9DE; color: #275c3c; }
-
-/* ---- wishlist ---- */
-.wishlist-card { position: relative; }
-.wishlist-remove {
-  position: absolute;
-  top: 10px; right: 10px;
-  width: 30px; height: 30px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.92);
-  border: none;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 15px;
-  z-index: 2;
-  box-shadow: var(--shadow-card);
-}
-.wishlist-remove:hover { background: var(--blush); }
-
-/* ---- checkout / payment two-column layout ---- */
-.checkout-layout {
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 44px;
-  padding-bottom: 90px;
-  align-items: start;
-}
-.checkout-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 28px;
-  margin-bottom: 24px;
-}
-.checkout-card h3 {
-  font-family: var(--font-display);
-  font-size: 18px;
-  margin: 0 0 20px;
-  display: flex; align-items: center; gap: 8px;
-}
-
-.order-summary {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 26px;
-  position: sticky;
-  top: 100px;
-}
-.order-summary h3 { font-family: var(--font-display); font-size: 17px; margin: 0 0 18px; }
-.summary-line-item {
-  display: flex;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--line);
-  align-items: center;
-}
-.summary-line-item img { width: 52px; height: 62px; border-radius: 8px; object-fit: cover; flex: none; }
-.summary-line-item .info { flex: 1; }
-.summary-line-item .info .name { font-size: 13px; font-weight: 600; }
-.summary-line-item .info .meta { font-size: 11.5px; color: var(--ink-soft); }
-.summary-line-item .price { font-family: var(--font-mono); font-size: 13px; font-weight: 600; }
-
-.summary-totals { padding-top: 16px; }
-.summary-totals .row {
-  display: flex; justify-content: space-between;
-  font-size: 13.5px; padding: 6px 0; color: var(--ink-soft);
-}
-.summary-totals .row.grand {
-  color: var(--ink);
-  font-weight: 700;
-  font-size: 16px;
-  border-top: 1px solid var(--line);
-  margin-top: 8px;
-  padding-top: 14px;
-}
-.promo-row { display: flex; gap: 8px; margin: 16px 0; }
-.promo-row input {
-  flex: 1;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  font-size: 13px;
-  font-family: inherit;
-}
-
-/* ---- payment method selector ---- */
-.pay-methods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 22px; }
-.pay-method {
-  border: 2px solid var(--line);
-  border-radius: 12px;
-  padding: 16px 10px;
-  text-align: center;
-  cursor: pointer;
-  font-size: 12.5px;
-  font-weight: 700;
-}
-.pay-method input { display: none; }
-.pay-method .glyph { font-size: 22px; display: block; margin-bottom: 6px; }
-.pay-method.checked { border-color: var(--marigold); background: var(--marigold-pale); }
-
-.card-preview {
-  background: linear-gradient(135deg, #3a3a38, #2b2a28);
-  color: var(--white);
-  border-radius: 16px;
-  padding: 24px;
-  margin-bottom: 24px;
-  font-family: var(--font-mono);
-  min-height: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.card-preview .chip { width: 34px; height: 24px; border-radius: 5px; background: var(--marigold-pale); }
-.card-preview .num { font-size: 17px; letter-spacing: .12em; }
-.card-preview .row { display: flex; justify-content: space-between; font-size: 10.5px; text-transform: uppercase; opacity: .8; }
-
-.success-banner {
-  display: none;
-  background: #E4E9DC;
-  border: 1px solid var(--sage);
-  border-radius: var(--radius-md);
-  padding: 20px 24px;
-  margin-bottom: 24px;
-  align-items: center;
-  gap: 12px;
-}
-.success-banner.show { display: flex; }
-.success-banner .icon {
-  width: 36px; height: 36px; border-radius: 50%;
-  background: var(--sage); color: var(--white);
-  display: flex; align-items: center; justify-content: center;
-  flex: none; font-weight: 700;
-}
-
-@media (max-width: 900px) {
-  .account-layout { grid-template-columns: 1fr; }
-  .checkout-layout { grid-template-columns: 1fr; }
-  .summary-cards { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .order-summary { position: static; }
 }
 
 </style>
@@ -1144,7 +720,7 @@ section.band { padding: 76px 0; }
     <div class="wrap">
       <div class="links">
         <select aria-label="Language"><option>English</option><option>Français</option><option>Español</option></select>
-        <select aria-label="Currency"><option>USD</option><option>EUR</option><option>GBP</option></select>
+        <select aria-label="Currency"><option>NGN</option><option>USD</option><option>EUR</option><option>GBP</option></select>
       </div>
       <div class="links">
         <a href="account.html">My Account</a>
@@ -1162,16 +738,16 @@ section.band { padding: 76px 0; }
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
       <a href="index.html" class="logo">
-        <span class="logo-mark">M</span>
-        Marigold&nbsp;&amp;&nbsp;Co.
+        <img src="images/chic-logo.jpg" alt="Chic District & Co." class="logo-img">
+        <span>Chic District & Co.</span>
       </a>
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="shop.html" class="active">Shop</a>
-        <a href="shop.html?category=Girls">Girls</a>
-        <a href="shop.html?category=Boys">Boys</a>
-        <a href="shop.html?category=Baby">Baby</a>
-        <a href="shop.html?category=Shoes">Shoes</a>
+        <a href="shop.html?category=Dresses">Dresses</a>
+        <a href="shop.html?category=Tops">Tops</a>
+        <a href="shop.html?category=Bottoms">Bottoms</a>
+        <a href="shop.html?category=Outerwear">Outerwear</a>
         <a href="index.html#contact">Contact</a>
       </nav>
       <div class="header-actions">
@@ -1193,10 +769,10 @@ section.band { padding: 76px 0; }
       <button class="mobile-nav-close" aria-label="Close menu">✕</button>
       <a href="index.html">Home</a>
       <a href="shop.html">Shop</a>
-      <a href="shop.html?category=Girls">Girls</a>
-      <a href="shop.html?category=Boys">Boys</a>
-      <a href="shop.html?category=Baby">Baby</a>
-      <a href="shop.html?category=Shoes">Shoes</a>
+      <a href="shop.html?category=Dresses">Dresses</a>
+      <a href="shop.html?category=Tops">Tops</a>
+      <a href="shop.html?category=Bottoms">Bottoms</a>
+      <a href="shop.html?category=Outerwear">Outerwear</a>
       <a href="index.html#contact">Contact</a>
     </div>
   </div>
@@ -1216,7 +792,7 @@ section.band { padding: 76px 0; }
       </div>
 
       <div class="filter-group">
-        <p class="filter-title">Age Group</p>
+        <p class="filter-title">Size</p>
         <div class="age-pill-row" id="age-filters"></div>
       </div>
 
@@ -1230,7 +806,7 @@ section.band { padding: 76px 0; }
       </div>
 
       <div class="filter-group">
-        <p class="filter-title">Size</p>
+        <p class="filter-title">Size Options</p>
         <div id="size-filters" class="filter-option" style="display:block; padding:0;"></div>
       </div>
 
@@ -1277,7 +853,7 @@ section.band { padding: 76px 0; }
       <div class="catalog-grid" id="catalog-grid"></div>
 
       <div class="empty-state" id="empty-state" style="display:none;">
-        <span class="bloom">No products match these filters</span>
+        <span class="chic-mark">No products match these filters</span>
         <p>Try clearing a filter or widening your price range.</p>
       </div>
 
@@ -1289,18 +865,21 @@ section.band { padding: 76px 0; }
   <footer class="site-footer">
     <div class="wrap footer-top">
       <div class="footer-about">
-        <a href="index.html" class="logo"><span class="logo-mark">M</span>Marigold&nbsp;&amp;&nbsp;Co.</a>
-        <p>📍 118 Marigold Lane, Portland, OR</p>
+        <a href="index.html" class="logo">
+          <img src="images/chic-logo.jpg" alt="Chic District & Co." class="logo-img">
+          <span>Chic District & Co.</span>
+        </a>
+        <p>📍 118 Dr Ladi Alakija Lane, Lekki Phase 1, Lagos</p>
         <p>📞 (503) 555-0192</p>
-        <p>✉️ hello@marigoldandco.com</p>
+        <p>✉️ hello@Chicdistrictandco.com</p>
       </div>
       <div>
         <h4>Popular Tags</h4>
         <div class="tag-pills">
-          <a href="shop.html?category=Girls">New In</a>
+          <a href="shop.html?category=Dresses">New In</a>
           <a href="shop.html">Best Sellers</a>
           <a href="shop.html">Sale</a>
-          <a href="shop.html?category=Shoes">Shoes</a>
+          <a href="shop.html?category=Outerwear">Outerwear</a>
           <a href="shop.html">Lookbook</a>
           <a href="shop.html">View All</a>
         </div>
@@ -1308,8 +887,8 @@ section.band { padding: 76px 0; }
       <div>
         <h4>Trusted Brands</h4>
         <div class="brand-grid">
-          <div>LITTLE&nbsp;OAK</div><div>SPROUT&nbsp;CO.</div>
-          <div>DAISY&nbsp;LANE</div><div>ACORN&nbsp;KIDS</div>
+          <div>CHIC&nbsp;STUDIO</div><div>ATELIER&nbsp;NO.5</div>
+          <div>LUXE&nbsp;THREADS</div><div>MODERN&nbsp;MUSE</div>
         </div>
       </div>
       <div>
@@ -1326,419 +905,134 @@ section.band { padding: 76px 0; }
         </form>
       </div>
     </div>
+    <div class="wrap footer-links">
+      <a href="#">Wholesale</a><a href="#">Privacy &amp; Security</a><a href="#">Help</a>
+      <a href="#">Seller Home</a><a href="#">Search Products</a><a href="#">Refined Products</a>
+      <a href="#">Prices</a><a href="#">Reviews</a><a href="#">Customer Service</a><a href="#">Terms of Use</a>
+    </div>
     <div class="wrap footer-bottom">
-      <span>© 2026 Marigold &amp; Co. All Rights Reserved.</span>
+      <span>© 2026 Chic District &amp; Co. All Rights Reserved.</span>
       <div class="payments">
-        <span>VISA</span><span>MasterCard</span><span>PayPal</span><span>Amex</span>
+        <img src="images/visa.jpg" alt="Visa">
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-cc-amex"></i>
+        <i class="fa-brands fa-cc-paypal"></i>
+        <i class="fa-brands fa-apple-pay"></i>
       </div>
     </div>
   </footer>
 
   <script>
 /* ============================================================
-   Marigold & Co. — product data loader (Google Sheet-backed)
-   ------------------------------------------------------------
-   Fetches your product catalog from a Google Apps Script Web App
-   that reads the "Products" tab of your Google Sheet. Every page
-   awaits window.MARIGOLD_READY before rendering, so this works
-   even though the fetch is asynchronous.
-
-   >>> PASTE YOUR DEPLOYED WEB APP URL BELOW <<<
-   (Apps Script → Deploy → Web app → copy the URL ending in /exec)
+   CHIC DISTRICT & CO. — product data loader (Google Sheet-backed)
    ============================================================ */
-
 (function () {
   "use strict";
-
-  // ---- CONFIGURE THIS ----
   const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbwst6GwoVOFi4aRZ9lhn7bEMCwW9IWvXtHTc_9xstgEgBpCQLmweKnjJKuo0UeMmzd3/exec";
-  // e.g. "https://script.google.com/macros/s/AKfycb.../exec"
 
-  // ---- small built-in sample so the site still renders something
-  //      useful before you've connected a sheet ----
   const FALLBACK_PRODUCTS = [
-    { id: 1, name: "Sunlit Floral Dress", description: "A breezy cotton dress with a soft floral print, perfect for warm afternoons.", category: "Girls", ageGroup: "3-5", ageGroupLabel: "3–5 Years", color: "Blush", colorHex: "e7a9a0", price: 32.99, salePrice: null, isNew: true, rating: 4.7, reviews: 58, sizes: "XS,S,M", sku: "MC-00001", imageSrc: "images/girls-1.jpg" },
-    { id: 2, name: "Meadow Chino Shorts", description: "Durable everyday shorts built for climbing, running, and everything in between.", category: "Boys", ageGroup: "6-8", ageGroupLabel: "6–8 Years", color: "Sage", colorHex: "93a67f", price: 24.99, salePrice: 19.99, isNew: false, rating: 4.5, reviews: 34, sizes: "S,M,L", sku: "MC-00002", imageSrc: "images/boys-1.jpg" },
-    { id: 3, name: "Petit Footed Sleeper", description: "Gentle on delicate skin, with soft fabric and easy snap closures for quick changes.", category: "Baby", ageGroup: "0-2", ageGroupLabel: "0–2 Years", color: "Cream", colorHex: "f6efe2", price: 22.99, salePrice: null, isNew: true, rating: 4.9, reviews: 112, sizes: "XS,S", sku: "MC-00003", imageSrc: "images/baby-1.jpg" },
-    { id: 4, name: "Golden Hour Canvas Sneaker", description: "A comfortable pair with room to grow and grip that keeps up with little feet.", category: "Shoes", ageGroup: "6-8", ageGroupLabel: "6–8 Years", color: "Marigold", colorHex: "d9a441", price: 34.99, salePrice: null, isNew: false, rating: 4.6, reviews: 89, sizes: "S,M,L,XL", sku: "MC-00004", imageSrc: "images/shoes-1.jpg" },
-    { id: 5, name: "Orchard Wool Beanie", description: "The finishing touch — small details, well made, keeps little ears warm.", category: "Accessories", ageGroup: "3-5", ageGroupLabel: "3–5 Years", color: "Butter", colorHex: "f2d98a", price: 16.99, salePrice: 12.99, isNew: true, rating: 4.4, reviews: 21, sizes: "S,M", sku: "MC-00005", imageSrc: "images/accessories-1.jpg" },
-    { id: 6, name: "Dandelion Tulle Skirt", description: "Twirl-ready tulle over a soft cotton lining — party-perfect and playground-tough.", category: "Girls", ageGroup: "6-8", ageGroupLabel: "6–8 Years", color: "Blush", colorHex: "e7a9a0", price: 28.99, salePrice: null, isNew: false, rating: 4.8, reviews: 64, sizes: "S,M,L", sku: "MC-00006", imageSrc: "images/girls-2.jpg" },
+    { id: 1, name: "Sunlit Linen Dress", description: "A breezy linen midi dress with a soft floral print, perfect for warm afternoons.", category: "Dresses", ageGroup: "XS-XL", ageGroupLabel: "XS–XL", color: "Blush", colorHex: "e7a9a0", price: 89.99, salePrice: null, isNew: true, rating: 4.7, reviews: 58, sizes: "XS,S,M,L,XL", sku: "CC-00001", imageSrc: "images/girls-1.jpg" },
+    { id: 2, name: "Tailored Crop Trouser", description: "A sharp, cropped silhouette in seasonless wool crepe.", category: "Bottoms", ageGroup: "XS-XL", ageGroupLabel: "XS–XL", color: "Sage", colorHex: "93a67f", price: 110.00, salePrice: 88.00, isNew: false, rating: 4.5, reviews: 34, sizes: "XS,S,M,L,XL", sku: "CC-00002", imageSrc: "images/boys-1.jpg" },
+    { id: 3, name: "Cashmere Crewneck", description: "Lightweight, ultra-soft cashmere knit with a relaxed fit.", category: "Tops", ageGroup: "XS-XL", ageGroupLabel: "XS–XL", color: "Cream", colorHex: "f6efe2", price: 145.00, salePrice: null, isNew: true, rating: 4.9, reviews: 112, sizes: "XS,S,M,L", sku: "CC-00003", imageSrc: "images/baby-1.jpg" },
+    { id: 4, name: "Block Heel Mule", description: "A sculptural heel adds modern edge to a classic slip-on mule.", category: "Shoes", ageGroup: "36-41", ageGroupLabel: "36–41", color: "Marigold", colorHex: "d9a441", price: 130.00, salePrice: null, isNew: false, rating: 4.6, reviews: 89, sizes: "36,37,38,39,40,41", sku: "CC-00004", imageSrc: "images/shoes-1.jpg" },
+    { id: 5, name: "Silk Twill Scarf", description: "Pure silk twill scarf — small details, beautifully made.", category: "Accessories", ageGroup: "One Size", ageGroupLabel: "One Size", color: "Butter", colorHex: "f2d98a", price: 65.00, salePrice: 45.00, isNew: true, rating: 4.4, reviews: 21, sizes: "One Size", sku: "CC-00005", imageSrc: "images/accessories-1.jpg" },
+    { id: 6, name: "Pleated Midi Skirt", description: "Twirl-ready knife pleats over a silky lining.", category: "Bottoms", ageGroup: "XS-XL", ageGroupLabel: "XS–XL", color: "Blush", colorHex: "e7a9a0", price: 95.00, salePrice: null, isNew: false, rating: 4.8, reviews: 64, sizes: "XS,S,M,L,XL", sku: "CC-00006", imageSrc: "images/girls-2.jpg" },
   ];
 
-  // ---- turn a raw sheet row (or fallback object) into a clean product ----
   function normalizeProduct(raw) {
-    const sizes = String(raw.sizes || "")
-      .split(",")
-      .map((s) => s.trim())
-      .filter(Boolean);
-
+    const sizes = String(raw.sizes || "").split(",").map((s) => s.trim()).filter(Boolean);
     const isNewRaw = raw.isNew;
-    const isNew =
-      isNewRaw === true ||
-      String(isNewRaw).trim().toUpperCase() === "TRUE";
-
+    const isNew = isNewRaw === true || String(isNewRaw).trim().toUpperCase() === "TRUE";
     const salePriceRaw = raw.salePrice;
-    const salePrice =
-      salePriceRaw === "" || salePriceRaw == null || isNaN(Number(salePriceRaw))
-        ? null
-        : Number(salePriceRaw);
-
+    const salePrice = salePriceRaw === "" || salePriceRaw == null || isNaN(Number(salePriceRaw)) ? null : Number(salePriceRaw);
     return {
-      id: Number(raw.id),
-      name: String(raw.name || "").trim(),
-      description: String(raw.description || "").trim(),
-      category: String(raw.category || "").trim(),
-      ageGroup: String(raw.ageGroup || "").trim(),
-      ageGroupLabel: String(raw.ageGroupLabel || raw.ageGroup || "").trim(),
-      color: String(raw.color || "").trim(),
-      colorHex: String(raw.colorHex || "d9a441").trim().replace(/^#/, ""),
-      price: Number(raw.price) || 0,
-      salePrice,
-      isNew,
-      rating: Number(raw.rating) || 0,
-      reviews: Number(raw.reviews) || 0,
-      sizes: sizes.length ? sizes : ["S", "M", "L"],
-      sku: String(raw.sku || "").trim(),
-      imageSrc: String(raw.imageSrc || "").trim(),
+      id: Number(raw.id), name: String(raw.name || "").trim(), description: String(raw.description || "").trim(),
+      category: String(raw.category || "").trim(), ageGroup: String(raw.ageGroup || "").trim(),
+      ageGroupLabel: String(raw.ageGroupLabel || raw.ageGroup || "").trim(), color: String(raw.color || "").trim(),
+      colorHex: String(raw.colorHex || "d9a441").trim().replace(/^#/, ""), price: Number(raw.price) || 0,
+      salePrice, isNew, rating: Number(raw.rating) || 0, reviews: Number(raw.reviews) || 0,
+      sizes: sizes.length ? sizes : ["S", "M", "L"], sku: String(raw.sku || "").trim(), imageSrc: String(raw.imageSrc || "").trim(),
     };
   }
 
-  // ---- derive filter option lists straight from the live product data,
-  //      so new categories/ages/sizes/colors you add in the sheet show
-  //      up in the shop filters automatically ----
   function deriveFilters(products) {
     const categories = [...new Set(products.map((p) => p.category))].filter(Boolean);
-
     const ageMap = new Map();
-    products.forEach((p) => {
-      if (p.ageGroup) ageMap.set(p.ageGroup, p.ageGroupLabel || p.ageGroup);
-    });
-    const ageGroups = [...ageMap.entries()]
-      .map(([id, label]) => ({ id, label }))
-      .sort((a, b) => a.id.localeCompare(b.id));
-
+    products.forEach((p) => { if (p.ageGroup) ageMap.set(p.ageGroup, p.ageGroupLabel || p.ageGroup); });
+    const ageGroups = [...ageMap.entries()].map(([id, label]) => ({ id, label })).sort((a, b) => a.id.localeCompare(b.id));
     const sizes = [...new Set(products.flatMap((p) => p.sizes))];
-
     const colorMap = new Map();
-    products.forEach((p) => {
-      if (p.color) colorMap.set(p.color, p.colorHex);
-    });
+    products.forEach((p) => { if (p.color) colorMap.set(p.color, p.colorHex); });
     const colors = [...colorMap.entries()].map(([name, hex]) => ({ name, hex }));
-
     return { categories, ageGroups, sizes, colors };
   }
 
-  function productImage(p) {
-    return p.imageSrc || productImageFallback(p);
-  }
+  function productImage(p) { return p.imageSrc || productImageFallback(p); }
   function productImageFallback(p, w = 400, h = 500) {
     const hex = (p && p.colorHex) || "d9a441";
     const label = (p && p.category) || "Product";
-    return `https://placehold.co/${w}x${h}/${hex}/2b2a28?font=poppins&text=${encodeURIComponent(label)}`;
+    return `https://placehold.co/${w}x${h}/${hex}/2b2a28?font=playfair-display&text=${encodeURIComponent(label)}`;
   }
 
-  window.marigoldProductImage = productImage;
-  window.marigoldProductImageFallback = productImageFallback;
+  window.chicProductImage = productImage;
+  window.chicProductImageFallback = productImageFallback;
 
-  // ---- MARIGOLD_READY: every page's render script does
-  //      `await window.MARIGOLD_READY;` before touching MARIGOLD_PRODUCTS ----
-  window.MARIGOLD_READY = (async function loadProducts() {
+  window.CHIC_READY = (async function loadProducts() {
     let usingFallback = false;
     try {
-      if (!SHEET_API_URL || SHEET_API_URL.indexOf("PASTE_YOUR") === 0) {
-        throw new Error("Google Sheet not connected yet (SHEET_API_URL not set)");
-      }
+      if (!SHEET_API_URL || SHEET_API_URL.indexOf("PASTE_YOUR") === 0) throw new Error("Sheet not connected");
       const res = await fetch(SHEET_API_URL, { cache: "no-store" });
-      if (!res.ok) throw new Error("Sheet fetch failed: HTTP " + res.status);
+      if (!res.ok) throw new Error("Sheet fetch failed");
       const raw = await res.json();
       if (raw && raw.error) throw new Error(raw.error);
       const products = (Array.isArray(raw) ? raw : []).map(normalizeProduct).filter((p) => p.id);
       if (!products.length) throw new Error("Sheet returned zero products");
-      window.MARIGOLD_PRODUCTS = products;
+      window.CHIC_PRODUCTS = products;
     } catch (err) {
-      console.warn("Marigold: showing sample data —", err.message);
-      window.MARIGOLD_PRODUCTS = FALLBACK_PRODUCTS.map(normalizeProduct);
+      console.warn("Chic District: showing sample data —", err.message);
+      window.CHIC_PRODUCTS = FALLBACK_PRODUCTS.map(normalizeProduct);
       usingFallback = true;
     }
-
-    window.MARIGOLD_SOURCE = usingFallback ? "fallback" : "sheet";
-
-    const f = deriveFilters(window.MARIGOLD_PRODUCTS);
-    window.MARIGOLD_CATEGORIES = f.categories;
-    window.MARIGOLD_AGE_GROUPS = f.ageGroups;
-    window.MARIGOLD_SIZES = f.sizes;
-    window.MARIGOLD_COLORS = f.colors;
-
-    // small, unobtrusive heads-up banner while you're setting the sheet up —
-    // safe to ignore/remove once SHEET_API_URL is connected
-    if (usingFallback) {
-      document.addEventListener("DOMContentLoaded", () => {
-        const bar = document.createElement("div");
-        bar.textContent =
-          "Showing sample data — connect your Google Sheet in js/products-data.js (SHEET_API_URL) to go live.";
-        bar.style.cssText =
-          "background:#F2D98A;color:#2B2A28;font-size:12.5px;font-weight:600;text-align:center;padding:8px 12px;";
-        document.body.prepend(bar);
-      });
-    }
-
-    return window.MARIGOLD_PRODUCTS;
+    window.CHIC_SOURCE = usingFallback ? "fallback" : "sheet";
+    const f = deriveFilters(window.CHIC_PRODUCTS);
+    window.CHIC_CATEGORIES = f.categories;
+    window.CHIC_AGE_GROUPS = f.ageGroups;
+    window.CHIC_SIZES = f.sizes;
+    window.CHIC_COLORS = f.colors;
+    return window.CHIC_PRODUCTS;
   })();
 })();
-
 </script>
-  <script>
-/* ============================================================
-   Marigold & Co. — landing content loader (Google Sheet-backed)
-   ------------------------------------------------------------
-   Fetches the "Landing" tab (simple key | value rows) from the
-   same Apps Script Web App as products-data.js, using ?type=landing.
-   Controls: hero image, the 3 homepage promo images, and the
-   4 footer payment icons — on every page, since the footer with
-   payment icons appears everywhere.
 
-   >>> PASTE YOUR DEPLOYED WEB APP URL BELOW (same URL as in
-       products-data.js) <<<
-   ============================================================ */
-
-(function () {
-  "use strict";
-
-  // ---- CONFIGURE THIS (same URL you used in products-data.js) ----
-  const SHEET_API_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
-
-  // ---- sample content shown until a sheet is connected, or for any
-  //      key you leave blank in the sheet ----
-  const FALLBACK_LANDING = {
-    "hero.image": "images/hero.jpg",
-    "hero.alt": "Autumn 2026 kids' lookbook cover art",
-    "promo_shoes.image": "images/promo-shoes.jpg",
-    "promo_shoes.alt": "Canvas hi-top sneaker for kids",
-    "promo_sweaters.image": "images/promo-sweaters.jpg",
-    "promo_sweaters.alt": "Cozy harvest-colored sweater for kids",
-    "promo_accessories.image": "images/promo-accessories.jpg",
-    "promo_accessories.alt": "Sage green crossbody bag for kids",
-    "payment.1.label": "VISA",
-    "payment.1.image": "",
-    "payment.2.label": "MasterCard",
-    "payment.2.image": "",
-    "payment.3.label": "PayPal",
-    "payment.3.image": "",
-    "payment.4.label": "Amex",
-    "payment.4.image": "",
-  };
-
-  window.MARIGOLD_LANDING_READY = (async function loadLanding() {
-    let usingFallback = false;
-    try {
-      if (!SHEET_API_URL || SHEET_API_URL.indexOf("PASTE_YOUR") === 0) {
-        throw new Error("Google Sheet not connected yet (SHEET_API_URL not set)");
-      }
-      const url = SHEET_API_URL + (SHEET_API_URL.indexOf("?") === -1 ? "?" : "&") + "type=landing";
-      const res = await fetch(url, { cache: "no-store" });
-      if (!res.ok) throw new Error("Landing fetch failed: HTTP " + res.status);
-      const raw = await res.json();
-      if (raw && raw.error) throw new Error(raw.error);
-      if (!raw || typeof raw !== "object" || Array.isArray(raw) || !Object.keys(raw).length) {
-        throw new Error("Landing tab returned no rows");
-      }
-      window.MARIGOLD_LANDING = raw;
-    } catch (err) {
-      console.warn("Marigold: landing images using sample data —", err.message);
-      window.MARIGOLD_LANDING = FALLBACK_LANDING;
-      usingFallback = true;
-    }
-    window.MARIGOLD_LANDING_SOURCE = usingFallback ? "fallback" : "sheet";
-    return window.MARIGOLD_LANDING;
-  })();
-
-  // Look up a key from the Landing sheet, with a fallback if blank/missing.
-  window.marigoldLanding = function (key, fallback) {
-    const data = window.MARIGOLD_LANDING || {};
-    const v = data[key];
-    return v !== undefined && v !== null && String(v).trim() !== "" ? v : fallback;
-  };
-})();
-
-</script>
-  <script>
+<script>
 /* ==========================================================================
-   Marigold & Co. — shared behaviors, cart + wishlist (localStorage-backed)
-   NOTE: this is a static site meant to be hosted on GitHub Pages, not run
-   inside the Claude artifact sandbox — localStorage is the right tool here
-   so the cart/wishlist survive across index.html / shop.html / account.html
-   / wishlist.html / checkout.html / payment.html.
+   CHIC DISTRICT & CO. — shared behaviors, cart + wishlist (localStorage-backed)
    ========================================================================== */
 (function () {
   "use strict";
+  const CART_KEY = "chic_cart_v1";
+  const WISHLIST_KEY = "chic_wishlist_v1";
 
-  const CART_KEY = "marigold_cart_v1";
-  const WISHLIST_KEY = "marigold_wishlist_v1";
+  function readJSON(key, fallback) { try { const raw = localStorage.getItem(key); if (!raw) return fallback; return JSON.parse(raw) ?? fallback; } catch (e) { return fallback; } }
+  function writeJSON(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) {} }
 
-  function readJSON(key, fallback) {
-    try {
-      const raw = localStorage.getItem(key);
-      if (!raw) return fallback;
-      const parsed = JSON.parse(raw);
-      return parsed ?? fallback;
-    } catch (e) {
-      return fallback;
-    }
-  }
-  function writeJSON(key, value) {
-    try {
-      localStorage.setItem(key, JSON.stringify(value));
-    } catch (e) {
-      /* storage unavailable (private browsing etc) — fail silently */
-    }
-  }
+  function getCart() { return readJSON(CART_KEY, []); }
+  function saveCart(cart) { writeJSON(CART_KEY, cart); updateCartBadge(); }
+  function addToCart(id, qty = 1) { const cart = getCart(); const existing = cart.find((c) => c.id === id); if (existing) existing.qty += qty; else cart.push({ id, qty }); saveCart(cart); }
+  function removeFromCart(id) { saveCart(getCart().filter((c) => c.id !== id)); }
+  function cartCount() { return getCart().reduce((sum, c) => sum + c.qty, 0); }
 
-  // ---------------- cart ----------------
-  function getCart() {
-    return readJSON(CART_KEY, []); // [{id, qty}]
-  }
-  function saveCart(cart) {
-    writeJSON(CART_KEY, cart);
-    updateCartBadge();
-  }
-  function addToCart(id, qty = 1) {
-    const cart = getCart();
-    const existing = cart.find((c) => c.id === id);
-    if (existing) existing.qty += qty;
-    else cart.push({ id, qty });
-    saveCart(cart);
-  }
-  function setQty(id, qty) {
-    let cart = getCart();
-    if (qty <= 0) cart = cart.filter((c) => c.id !== id);
-    else {
-      const existing = cart.find((c) => c.id === id);
-      if (existing) existing.qty = qty;
-    }
-    saveCart(cart);
-  }
-  function removeFromCart(id) {
-    saveCart(getCart().filter((c) => c.id !== id));
-  }
-  function clearCart() {
-    saveCart([]);
-  }
-  function cartCount() {
-    return getCart().reduce((sum, c) => sum + c.qty, 0);
-  }
-  function cartItemsWithProducts() {
-    const products = window.MARIGOLD_PRODUCTS || [];
-    return getCart()
-      .map((c) => {
-        const product = products.find((p) => p.id === c.id);
-        return product ? { ...c, product } : null;
-      })
-      .filter(Boolean);
-  }
+  function getWishlist() { return readJSON(WISHLIST_KEY, []); }
+  function saveWishlist(list) { writeJSON(WISHLIST_KEY, list); }
+  function isWishlisted(id) { return getWishlist().includes(id); }
+  function toggleWishlist(id) { let list = getWishlist(); const has = list.includes(id); list = has ? list.filter((x) => x !== id) : [...list, id]; saveWishlist(list); return !has; }
 
-  // ---------------- wishlist ----------------
-  function getWishlist() {
-    return readJSON(WISHLIST_KEY, []); // [id, id, ...]
-  }
-  function saveWishlist(list) {
-    writeJSON(WISHLIST_KEY, list);
-  }
-  function isWishlisted(id) {
-    return getWishlist().includes(id);
-  }
-  function toggleWishlist(id) {
-    let list = getWishlist();
-    const has = list.includes(id);
-    list = has ? list.filter((x) => x !== id) : [...list, id];
-    saveWishlist(list);
-    return !has;
-  }
-  function wishlistItemsWithProducts() {
-    const products = window.MARIGOLD_PRODUCTS || [];
-    return getWishlist()
-      .map((id) => products.find((p) => p.id === id))
-      .filter(Boolean);
-  }
+  function updateCartBadge() { document.querySelectorAll(".cart-count").forEach((el) => (el.textContent = cartCount())); }
+  function refreshWishlistIcons() { document.querySelectorAll("[data-wishlist-toggle]").forEach((btn) => { const id = Number(btn.dataset.wishlistToggle); btn.classList.toggle("active", isWishlisted(id)); }); }
 
-  // ---------------- badge + shared UI wiring ----------------
-  function updateCartBadge() {
-    document.querySelectorAll(".cart-count").forEach((el) => (el.textContent = cartCount()));
-  }
-
-  function refreshWishlistIcons() {
-    document.querySelectorAll("[data-wishlist-toggle]").forEach((btn) => {
-      const id = Number(btn.dataset.wishlistToggle);
-      btn.classList.toggle("active", isWishlisted(id));
-    });
-  }
-
-  window.Marigold = {
-    getCart, saveCart, addToCart, setQty, removeFromCart, clearCart, cartCount, cartItemsWithProducts,
-    getWishlist, isWishlisted, toggleWishlist, wishlistItemsWithProducts,
-    updateCartBadge, refreshWishlistIcons,
-  };
-
-  // ---------------- landing images: hero, promo panels, payment icons ----------------
-  // Runs on every page (payment icons live in the shared footer); hero/promo
-  // elements only exist on index.html, so each lookup is guarded with a null check.
-  function applyLandingImages() {
-    const heroImg = document.getElementById("hero-image");
-    if (heroImg) {
-      heroImg.src = window.marigoldLanding("hero.image", heroImg.getAttribute("src"));
-      heroImg.alt = window.marigoldLanding("hero.alt", heroImg.getAttribute("alt"));
-    }
-
-    ["shoes", "sweaters", "accessories"].forEach((key) => {
-      const img = document.getElementById(`promo-${key}-image`);
-      if (!img) return;
-      img.src = window.marigoldLanding(`promo_${key}.image`, img.getAttribute("src"));
-      img.alt = window.marigoldLanding(`promo_${key}.alt`, img.getAttribute("alt"));
-    });
-
-    const paymentsEl = document.querySelector(".payments");
-    if (paymentsEl) {
-      const items = [1, 2, 3, 4]
-        .map((n) => ({
-          label: window.marigoldLanding(`payment.${n}.label`, ""),
-          image: window.marigoldLanding(`payment.${n}.image`, ""),
-        }))
-        .filter((p) => p.label);
-
-      if (items.length) {
-        paymentsEl.innerHTML = "";
-        items.forEach((p) => {
-          const wrapper = document.createElement("span");
-          if (p.image) {
-            const img = document.createElement("img");
-            img.src = p.image;
-            img.alt = p.label;
-            img.onerror = () => {
-              wrapper.textContent = p.label; // fall back to text if the logo URL is broken
-            };
-            wrapper.appendChild(img);
-          } else {
-            wrapper.textContent = p.label;
-          }
-          paymentsEl.appendChild(wrapper);
-        });
-      }
-    }
-  }
-
-  function whenDomReady(fn) {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", fn);
-    } else {
-      fn();
-    }
-  }
-
-  if (window.MARIGOLD_LANDING_READY) {
-    window.MARIGOLD_LANDING_READY.then(() => whenDomReady(applyLandingImages));
-  }
+  window.Chic = { getCart, saveCart, addToCart, removeFromCart, cartCount, getWishlist, isWishlisted, toggleWishlist, updateCartBadge, refreshWishlistIcons };
 
   document.addEventListener("DOMContentLoaded", () => {
-    // Mobile nav toggle
     const burger = document.querySelector(".burger");
     const mobileNav = document.querySelector(".mobile-nav");
     const mobileClose = document.querySelector(".mobile-nav-close");
@@ -1747,11 +1041,9 @@ section.band { padding: 76px 0; }
       mobileNav.querySelector(".backdrop").addEventListener("click", () => mobileNav.classList.remove("open"));
       if (mobileClose) mobileClose.addEventListener("click", () => mobileNav.classList.remove("open"));
     }
-
     updateCartBadge();
     refreshWishlistIcons();
 
-    // Add to cart (delegated) — button carries data-add-to-cart="<product id>"
     document.body.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-add-to-cart]");
       if (!btn) return;
@@ -1763,110 +1055,65 @@ section.band { padding: 76px 0; }
       setTimeout(() => (btn.textContent = original), 1200);
     });
 
-    // Wishlist heart toggle (delegated) — button carries data-wishlist-toggle="<product id>"
     document.body.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-wishlist-toggle]");
       if (!btn) return;
       const id = Number(btn.dataset.wishlistToggle);
-      const nowActive = toggleWishlist(id);
-      btn.classList.toggle("active", nowActive);
-      // if we're on the wishlist page itself, re-render the list live
-      if (typeof window.renderWishlistPage === "function") window.renderWishlistPage();
-    });
-
-    // Product row arrows (homepage "New Arrivals") — simple scroll-by-one
-    document.querySelectorAll(".product-row").forEach((row) => {
-      const grid = row.querySelector(".product-grid");
-      const prev = row.querySelector(".row-arrow.prev");
-      const next = row.querySelector(".row-arrow.next");
-      if (!grid) return;
-      const scrollAmount = 320;
-      if (prev) prev.addEventListener("click", () => grid.scrollBy({ left: -scrollAmount, behavior: "smooth" }));
-      if (next) next.addEventListener("click", () => grid.scrollBy({ left: scrollAmount, behavior: "smooth" }));
+      toggleWishlist(id);
+      btn.classList.toggle("active", isWishlisted(id));
     });
   });
 })();
-
 </script>
-  <script>
+
+<script>
 /* ==========================================================================
-   Marigold & Co. — shop catalog: filters, sort, pagination
-   Waits for window.MARIGOLD_READY (the Google Sheet fetch) before
-   building anything, since filter option lists are derived from the
-   live product data.
+   CHIC DISTRICT & CO. — shop catalog: filters, sort, pagination
    ========================================================================== */
 (async function () {
   "use strict";
+  await window.CHIC_READY;
 
-  await window.MARIGOLD_READY;
+  const ALL = window.CHIC_PRODUCTS;
+  const CATEGORIES = window.CHIC_CATEGORIES;
+  const AGE_GROUPS = window.CHIC_AGE_GROUPS;
+  const SIZES = window.CHIC_SIZES;
+  const COLORS = window.CHIC_COLORS;
 
-  const ALL = window.MARIGOLD_PRODUCTS;
-  const CATEGORIES = window.MARIGOLD_CATEGORIES;
-  const AGE_GROUPS = window.MARIGOLD_AGE_GROUPS;
-  const SIZES = window.MARIGOLD_SIZES;
-  const COLORS = window.MARIGOLD_COLORS;
+  const state = { categories: new Set(), ages: new Set(), sizes: new Set(), colors: new Set(), priceMin: null, priceMax: null, sort: "featured", perPage: 12, page: 1 };
 
-  const state = {
-    categories: new Set(),
-    ages: new Set(),
-    sizes: new Set(),
-    colors: new Set(),
-    priceMin: null,
-    priceMax: null,
-    sort: "featured",
-    perPage: 12,
-    page: 1,
-  };
-
-  // ---- read initial category from ?category= query param ----
   const params = new URLSearchParams(window.location.search);
   const initialCategory = params.get("category");
-  if (initialCategory && CATEGORIES.includes(initialCategory)) {
-    state.categories.add(initialCategory);
-  }
+  if (initialCategory && CATEGORIES.includes(initialCategory)) state.categories.add(initialCategory);
 
   const els = {
-    categoryFilters: document.getElementById("category-filters"),
-    ageFilters: document.getElementById("age-filters"),
-    sizeFilters: document.getElementById("size-filters"),
-    colorFilters: document.getElementById("color-filters"),
-    priceMin: document.getElementById("price-min"),
-    priceMax: document.getElementById("price-max"),
-    sortSelect: document.getElementById("sort-select"),
-    perPageSelect: document.getElementById("per-page-select"),
-    resultCount: document.getElementById("result-count"),
-    activeChips: document.getElementById("active-chips"),
-    catalogGrid: document.getElementById("catalog-grid"),
-    emptyState: document.getElementById("empty-state"),
-    pagination: document.getElementById("pagination"),
-    clearFilters: document.getElementById("clear-filters"),
-    filtersPanel: document.getElementById("filters"),
-    filtersBackdrop: document.querySelector(".filters-backdrop"),
+    categoryFilters: document.getElementById("category-filters"), ageFilters: document.getElementById("age-filters"),
+    sizeFilters: document.getElementById("size-filters"), colorFilters: document.getElementById("color-filters"),
+    priceMin: document.getElementById("price-min"), priceMax: document.getElementById("price-max"),
+    sortSelect: document.getElementById("sort-select"), perPageSelect: document.getElementById("per-page-select"),
+    resultCount: document.getElementById("result-count"), activeChips: document.getElementById("active-chips"),
+    catalogGrid: document.getElementById("catalog-grid"), emptyState: document.getElementById("empty-state"),
+    pagination: document.getElementById("pagination"), clearFilters: document.getElementById("clear-filters"),
+    filtersPanel: document.getElementById("filters"), filtersBackdrop: document.querySelector(".filters-backdrop"),
     openFilters: document.getElementById("open-filters"),
   };
 
-  // ---------------- build filter controls ----------------
-  function categoryCount(cat) {
-    return ALL.filter((p) => p.category === cat).length;
-  }
+  function categoryCount(cat) { return ALL.filter((p) => p.category === cat).length; }
 
   els.categoryFilters.innerHTML = CATEGORIES.map((cat) => `
     <label class="filter-option">
       <input type="checkbox" value="${cat}" data-filter="category" ${state.categories.has(cat) ? "checked" : ""}>
-      ${cat}
-      <span class="count">${categoryCount(cat)}</span>
+      ${cat} <span class="count">${categoryCount(cat)}</span>
     </label>`).join("");
 
   els.ageFilters.innerHTML = AGE_GROUPS.map((ag) => `
     <label class="age-pill ${state.ages.has(ag.id) ? "checked" : ""}">
-      <input type="checkbox" value="${ag.id}" data-filter="age">
-      ${ag.label}
+      <input type="checkbox" value="${ag.id}" data-filter="age"> ${ag.label}
     </label>`).join("");
 
   els.sizeFilters.innerHTML = SIZES.map((sz) => `
     <label class="filter-option" style="display:inline-flex; margin-right:14px;">
-      <input type="checkbox" value="${sz}" data-filter="size">
-      ${sz}
+      <input type="checkbox" value="${sz}" data-filter="size"> ${sz}
     </label>`).join("");
 
   els.colorFilters.innerHTML = COLORS.map((c) => `
@@ -1875,7 +1122,6 @@ section.band { padding: 76px 0; }
       <span class="color-swatch" style="background:#${c.hex};"></span>
     </label>`).join("");
 
-  // ---------------- event wiring ----------------
   document.addEventListener("change", (e) => {
     const t = e.target;
     if (!t.dataset || !t.dataset.filter) return;
@@ -1883,8 +1129,7 @@ section.band { padding: 76px 0; }
     if (t.checked) setFor.add(t.value); else setFor.delete(t.value);
     if (t.dataset.filter === "age") t.closest(".age-pill").classList.toggle("checked", t.checked);
     if (t.dataset.filter === "color") t.nextElementSibling.classList.toggle("checked", t.checked);
-    state.page = 1;
-    render();
+    state.page = 1; render();
   });
 
   els.priceMin.addEventListener("input", () => { state.priceMin = els.priceMin.value ? Number(els.priceMin.value) : null; state.page = 1; render(); });
@@ -1902,26 +1147,19 @@ section.band { padding: 76px 0; }
   });
 
   if (els.openFilters) {
-    els.openFilters.addEventListener("click", () => {
-      els.filtersPanel.classList.add("open");
-      els.filtersBackdrop.classList.add("open");
-    });
-    els.filtersBackdrop.addEventListener("click", () => {
-      els.filtersPanel.classList.remove("open");
-      els.filtersBackdrop.classList.remove("open");
-    });
+    els.openFilters.addEventListener("click", () => { els.filtersPanel.classList.add("open"); els.filtersBackdrop.classList.add("open"); });
+    els.filtersBackdrop.addEventListener("click", () => { els.filtersPanel.classList.remove("open"); els.filtersBackdrop.classList.remove("open"); });
   }
 
-  // ---------------- filtering / sorting ----------------
   function getFiltered() {
     return ALL.filter((p) => {
       if (state.categories.size && !state.categories.has(p.category)) return false;
       if (state.ages.size && !state.ages.has(p.ageGroup)) return false;
       if (state.sizes.size && !p.sizes.some((s) => state.sizes.has(s))) return false;
       if (state.colors.size && !state.colors.has(p.color)) return false;
-      const effectivePrice = p.salePrice ?? p.price;
-      if (state.priceMin !== null && effectivePrice < state.priceMin) return false;
-      if (state.priceMax !== null && effectivePrice > state.priceMax) return false;
+      const ep = p.salePrice ?? p.price;
+      if (state.priceMin !== null && ep < state.priceMin) return false;
+      if (state.priceMax !== null && ep > state.priceMax) return false;
       return true;
     });
   }
@@ -1933,25 +1171,22 @@ section.band { padding: 76px 0; }
       case "price-desc": arr.sort((a, b) => (b.salePrice ?? b.price) - (a.salePrice ?? a.price)); break;
       case "name-asc": arr.sort((a, b) => a.name.localeCompare(b.name)); break;
       case "rating-desc": arr.sort((a, b) => b.rating - a.rating); break;
-      default: /* featured: new items first */ arr.sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
+      default: arr.sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
     }
     return arr;
   }
 
-  // ---------------- rendering ----------------
   function cardHTML(p) {
     const price = p.salePrice
-      ? `<span class="was">$${p.price.toFixed(2)}</span>$${p.salePrice.toFixed(2)}`
-      : `$${p.price.toFixed(2)}`;
-    const tag = p.salePrice
-      ? `<span class="product-tag sale">Sale</span>`
-      : p.isNew ? `<span class="product-tag new">New</span>` : "";
+      ? `<span class="was">₦${p.price.toFixed(2)}</span>₦${p.salePrice.toFixed(2)}`
+      : `₦${p.price.toFixed(2)}`;
+    const tag = p.salePrice ? `<span class="product-tag sale">Sale</span>` : p.isNew ? `<span class="product-tag new">New</span>` : "";
     return `
       <article class="product-card">
         <a href="#" class="product-media">
           ${tag}
-          <img src="${window.marigoldProductImage(p)}" alt="${p.name}" loading="lazy"
-               onerror="this.onerror=null;this.src='${window.marigoldProductImageFallback(p)}';">
+          <img src="${window.chicProductImage(p)}" alt="${p.name}" loading="lazy"
+               onerror="this.onerror=null;this.src='${window.chicProductImageFallback(p)}';">
         </a>
         <button class="wishlist-btn" data-wishlist-toggle="${p.id}" aria-label="Save to wishlist">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7.5-4.6-10-9.3C.4 8 2 4.5 5.5 4c2-.3 3.7.7 4.5 2.2C10.8 4.7 12.5 3.7 14.5 4c3.5.5 5.1 4 3.5 7.7C15.5 16.4 12 21 12 21z"/></svg>
@@ -1971,14 +1206,11 @@ section.band { padding: 76px 0; }
     state.ages.forEach((v) => chips.push({ label: AGE_GROUPS.find((a) => a.id === v).label, group: "ages", value: v }));
     state.sizes.forEach((v) => chips.push({ label: `Size ${v}`, group: "sizes", value: v }));
     state.colors.forEach((v) => chips.push({ label: v, group: "colors", value: v }));
-    if (state.priceMin !== null || state.priceMax !== null) {
-      chips.push({ label: `$${state.priceMin ?? 0} – $${state.priceMax ?? "∞"}`, group: "price", value: "price" });
-    }
+    if (state.priceMin !== null || state.priceMax !== null) chips.push({ label: `₦${state.priceMin ?? 0} – ₦${state.priceMax ?? "∞"}`, group: "price", value: "price" });
     els.activeChips.innerHTML = chips.map((c) => `
       <span class="chip" data-group="${c.group}" data-value="${c.value}">
         ${c.label} <button aria-label="Remove filter">✕</button>
       </span>`).join("");
-
     els.activeChips.querySelectorAll(".chip button").forEach((btn) => {
       btn.addEventListener("click", () => {
         const chip = btn.closest(".chip");
@@ -1986,24 +1218,8 @@ section.band { padding: 76px 0; }
         const value = chip.dataset.value;
         if (group === "price") { state.priceMin = null; state.priceMax = null; els.priceMin.value = ""; els.priceMax.value = ""; }
         else state[group].delete(value);
-        document.querySelectorAll(`[data-filter] `).forEach(() => {}); // no-op guard
-        syncControlsFromState();
-        state.page = 1;
-        render();
+        state.page = 1; render();
       });
-    });
-  }
-
-  function syncControlsFromState() {
-    document.querySelectorAll('[data-filter="category"]').forEach((i) => (i.checked = state.categories.has(i.value)));
-    document.querySelectorAll('[data-filter="age"]').forEach((i) => {
-      i.checked = state.ages.has(i.value);
-      i.closest(".age-pill").classList.toggle("checked", i.checked);
-    });
-    document.querySelectorAll('[data-filter="size"]').forEach((i) => (i.checked = state.sizes.has(i.value)));
-    document.querySelectorAll('[data-filter="color"]').forEach((i) => {
-      i.checked = state.colors.has(i.value);
-      i.nextElementSibling.classList.toggle("checked", i.checked);
     });
   }
 
@@ -2012,16 +1228,10 @@ section.band { padding: 76px 0; }
     const p = state.page;
     const pages = [];
     const pushRange = (a, b) => { for (let i = a; i <= b; i++) pages.push(i); };
-
-    if (totalPages <= 7) {
-      pushRange(1, totalPages);
-    } else if (p <= 4) {
-      pushRange(1, 5); pages.push("…"); pages.push(totalPages);
-    } else if (p >= totalPages - 3) {
-      pages.push(1); pages.push("…"); pushRange(totalPages - 4, totalPages);
-    } else {
-      pages.push(1); pages.push("…"); pushRange(p - 1, p + 1); pages.push("…"); pages.push(totalPages);
-    }
+    if (totalPages <= 7) pushRange(1, totalPages);
+    else if (p <= 4) { pushRange(1, 5); pages.push("…"); pages.push(totalPages); }
+    else if (p >= totalPages - 3) { pages.push(1); pages.push("…"); pushRange(totalPages - 4, totalPages); }
+    else { pages.push(1); pages.push("…"); pushRange(p - 1, p + 1); pages.push("…"); pages.push(totalPages); }
 
     let html = `<button class="page-btn" data-page="${p - 1}" ${p === 1 ? "disabled" : ""} aria-label="Previous page">‹</button>`;
     pages.forEach((pg) => {
@@ -2029,32 +1239,14 @@ section.band { padding: 76px 0; }
       else html += `<button class="page-btn ${pg === p ? "current" : ""}" data-page="${pg}">${pg}</button>`;
     });
     html += `<button class="page-btn" data-page="${p + 1}" ${p === totalPages ? "disabled" : ""} aria-label="Next page">›</button>`;
-    html += `
-      <label class="page-jump">
-        of ${totalPages} —
-        <input type="number" min="1" max="${totalPages}" value="${p}" id="page-jump-input" aria-label="Jump to page">
-        <button class="btn btn-sm" id="page-jump-go">Go</button>
-      </label>`;
     els.pagination.innerHTML = html;
 
     els.pagination.querySelectorAll(".page-btn[data-page]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const target = Number(btn.dataset.page);
-        if (target >= 1 && target <= totalPages) { state.page = target; render(); scrollToTop(); }
+        if (target >= 1 && target <= totalPages) { state.page = target; render(); document.querySelector(".shop-toolbar").scrollIntoView({ behavior: "smooth", block: "start" }); }
       });
     });
-    const jumpBtn = document.getElementById("page-jump-go");
-    if (jumpBtn) {
-      jumpBtn.addEventListener("click", () => {
-        let target = Number(document.getElementById("page-jump-input").value);
-        target = Math.min(Math.max(target, 1), totalPages);
-        state.page = target; render(); scrollToTop();
-      });
-    }
-  }
-
-  function scrollToTop() {
-    document.querySelector(".shop-toolbar").scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function render() {
@@ -2069,15 +1261,13 @@ section.band { padding: 76px 0; }
     els.catalogGrid.innerHTML = pageItems.map(cardHTML).join("");
     els.emptyState.style.display = sorted.length === 0 ? "block" : "none";
     els.catalogGrid.style.display = sorted.length === 0 ? "none" : "grid";
-
     renderChips();
     renderPagination(totalPages);
-    if (window.Marigold) window.Marigold.refreshWishlistIcons();
+    if (window.Chic) window.Chic.refreshWishlistIcons();
   }
 
   render();
 })();
-
 </script>
 </body>
 </html>
