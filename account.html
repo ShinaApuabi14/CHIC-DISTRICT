@@ -2,35 +2,35 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Account — Marigold & Co.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>My Account — Chic District & Co.</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 /* ==========================================================================
-   MARIGOLD & CO. — Kids' clothing shop
+   CHIC DISTRICT & CO. — Women's clothing shop
    Design tokens
    Color:
      --cream        #FBF7F0  page background
-     --ink          #2B2A28  primary text
+     --ink          #555350  primary text
      --marigold     #D9A441  primary brand accent
      --marigold-dk  #B87F2A  hover / pressed accent
-     --blush        #E7A9A0  secondary accent (sale tags, girls)
-     --sage         #93A67F  secondary accent (new tags, boys)
+     --blush        #E7A9A0  secondary accent (sale tags)
+     --sage         #93A67F  secondary accent (new tags)
      --line         #E7E0D2  hairline borders
      --white        #FFFFFF
    Type:
-     --font-display "Baloo 2"   headlines, rounded + friendly, kid-appropriate
-     --font-body    "Inter"     body copy
-     --font-mono    "IBM Plex Mono" prices, SKUs, page numbers (tabular data)
-   Signature element: the marigold-flower mark (••••) used as section eyebrows,
-   the "new" tag bloom, and the current-page indicator in pagination.
+     --font-display 'Lato'  headlines
+     --font-body    'Lato'  body copy
+     --font-mono    'Lato'  prices, SKUs
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&display=swap');
 
 :root {
   --cream: #FBF7F0;
   --cream-deep: #F3ECDD;
-  --ink: #2B2A28;
+  --ink: #555350;
   --ink-soft: #6b6660;
   --marigold: #D9A441;
   --marigold-dk: #B87F2A;
@@ -39,11 +39,9 @@
   --sage: #93A67F;
   --line: #E7E0D2;
   --white: #FFFFFF;
-
-  --font-display: 'Baloo 2', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
-
+  --font-display: 'Lato', 'Helvetica Neue', sans-serif;
+  --font-body: 'Lato', system-ui, sans-serif;
+  --font-mono: 'Lato', monospace;
   --radius-sm: 6px;
   --radius-md: 14px;
   --radius-lg: 28px;
@@ -61,6 +59,15 @@ body {
   background: var(--cream);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+.logo-img {
+  height: 84px;
+  width: 84px;
+  display: block;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 img { max-width: 100%; display: block; }
@@ -83,19 +90,16 @@ ul { list-style: none; margin: 0; padding: 0; }
   * { animation: none !important; transition: none !important; }
 }
 
-/* ---------- Signature: marigold-bloom mark ---------- */
-.bloom {
+/* ---------- Signature: chic geometric mark ---------- */
+.chic-mark {
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
-.bloom::before {
-  content: "";
-  width: 9px;
-  height: 9px;
-  border-radius: 50% 50% 50% 0;
-  background: var(--marigold);
-  transform: rotate(45deg);
+.chic-mark::before {
+  content: "◆";
+  color: var(--marigold);
+  font-size: 10px;
   flex: none;
 }
 
@@ -147,25 +151,14 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .logo {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 26px;
   display: flex;
   align-items: center;
   gap: 10px;
   color: var(--ink);
   white-space: nowrap;
-}
-.logo-mark {
-  width: 38px;
-  height: 38px;
-  border-radius: 50% 50% 50% 4px;
-  background: var(--marigold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-size: 18px;
-  transform: rotate(-8deg);
+  letter-spacing: -0.5px;
 }
 .main-nav {
   display: flex;
@@ -227,7 +220,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   gap: 8px;
   padding: 14px 30px;
   border-radius: var(--radius-sm);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 13.5px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -245,254 +238,6 @@ ul { list-style: none; margin: 0; padding: 0; }
 .btn-solid:hover { background: var(--marigold-dk); border-color: var(--marigold-dk); color: var(--white); }
 .btn-block { width: 100%; justify-content: center; }
 .btn-sm { padding: 10px 18px; font-size: 12px; }
-
-/* ---------- Hero ---------- */
-.hero {
-  background: linear-gradient(180deg, var(--cream-deep), var(--cream) 70%);
-  overflow: hidden;
-}
-.hero .wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 40px;
-  min-height: 520px;
-}
-.hero-copy .eyebrow { margin-bottom: 14px; display: block; }
-.hero-copy h1 {
-  font-family: var(--font-display);
-  font-size: clamp(38px, 5vw, 60px);
-  line-height: 1.02;
-  margin: 0 0 6px;
-  font-weight: 800;
-}
-.hero-copy h1 span {
-  color: var(--marigold-dk);
-  display: block;
-}
-.hero-copy p {
-  color: var(--ink-soft);
-  max-width: 40ch;
-  line-height: 1.6;
-  margin: 18px 0 30px;
-}
-.hero-visual {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  aspect-ratio: 4/5;
-  box-shadow: var(--shadow-card-hover);
-}
-.hero-visual img { width: 100%; height: 100%; object-fit: cover; }
-.hero-visual::after {
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(0deg, rgba(43,42,40,.25), transparent 40%);
-}
-.hero-dots {
-  position: absolute;
-  right: 18px; top: 50%;
-  transform: translateY(-50%);
-  display: flex; flex-direction: column; gap: 10px;
-  z-index: 2;
-}
-.hero-dots span {
-  width: 9px; height: 9px; border-radius: 50%;
-  background: rgba(255,255,255,.55);
-  border: 1px solid rgba(255,255,255,.8);
-}
-.hero-dots span.active { background: var(--marigold); border-color: var(--marigold); }
-
-/* ---------- Section heading ---------- */
-.section-head {
-  text-align: center;
-  margin: 0 0 44px;
-}
-.section-head .eyebrow { justify-content: center; }
-.section-head h2 {
-  font-family: var(--font-display);
-  font-size: clamp(26px, 3vw, 36px);
-  margin: 10px 0 8px;
-  font-weight: 700;
-}
-.section-head p { color: var(--ink-soft); margin: 0; }
-
-section.band { padding: 76px 0; }
-
-/* ---------- Product grid / carousel row ---------- */
-.product-row {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.row-arrow {
-  flex: none;
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  background: var(--white);
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: var(--shadow-card);
-}
-.row-arrow:hover { border-color: var(--marigold); color: var(--marigold-dk); }
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 26px;
-  flex: 1;
-}
-
-.product-card {
-  position: relative;
-  background: var(--white);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  transition: box-shadow .2s ease, transform .2s ease;
-  display: flex;
-  flex-direction: column;
-}
-.product-card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-3px); }
-.product-media {
-  position: relative;
-  aspect-ratio: 4/5;
-  background: var(--cream-deep);
-  overflow: hidden;
-}
-.product-media img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform .4s ease;
-}
-.product-card:hover .product-media img { transform: scale(1.05); }
-.product-tag {
-  position: absolute;
-  top: 10px; left: 10px;
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: .05em;
-  padding: 4px 9px;
-  border-radius: 20px;
-  color: var(--white);
-}
-.product-tag.new { background: var(--sage); }
-.product-tag.sale { background: var(--blush); color: var(--ink); }
-
-.wishlist-btn {
-  position: absolute;
-  top: 10px; right: 10px;
-  width: 32px; height: 32px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.92);
-  border: none;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--ink-soft);
-  box-shadow: var(--shadow-card);
-  z-index: 2;
-}
-.wishlist-btn svg { width: 17px; height: 17px; }
-.wishlist-btn:hover { color: var(--blush); }
-.wishlist-btn.active { color: var(--blush); }
-.wishlist-btn.active svg { fill: var(--blush); }
-
-.product-body {
-  padding: 16px 16px 18px;
-  text-align: center;
-  position: relative;
-}
-.product-desc {
-  font-size: 12px;
-  color: var(--ink-soft);
-  line-height: 1.4;
-  margin: 0 0 8px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.product-cat {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  margin: 0 0 4px;
-}
-.product-name {
-  font-weight: 600;
-  font-size: 14.5px;
-  margin: 0 0 8px;
-  line-height: 1.3;
-}
-.product-price {
-  font-family: var(--font-mono);
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--marigold-dk);
-}
-.product-price .was {
-  color: var(--ink-soft);
-  text-decoration: line-through;
-  font-weight: 500;
-  margin-right: 6px;
-}
-
-/* ---------- Promo banners (2-up + big panel) ---------- */
-.promo-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 26px;
-}
-.promo-stack { display: grid; gap: 26px; }
-.promo-panel {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  min-height: 260px;
-  display: flex;
-  align-items: center;
-  padding: 40px;
-}
-.promo-panel.tall { min-height: 546px; }
-.promo-panel img.bg {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%; object-fit: cover;
-  z-index: 0;
-}
-.promo-panel .scrim {
-  position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(251,247,240,.94) 38%, rgba(251,247,240,.15));
-  z-index: 1;
-}
-.promo-panel .content { position: relative; z-index: 2; max-width: 260px; }
-.promo-panel .eyebrow { display: block; margin-bottom: 8px; }
-.promo-panel h3 {
-  font-family: var(--font-display);
-  font-size: 28px;
-  margin: 0 0 4px;
-  font-weight: 700;
-  line-height: 1.1;
-}
-.promo-panel h3.accent { color: var(--marigold-dk); }
-.promo-panel a.shop-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  margin-top: 14px;
-  font-weight: 700; font-size: 13px;
-  border-bottom: 2px solid var(--ink);
-  padding-bottom: 2px;
-}
-.promo-watermark {
-  position: absolute;
-  bottom: -18px; left: 20px;
-  font-family: var(--font-display);
-  font-size: 74px;
-  font-weight: 800;
-  color: rgba(43,42,40,.05);
-  z-index: 1;
-  white-space: nowrap;
-}
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--cream-deep); border-top: 1px solid var(--line); }
@@ -568,259 +313,21 @@ section.band { padding: 76px 0; }
   font-size: 12.5px;
   color: var(--ink-soft);
 }
-.payments { display: flex; gap: 10px; font-family: var(--font-mono); font-size: 11px; }
-.payments span {
-  border: 1px solid var(--line); border-radius: 4px; padding: 3px 8px; background: var(--white);
-  display: flex; align-items: center; justify-content: center;
-}
-.payments img { height: 16px; width: auto; display: block; }
-
-/* ============================================================
-   SHOP / CATALOG PAGE
-   ============================================================ */
-.breadcrumb {
-  padding: 18px 0;
-  font-size: 13px;
-  color: var(--ink-soft);
-}
-.breadcrumb a:hover { color: var(--marigold-dk); }
-.breadcrumb .sep { margin: 0 6px; opacity: .5; }
-
-.shop-layout {
-  display: grid;
-  grid-template-columns: 270px 1fr;
-  gap: 40px;
-  padding-bottom: 90px;
-  align-items: start;
-}
-
-.filters {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 24px;
-  position: sticky;
-  top: 100px;
-}
-.filter-group { border-bottom: 1px solid var(--line); padding-bottom: 20px; margin-bottom: 20px; }
-.filter-group:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.filter-title {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 15px;
-  margin: 0 0 14px;
+.payments {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  color: #333;
 }
-.filter-option {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 13.5px;
-  padding: 6px 0;
-  cursor: pointer;
-  color: var(--ink);
-}
-.filter-option input { accent-color: var(--marigold-dk); width: 15px; height: 15px; }
-.filter-option .count { margin-left: auto; color: var(--ink-soft); font-family: var(--font-mono); font-size: 11.5px; }
-
-.age-pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
-.age-pill {
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 7px 13px;
-  font-size: 12.5px;
-  font-weight: 600;
-  background: var(--cream);
-}
-.age-pill input { display: none; }
-.age-pill.checked { background: var(--marigold); border-color: var(--marigold); color: var(--ink); }
-
-.color-row { display: flex; flex-wrap: wrap; gap: 10px; }
-.color-swatch {
-  width: 26px; height: 26px; border-radius: 50%;
-  border: 2px solid transparent;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);
-  cursor: pointer;
-}
-.color-swatch.checked { border-color: var(--marigold-dk); }
-.color-row input { display: none; }
-
-.price-inputs { display: flex; align-items: center; gap: 10px; }
-.price-inputs input {
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
+.payments img {
+  height: 24px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
-.clear-filters {
-  width: 100%;
-  margin-top: 6px;
-  background: none;
-  border: none;
-  color: var(--marigold-dk);
-  font-weight: 700;
-  font-size: 13px;
-  text-align: left;
-  padding: 4px 0;
-}
-.clear-filters:hover { text-decoration: underline; }
-
-.shop-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 26px;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-.result-count { font-size: 13.5px; color: var(--ink-soft); }
-.result-count strong { color: var(--ink); }
-.toolbar-right { display: flex; align-items: center; gap: 12px; }
-.toolbar-right select {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 9px 12px;
-  font-size: 13px;
-  font-family: inherit;
-  background: var(--white);
-}
-.active-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-.chip {
-  display: flex; align-items: center; gap: 6px;
-  background: var(--marigold-pale);
-  border-radius: 20px;
-  padding: 6px 12px 6px 14px;
-  font-size: 12.5px;
-  font-weight: 600;
-}
-.chip button { background: none; border: none; font-size: 14px; line-height: 1; color: var(--ink); }
-
-.catalog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
-}
-.catalog-grid .product-card { height: 100%; }
-.empty-state {
-  text-align: center;
-  padding: 80px 20px;
-  color: var(--ink-soft);
-}
-.empty-state .bloom { justify-content: center; margin-bottom: 10px; }
-
-/* ---------- Pagination ---------- */
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 54px;
-  flex-wrap: wrap;
-}
-.page-btn {
-  min-width: 38px; height: 38px;
-  padding: 0 6px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background: var(--white);
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ink-soft);
-  display: flex; align-items: center; justify-content: center;
-}
-.page-btn:hover:not(:disabled) { border-color: var(--marigold); color: var(--marigold-dk); }
-.page-btn:disabled { opacity: .35; cursor: default; }
-.page-btn.current {
-  background: var(--marigold);
-  border-color: var(--marigold);
-  color: var(--ink);
-  position: relative;
-}
-.page-btn.current::before {
-  content: "";
-  position: absolute; top: -4px; left: 50%; transform: translateX(-50%) rotate(45deg);
-  width: 7px; height: 7px;
-  background: var(--marigold-dk);
-  border-radius: 50% 50% 50% 0;
-}
-.page-ellipsis { color: var(--ink-soft); padding: 0 4px; font-family: var(--font-mono); }
-.page-jump {
-  display: flex; align-items: center; gap: 8px;
-  margin-left: 12px;
-  font-size: 12.5px;
-  color: var(--ink-soft);
-}
-.page-jump input {
-  width: 54px;
-  padding: 8px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  font-family: var(--font-mono);
-  text-align: center;
-}
-
-/* ---------- Mobile filter drawer ---------- */
-.filters-mobile-toggle { display: none; }
-.filters-backdrop { display: none; }
-
-/* ---------- Responsive ---------- */
-@media (max-width: 980px) {
-  .hero .wrap { grid-template-columns: 1fr; min-height: auto; padding-top: 40px; }
-  .hero-visual { aspect-ratio: 16/10; order: -1; }
-  .product-grid { grid-template-columns: repeat(2, 1fr); }
-  .promo-grid { grid-template-columns: 1fr; }
-  .promo-panel.tall { min-height: 320px; }
-  .footer-top { grid-template-columns: 1fr 1fr; }
-  .shop-layout { grid-template-columns: 1fr; }
-  .catalog-grid { grid-template-columns: repeat(2, 1fr); }
-
-  .filters {
-    position: fixed;
-    top: 0; left: 0; bottom: 0;
-    width: 300px;
-    max-width: 84vw;
-    transform: translateX(-100%);
-    transition: transform .25s ease;
-    z-index: 60;
-    overflow-y: auto;
-    border-radius: 0;
-  }
-  .filters.open { transform: translateX(0); }
-  .filters-backdrop.open {
-    display: block;
-    position: fixed; inset: 0; background: rgba(43,42,40,.4); z-index: 55;
-  }
-  .filters-mobile-toggle {
-    display: inline-flex;
-    align-items: center; gap: 8px;
-  }
-}
-
-@media (max-width: 720px) {
-  .wrap { padding: 0 18px; }
-  .utility-bar .links a:not(:first-child) { display: none; }
-  .main-nav { display: none; }
-  .burger { display: flex; }
-  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .catalog-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-  .footer-top { grid-template-columns: 1fr; padding: 44px 0 30px; }
-  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
-  section.band { padding: 52px 0; }
-  .row-arrow { display: none; }
-}
-
-@media (max-width: 480px) {
-  .catalog-grid { grid-template-columns: 1fr; }
-  .product-grid { grid-template-columns: 1fr 1fr; }
-}
-
-/* Mobile nav drawer (index/shop) */
+/* Mobile nav drawer */
 .mobile-nav {
   position: fixed; inset: 0; z-index: 70;
   display: none;
@@ -843,8 +350,16 @@ section.band { padding: 76px 0; }
 .mobile-nav-close { background: none; border: none; font-size: 22px; margin-bottom: 16px; }
 
 /* ============================================================
-   ACCOUNT / WISHLIST / CHECKOUT / PAYMENT PAGES
+   ACCOUNT PAGE
    ============================================================ */
+
+.breadcrumb {
+  padding: 18px 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.breadcrumb a:hover { color: var(--marigold-dk); }
+.breadcrumb .sep { margin: 0 6px; opacity: .5; }
 
 .page-head {
   padding: 44px 0 8px;
@@ -856,33 +371,6 @@ section.band { padding: 76px 0; }
   margin: 6px 0 6px;
 }
 .page-head p { color: var(--ink-soft); margin: 0 0 10px; }
-
-/* ---- step indicator (checkout / payment) ---- */
-.step-track {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 20px 0 40px;
-  flex-wrap: wrap;
-}
-.step-track .step {
-  display: flex; align-items: center; gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--ink-soft);
-}
-.step-track .step .num {
-  width: 26px; height: 26px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  display: flex; align-items: center; justify-content: center;
-  background: var(--white);
-}
-.step-track .step.active { color: var(--ink); }
-.step-track .step.active .num { background: var(--marigold); border-color: var(--marigold); }
-.step-track .step.done .num { background: var(--sage); border-color: var(--sage); color: var(--white); }
-.step-track .divider { width: 30px; height: 1px; background: var(--line); }
 
 /* ---- account page: tabs ---- */
 .auth-tabs {
@@ -995,30 +483,6 @@ section.band { padding: 76px 0; }
 .status-pill.processing { background: #F2D98A; color: #6b4f0e; }
 .status-pill.delivered { background: #D8E9DE; color: #275c3c; }
 
-/* ---- wishlist ---- */
-.wishlist-card { position: relative; }
-.wishlist-remove {
-  position: absolute;
-  top: 10px; right: 10px;
-  width: 30px; height: 30px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.92);
-  border: none;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 15px;
-  z-index: 2;
-  box-shadow: var(--shadow-card);
-}
-.wishlist-remove:hover { background: var(--blush); }
-
-/* ---- checkout / payment two-column layout ---- */
-.checkout-layout {
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 44px;
-  padding-bottom: 90px;
-  align-items: start;
-}
 .checkout-card {
   background: var(--white);
   border: 1px solid var(--line);
@@ -1033,106 +497,24 @@ section.band { padding: 76px 0; }
   display: flex; align-items: center; gap: 8px;
 }
 
-.order-summary {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 26px;
-  position: sticky;
-  top: 100px;
-}
-.order-summary h3 { font-family: var(--font-display); font-size: 17px; margin: 0 0 18px; }
-.summary-line-item {
-  display: flex;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--line);
-  align-items: center;
-}
-.summary-line-item img { width: 52px; height: 62px; border-radius: 8px; object-fit: cover; flex: none; }
-.summary-line-item .info { flex: 1; }
-.summary-line-item .info .name { font-size: 13px; font-weight: 600; }
-.summary-line-item .info .meta { font-size: 11.5px; color: var(--ink-soft); }
-.summary-line-item .price { font-family: var(--font-mono); font-size: 13px; font-weight: 600; }
-
-.summary-totals { padding-top: 16px; }
-.summary-totals .row {
-  display: flex; justify-content: space-between;
-  font-size: 13.5px; padding: 6px 0; color: var(--ink-soft);
-}
-.summary-totals .row.grand {
-  color: var(--ink);
-  font-weight: 700;
-  font-size: 16px;
-  border-top: 1px solid var(--line);
-  margin-top: 8px;
-  padding-top: 14px;
-}
-.promo-row { display: flex; gap: 8px; margin: 16px 0; }
-.promo-row input {
-  flex: 1;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  font-size: 13px;
-  font-family: inherit;
-}
-
-/* ---- payment method selector ---- */
-.pay-methods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 22px; }
-.pay-method {
-  border: 2px solid var(--line);
-  border-radius: 12px;
-  padding: 16px 10px;
-  text-align: center;
-  cursor: pointer;
-  font-size: 12.5px;
-  font-weight: 700;
-}
-.pay-method input { display: none; }
-.pay-method .glyph { font-size: 22px; display: block; margin-bottom: 6px; }
-.pay-method.checked { border-color: var(--marigold); background: var(--marigold-pale); }
-
-.card-preview {
-  background: linear-gradient(135deg, #3a3a38, #2b2a28);
-  color: var(--white);
-  border-radius: 16px;
-  padding: 24px;
-  margin-bottom: 24px;
-  font-family: var(--font-mono);
-  min-height: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.card-preview .chip { width: 34px; height: 24px; border-radius: 5px; background: var(--marigold-pale); }
-.card-preview .num { font-size: 17px; letter-spacing: .12em; }
-.card-preview .row { display: flex; justify-content: space-between; font-size: 10.5px; text-transform: uppercase; opacity: .8; }
-
-.success-banner {
-  display: none;
-  background: #E4E9DC;
-  border: 1px solid var(--sage);
-  border-radius: var(--radius-md);
-  padding: 20px 24px;
-  margin-bottom: 24px;
-  align-items: center;
-  gap: 12px;
-}
-.success-banner.show { display: flex; }
-.success-banner .icon {
-  width: 36px; height: 36px; border-radius: 50%;
-  background: var(--sage); color: var(--white);
-  display: flex; align-items: center; justify-content: center;
-  flex: none; font-weight: 700;
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .footer-top { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 900px) {
   .account-layout { grid-template-columns: 1fr; }
-  .checkout-layout { grid-template-columns: 1fr; }
   .summary-cards { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  .order-summary { position: static; }
+}
+
+@media (max-width: 720px) {
+  .wrap { padding: 0 18px; }
+  .utility-bar .links a:not(:first-child) { display: none; }
+  .main-nav { display: none; }
+  .burger { display: flex; }
+  .footer-top { grid-template-columns: 1fr; padding: 44px 0 30px; }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
 }
 
 </style>
@@ -1143,7 +525,7 @@ section.band { padding: 76px 0; }
     <div class="wrap">
       <div class="links">
         <select aria-label="Language"><option>English</option><option>Français</option><option>Español</option></select>
-        <select aria-label="Currency"><option>USD</option><option>EUR</option><option>GBP</option></select>
+        <select aria-label="Currency"><option>NGN</option><option>USD</option><option>EUR</option><option>GBP</option></select>
       </div>
       <div class="links">
         <a href="account.html">My Account</a>
@@ -1160,16 +542,16 @@ section.band { padding: 76px 0; }
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
       <a href="index.html" class="logo">
-        <span class="logo-mark">M</span>
-        Marigold&nbsp;&amp;&nbsp;Co.
+        <img src="images/chic-logo.jpg" alt="Chic District & Co." class="logo-img">
+        <span>Chic District & Co.</span>
       </a>
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="shop.html">Shop</a>
-        <a href="shop.html?category=Girls">Girls</a>
-        <a href="shop.html?category=Boys">Boys</a>
-        <a href="shop.html?category=Baby">Baby</a>
-        <a href="shop.html?category=Shoes">Shoes</a>
+        <a href="shop.html?category=Dresses">Dresses</a>
+        <a href="shop.html?category=Tops">Tops</a>
+        <a href="shop.html?category=Bottoms">Bottoms</a>
+        <a href="shop.html?category=Outerwear">Outerwear</a>
         <a href="index.html#contact">Contact</a>
       </nav>
       <div class="header-actions">
@@ -1190,10 +572,10 @@ section.band { padding: 76px 0; }
       <button class="mobile-nav-close" aria-label="Close menu">✕</button>
       <a href="index.html">Home</a>
       <a href="shop.html">Shop</a>
-      <a href="shop.html?category=Girls">Girls</a>
-      <a href="shop.html?category=Boys">Boys</a>
-      <a href="shop.html?category=Baby">Baby</a>
-      <a href="shop.html?category=Shoes">Shoes</a>
+      <a href="shop.html?category=Dresses">Dresses</a>
+      <a href="shop.html?category=Tops">Tops</a>
+      <a href="shop.html?category=Bottoms">Bottoms</a>
+      <a href="shop.html?category=Outerwear">Outerwear</a>
       <a href="index.html#contact">Contact</a>
     </div>
   </div>
@@ -1205,7 +587,7 @@ section.band { padding: 76px 0; }
   <!-- ============ SIGNED-OUT: sign in / create account ============ -->
   <section id="signed-out-view">
     <div class="wrap page-head">
-      <span class="eyebrow bloom">Welcome Back</span>
+      <span class="eyebrow chic-mark">Welcome Back</span>
       <h1>My Account</h1>
       <p>Sign in to track orders, manage your wishlist, and check out faster.</p>
     </div>
@@ -1258,7 +640,7 @@ section.band { padding: 76px 0; }
   <!-- ============ SIGNED-IN: account dashboard (shown after mock sign-in) ============ -->
   <section id="signed-in-view" style="display:none;">
     <div class="wrap page-head">
-      <span class="eyebrow bloom">Hi, Amara</span>
+      <span class="eyebrow chic-mark">Hi, Amara</span>
       <h1>Your Account</h1>
       <p>Here's what's happening with your orders and details.</p>
     </div>
@@ -1277,25 +659,25 @@ section.band { padding: 76px 0; }
         <div class="summary-cards">
           <div class="summary-card"><div class="num">7</div><div class="label">Orders placed</div></div>
           <div class="summary-card"><div class="num">3</div><div class="label">Items in wishlist</div></div>
-          <div class="summary-card"><div class="num">$412</div><div class="label">Store credit</div></div>
+          <div class="summary-card"><div class="num">₦412,000</div><div class="label">Store credit</div></div>
         </div>
 
         <div class="checkout-card">
-          <h3><span class="bloom"></span>Recent Orders</h3>
+          <h3><span class="chic-mark"></span>Recent Orders</h3>
           <table class="data-table">
             <thead>
               <tr><th>Order</th><th>Date</th><th>Items</th><th>Total</th><th>Status</th></tr>
             </thead>
             <tbody>
-              <tr><td>#MC-10482</td><td>Jul 18, 2026</td><td>3</td><td>$86.00</td><td><span class="status-pill shipped">Shipped</span></td></tr>
-              <tr><td>#MC-10391</td><td>Jul 02, 2026</td><td>1</td><td>$28.50</td><td><span class="status-pill delivered">Delivered</span></td></tr>
-              <tr><td>#MC-10254</td><td>Jun 19, 2026</td><td>2</td><td>$54.00</td><td><span class="status-pill processing">Processing</span></td></tr>
+              <tr><td>#CC-10482</td><td>Jul 18, 2026</td><td>3</td><td>₦86,000.00</td><td><span class="status-pill shipped">Shipped</span></td></tr>
+              <tr><td>#CC-10391</td><td>Jul 02, 2026</td><td>1</td><td>₦28,500.00</td><td><span class="status-pill delivered">Delivered</span></td></tr>
+              <tr><td>#CC-10254</td><td>Jun 19, 2026</td><td>2</td><td>₦54,000.00</td><td><span class="status-pill processing">Processing</span></td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="checkout-card">
-          <h3><span class="bloom"></span>Saved Address</h3>
+          <h3><span class="chic-mark"></span>Saved Address</h3>
           <p style="color:var(--ink-soft); font-size:14px; line-height:1.6;">
             Amara Okafor<br>
             14 Palm Grove Close<br>
@@ -1311,18 +693,21 @@ section.band { padding: 76px 0; }
   <footer class="site-footer" id="contact">
     <div class="wrap footer-top">
       <div class="footer-about">
-        <a href="index.html" class="logo"><span class="logo-mark">M</span>Marigold&nbsp;&amp;&nbsp;Co.</a>
-        <p>📍 118 Marigold Lane, Portland, OR</p>
+        <a href="index.html" class="logo">
+          <img src="images/logo.jpg" alt="Chic District & Co." class="logo-img">
+          <span>Chic District & Co.</span>
+        </a>
+        <p>📍 118 Dr Ladi Alakija Lane, Lekki Phase 1, Lagos</p>
         <p>📞 (503) 555-0192</p>
-        <p>✉️ hello@marigoldandco.com</p>
+        <p>✉️ hello@Chicdistrictandco.com</p>
       </div>
       <div>
         <h4>Popular Tags</h4>
         <div class="tag-pills">
-          <a href="shop.html?category=Girls">New In</a>
+          <a href="shop.html?category=Dresses">New In</a>
           <a href="shop.html">Best Sellers</a>
           <a href="shop.html">Sale</a>
-          <a href="shop.html?category=Shoes">Shoes</a>
+          <a href="shop.html?category=Outerwear">Outerwear</a>
           <a href="shop.html">Lookbook</a>
           <a href="shop.html">View All</a>
         </div>
@@ -1330,8 +715,8 @@ section.band { padding: 76px 0; }
       <div>
         <h4>Trusted Brands</h4>
         <div class="brand-grid">
-          <div>LITTLE&nbsp;OAK</div><div>SPROUT&nbsp;CO.</div>
-          <div>DAISY&nbsp;LANE</div><div>ACORN&nbsp;KIDS</div>
+          <div>CHIC&nbsp;STUDIO</div><div>ATELIER&nbsp;NO.5</div>
+          <div>LUXE&nbsp;THREADS</div><div>MODERN&nbsp;MUSE</div>
         </div>
       </div>
       <div>
@@ -1348,45 +733,40 @@ section.band { padding: 76px 0; }
         </form>
       </div>
     </div>
+    <div class="wrap footer-links">
+      <a href="#">Wholesale</a><a href="#">Privacy &amp; Security</a><a href="#">Help</a>
+      <a href="#">Seller Home</a><a href="#">Search Products</a><a href="#">Refined Products</a>
+      <a href="#">Prices</a><a href="#">Reviews</a><a href="#">Customer Service</a><a href="#">Terms of Use</a>
+    </div>
     <div class="wrap footer-bottom">
-      <span>© 2026 Marigold &amp; Co. All Rights Reserved.</span>
+      <span>© 2026 Chic District &amp; Co. All Rights Reserved.</span>
       <div class="payments">
-        <span>VISA</span><span>MasterCard</span><span>PayPal</span><span>Amex</span>
+        <img src="images/visa.jpg" alt="Visa">
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-cc-amex"></i>
+        <i class="fa-brands fa-cc-paypal"></i>
+        <i class="fa-brands fa-apple-pay"></i>
       </div>
     </div>
   </footer>
 
   <script>
 /* ============================================================
-   Marigold & Co. — landing content loader (Google Sheet-backed)
-   ------------------------------------------------------------
-   Fetches the "Landing" tab (simple key | value rows) from the
-   same Apps Script Web App as products-data.js, using ?type=landing.
-   Controls: hero image, the 3 homepage promo images, and the
-   4 footer payment icons — on every page, since the footer with
-   payment icons appears everywhere.
-
-   >>> PASTE YOUR DEPLOYED WEB APP URL BELOW (same URL as in
-       products-data.js) <<<
+   CHIC DISTRICT & CO. — landing content loader (Google Sheet-backed)
    ============================================================ */
-
 (function () {
   "use strict";
-
-  // ---- CONFIGURE THIS (same URL you used in products-data.js) ----
   const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbyiGGcSLunNi4kewUyvTAKl8698ZpLCVhNv2fxrCQiu8d9GlGp3DeR0Su8VyffMKJC8Lg/exec";
 
-  // ---- sample content shown until a sheet is connected, or for any
-  //      key you leave blank in the sheet ----
   const FALLBACK_LANDING = {
     "hero.image": "images/hero.jpg",
-    "hero.alt": "Autumn 2026 kids' lookbook cover art",
+    "hero.alt": "Spring 2026 women's lookbook cover art",
     "promo_shoes.image": "images/promo-shoes.jpg",
-    "promo_shoes.alt": "Canvas hi-top sneaker for kids",
+    "promo_shoes.alt": "Tailored women's blazer",
     "promo_sweaters.image": "images/promo-sweaters.jpg",
-    "promo_sweaters.alt": "Cozy harvest-colored sweater for kids",
+    "promo_sweaters.alt": "Luxurious silk camisole top",
     "promo_accessories.image": "images/promo-accessories.jpg",
-    "promo_accessories.alt": "Sage green crossbody bag for kids",
+    "promo_accessories.alt": "Elegant leather tote bag",
     "payment.1.label": "VISA",
     "payment.1.image": "",
     "payment.2.label": "MasterCard",
@@ -1397,217 +777,90 @@ section.band { padding: 76px 0; }
     "payment.4.image": "",
   };
 
-  window.MARIGOLD_LANDING_READY = (async function loadLanding() {
+  window.CHIC_LANDING_READY = (async function loadLanding() {
     let usingFallback = false;
     try {
-      if (!SHEET_API_URL || SHEET_API_URL.indexOf("PASTE_YOUR") === 0) {
-        throw new Error("Google Sheet not connected yet (SHEET_API_URL not set)");
-      }
+      if (!SHEET_API_URL || SHEET_API_URL.indexOf("PASTE_YOUR") === 0) throw new Error("Sheet not connected");
       const url = SHEET_API_URL + (SHEET_API_URL.indexOf("?") === -1 ? "?" : "&") + "type=landing";
       const res = await fetch(url, { cache: "no-store" });
       if (!res.ok) throw new Error("Landing fetch failed: HTTP " + res.status);
       const raw = await res.json();
       if (raw && raw.error) throw new Error(raw.error);
-      if (!raw || typeof raw !== "object" || Array.isArray(raw) || !Object.keys(raw).length) {
-        throw new Error("Landing tab returned no rows");
-      }
-      window.MARIGOLD_LANDING = raw;
+      if (!raw || typeof raw !== "object" || Array.isArray(raw) || !Object.keys(raw).length) throw new Error("Landing tab returned no rows");
+      window.CHIC_LANDING = raw;
     } catch (err) {
-      console.warn("Marigold: landing images using sample data —", err.message);
-      window.MARIGOLD_LANDING = FALLBACK_LANDING;
+      console.warn("Chic District: landing images using sample data —", err.message);
+      window.CHIC_LANDING = FALLBACK_LANDING;
       usingFallback = true;
     }
-    window.MARIGOLD_LANDING_SOURCE = usingFallback ? "fallback" : "sheet";
-    return window.MARIGOLD_LANDING;
+    window.CHIC_LANDING_SOURCE = usingFallback ? "fallback" : "sheet";
+    return window.CHIC_LANDING;
   })();
 
-  // Look up a key from the Landing sheet, with a fallback if blank/missing.
-  window.marigoldLanding = function (key, fallback) {
-    const data = window.MARIGOLD_LANDING || {};
+  window.chicLanding = function (key, fallback) {
+    const data = window.CHIC_LANDING || {};
     const v = data[key];
     return v !== undefined && v !== null && String(v).trim() !== "" ? v : fallback;
   };
 })();
-
 </script>
-  <script>
+
+<script>
 /* ==========================================================================
-   Marigold & Co. — shared behaviors, cart + wishlist (localStorage-backed)
-   NOTE: this is a static site meant to be hosted on GitHub Pages, not run
-   inside the Claude artifact sandbox — localStorage is the right tool here
-   so the cart/wishlist survive across index.html / shop.html / account.html
-   / wishlist.html / checkout.html / payment.html.
+   CHIC DISTRICT & CO. — shared behaviors, cart + wishlist (localStorage-backed)
    ========================================================================== */
 (function () {
   "use strict";
+  const CART_KEY = "chic_cart_v1";
+  const WISHLIST_KEY = "chic_wishlist_v1";
 
-  const CART_KEY = "marigold_cart_v1";
-  const WISHLIST_KEY = "marigold_wishlist_v1";
+  function readJSON(key, fallback) { try { const raw = localStorage.getItem(key); if (!raw) return fallback; return JSON.parse(raw) ?? fallback; } catch (e) { return fallback; } }
+  function writeJSON(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) {} }
 
-  function readJSON(key, fallback) {
-    try {
-      const raw = localStorage.getItem(key);
-      if (!raw) return fallback;
-      const parsed = JSON.parse(raw);
-      return parsed ?? fallback;
-    } catch (e) {
-      return fallback;
-    }
-  }
-  function writeJSON(key, value) {
-    try {
-      localStorage.setItem(key, JSON.stringify(value));
-    } catch (e) {
-      /* storage unavailable (private browsing etc) — fail silently */
-    }
-  }
+  function getCart() { return readJSON(CART_KEY, []); }
+  function saveCart(cart) { writeJSON(CART_KEY, cart); updateCartBadge(); }
+  function addToCart(id, qty = 1) { const cart = getCart(); const existing = cart.find((c) => c.id === id); if (existing) existing.qty += qty; else cart.push({ id, qty }); saveCart(cart); }
+  function removeFromCart(id) { saveCart(getCart().filter((c) => c.id !== id)); }
+  function cartCount() { return getCart().reduce((sum, c) => sum + c.qty, 0); }
 
-  // ---------------- cart ----------------
-  function getCart() {
-    return readJSON(CART_KEY, []); // [{id, qty}]
-  }
-  function saveCart(cart) {
-    writeJSON(CART_KEY, cart);
-    updateCartBadge();
-  }
-  function addToCart(id, qty = 1) {
-    const cart = getCart();
-    const existing = cart.find((c) => c.id === id);
-    if (existing) existing.qty += qty;
-    else cart.push({ id, qty });
-    saveCart(cart);
-  }
-  function setQty(id, qty) {
-    let cart = getCart();
-    if (qty <= 0) cart = cart.filter((c) => c.id !== id);
-    else {
-      const existing = cart.find((c) => c.id === id);
-      if (existing) existing.qty = qty;
-    }
-    saveCart(cart);
-  }
-  function removeFromCart(id) {
-    saveCart(getCart().filter((c) => c.id !== id));
-  }
-  function clearCart() {
-    saveCart([]);
-  }
-  function cartCount() {
-    return getCart().reduce((sum, c) => sum + c.qty, 0);
-  }
-  function cartItemsWithProducts() {
-    const products = window.MARIGOLD_PRODUCTS || [];
-    return getCart()
-      .map((c) => {
-        const product = products.find((p) => p.id === c.id);
-        return product ? { ...c, product } : null;
-      })
-      .filter(Boolean);
-  }
+  function getWishlist() { return readJSON(WISHLIST_KEY, []); }
+  function saveWishlist(list) { writeJSON(WISHLIST_KEY, list); }
+  function isWishlisted(id) { return getWishlist().includes(id); }
+  function toggleWishlist(id) { let list = getWishlist(); const has = list.includes(id); list = has ? list.filter((x) => x !== id) : [...list, id]; saveWishlist(list); return !has; }
 
-  // ---------------- wishlist ----------------
-  function getWishlist() {
-    return readJSON(WISHLIST_KEY, []); // [id, id, ...]
-  }
-  function saveWishlist(list) {
-    writeJSON(WISHLIST_KEY, list);
-  }
-  function isWishlisted(id) {
-    return getWishlist().includes(id);
-  }
-  function toggleWishlist(id) {
-    let list = getWishlist();
-    const has = list.includes(id);
-    list = has ? list.filter((x) => x !== id) : [...list, id];
-    saveWishlist(list);
-    return !has;
-  }
-  function wishlistItemsWithProducts() {
-    const products = window.MARIGOLD_PRODUCTS || [];
-    return getWishlist()
-      .map((id) => products.find((p) => p.id === id))
-      .filter(Boolean);
-  }
+  function updateCartBadge() { document.querySelectorAll(".cart-count").forEach((el) => (el.textContent = cartCount())); }
+  function refreshWishlistIcons() { document.querySelectorAll("[data-wishlist-toggle]").forEach((btn) => { const id = Number(btn.dataset.wishlistToggle); btn.classList.toggle("active", isWishlisted(id)); }); }
 
-  // ---------------- badge + shared UI wiring ----------------
-  function updateCartBadge() {
-    document.querySelectorAll(".cart-count").forEach((el) => (el.textContent = cartCount()));
-  }
+  window.Chic = { getCart, saveCart, addToCart, removeFromCart, cartCount, getWishlist, isWishlisted, toggleWishlist, updateCartBadge, refreshWishlistIcons };
 
-  function refreshWishlistIcons() {
-    document.querySelectorAll("[data-wishlist-toggle]").forEach((btn) => {
-      const id = Number(btn.dataset.wishlistToggle);
-      btn.classList.toggle("active", isWishlisted(id));
-    });
-  }
-
-  window.Marigold = {
-    getCart, saveCart, addToCart, setQty, removeFromCart, clearCart, cartCount, cartItemsWithProducts,
-    getWishlist, isWishlisted, toggleWishlist, wishlistItemsWithProducts,
-    updateCartBadge, refreshWishlistIcons,
-  };
-
-  // ---------------- landing images: hero, promo panels, payment icons ----------------
-  // Runs on every page (payment icons live in the shared footer); hero/promo
-  // elements only exist on index.html, so each lookup is guarded with a null check.
   function applyLandingImages() {
     const heroImg = document.getElementById("hero-image");
-    if (heroImg) {
-      heroImg.src = window.marigoldLanding("hero.image", heroImg.getAttribute("src"));
-      heroImg.alt = window.marigoldLanding("hero.alt", heroImg.getAttribute("alt"));
-    }
-
+    if (heroImg) { heroImg.src = window.chicLanding("hero.image", heroImg.getAttribute("src")); heroImg.alt = window.chicLanding("hero.alt", heroImg.getAttribute("alt")); }
     ["shoes", "sweaters", "accessories"].forEach((key) => {
       const img = document.getElementById(`promo-${key}-image`);
       if (!img) return;
-      img.src = window.marigoldLanding(`promo_${key}.image`, img.getAttribute("src"));
-      img.alt = window.marigoldLanding(`promo_${key}.alt`, img.getAttribute("alt"));
+      img.src = window.chicLanding(`promo_${key}.image`, img.getAttribute("src"));
+      img.alt = window.chicLanding(`promo_${key}.alt`, img.getAttribute("alt"));
     });
-
     const paymentsEl = document.querySelector(".payments");
     if (paymentsEl) {
-      const items = [1, 2, 3, 4]
-        .map((n) => ({
-          label: window.marigoldLanding(`payment.${n}.label`, ""),
-          image: window.marigoldLanding(`payment.${n}.image`, ""),
-        }))
-        .filter((p) => p.label);
-
+      const items = [1, 2, 3, 4].map((n) => ({ label: window.chicLanding(`payment.${n}.label`, ""), image: window.chicLanding(`payment.${n}.image`, "") })).filter((p) => p.label);
       if (items.length) {
         paymentsEl.innerHTML = "";
         items.forEach((p) => {
           const wrapper = document.createElement("span");
-          if (p.image) {
-            const img = document.createElement("img");
-            img.src = p.image;
-            img.alt = p.label;
-            img.onerror = () => {
-              wrapper.textContent = p.label; // fall back to text if the logo URL is broken
-            };
-            wrapper.appendChild(img);
-          } else {
-            wrapper.textContent = p.label;
-          }
+          if (p.image) { const img = document.createElement("img"); img.src = p.image; img.alt = p.label; img.onerror = () => { wrapper.textContent = p.label; }; wrapper.appendChild(img); }
+          else { wrapper.textContent = p.label; }
           paymentsEl.appendChild(wrapper);
         });
       }
     }
   }
 
-  function whenDomReady(fn) {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", fn);
-    } else {
-      fn();
-    }
-  }
-
-  if (window.MARIGOLD_LANDING_READY) {
-    window.MARIGOLD_LANDING_READY.then(() => whenDomReady(applyLandingImages));
-  }
+  function whenDomReady(fn) { if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn); else fn(); }
+  if (window.CHIC_LANDING_READY) window.CHIC_LANDING_READY.then(() => whenDomReady(applyLandingImages));
 
   document.addEventListener("DOMContentLoaded", () => {
-    // Mobile nav toggle
     const burger = document.querySelector(".burger");
     const mobileNav = document.querySelector(".mobile-nav");
     const mobileClose = document.querySelector(".mobile-nav-close");
@@ -1616,11 +869,9 @@ section.band { padding: 76px 0; }
       mobileNav.querySelector(".backdrop").addEventListener("click", () => mobileNav.classList.remove("open"));
       if (mobileClose) mobileClose.addEventListener("click", () => mobileNav.classList.remove("open"));
     }
-
     updateCartBadge();
     refreshWishlistIcons();
 
-    // Add to cart (delegated) — button carries data-add-to-cart="<product id>"
     document.body.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-add-to-cart]");
       if (!btn) return;
@@ -1632,58 +883,42 @@ section.band { padding: 76px 0; }
       setTimeout(() => (btn.textContent = original), 1200);
     });
 
-    // Wishlist heart toggle (delegated) — button carries data-wishlist-toggle="<product id>"
     document.body.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-wishlist-toggle]");
       if (!btn) return;
       const id = Number(btn.dataset.wishlistToggle);
-      const nowActive = toggleWishlist(id);
-      btn.classList.toggle("active", nowActive);
-      // if we're on the wishlist page itself, re-render the list live
-      if (typeof window.renderWishlistPage === "function") window.renderWishlistPage();
-    });
-
-    // Product row arrows (homepage "New Arrivals") — simple scroll-by-one
-    document.querySelectorAll(".product-row").forEach((row) => {
-      const grid = row.querySelector(".product-grid");
-      const prev = row.querySelector(".row-arrow.prev");
-      const next = row.querySelector(".row-arrow.next");
-      if (!grid) return;
-      const scrollAmount = 320;
-      if (prev) prev.addEventListener("click", () => grid.scrollBy({ left: -scrollAmount, behavior: "smooth" }));
-      if (next) next.addEventListener("click", () => grid.scrollBy({ left: scrollAmount, behavior: "smooth" }));
+      toggleWishlist(id);
+      btn.classList.toggle("active", isWishlisted(id));
     });
   });
 })();
-
 </script>
-  <script>
-    (function () {
-      // tab switching (sign in / create account)
-      document.querySelectorAll(".tab-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
-          document.querySelectorAll(".auth-panel").forEach((p) => p.classList.remove("active"));
-          btn.classList.add("active");
-          document.getElementById(btn.dataset.tab + "-panel").classList.add("active");
-        });
-      });
 
-      // mock sign in / sign up -> reveal dashboard (demo only, no real auth)
-      function showDashboard() {
-        document.getElementById("signed-out-view").style.display = "none";
-        document.getElementById("signed-in-view").style.display = "block";
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-      document.getElementById("signin-btn").addEventListener("click", showDashboard);
-      document.getElementById("signup-btn").addEventListener("click", showDashboard);
-
-      document.getElementById("sign-out-link").addEventListener("click", (e) => {
-        e.preventDefault();
-        document.getElementById("signed-in-view").style.display = "none";
-        document.getElementById("signed-out-view").style.display = "block";
+<script>
+  (function () {
+    document.querySelectorAll(".tab-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".auth-panel").forEach((p) => p.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.tab + "-panel").classList.add("active");
       });
-    })();
-  </script>
+    });
+
+    function showDashboard() {
+      document.getElementById("signed-out-view").style.display = "none";
+      document.getElementById("signed-in-view").style.display = "block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    document.getElementById("signin-btn").addEventListener("click", showDashboard);
+    document.getElementById("signup-btn").addEventListener("click", showDashboard);
+
+    document.getElementById("sign-out-link").addEventListener("click", (e) => {
+      e.preventDefault();
+      document.getElementById("signed-in-view").style.display = "none";
+      document.getElementById("signed-out-view").style.display = "block";
+    });
+  })();
+</script>
 </body>
 </html>
