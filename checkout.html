@@ -7,24 +7,6 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-/* ==========================================================================
-   CHIC DISTRICT & CO. — Women's clothing shop
-   Design tokens
-   Color:
-     --cream        #FBF7F0  page background
-     --ink          #555350  primary text
-     --marigold     #D9A441  primary brand accent
-     --marigold-dk  #B87F2A  hover / pressed accent
-     --blush        #E7A9A0  secondary accent (sale tags)
-     --sage         #93A67F  secondary accent (new tags)
-     --line         #E7E0D2  hairline borders
-     --white        #FFFFFF
-   Type:
-     --font-display 'Lato'  headlines
-     --font-body    'Lato'  body copy
-     --font-mono    'Lato'  prices, SKUs
-   ========================================================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&display=swap');
 
 :root {
@@ -62,390 +44,110 @@ body {
   line-height: 1.5;
 }
 
-.logo-img {
-  height: 84px;
-  width: 84px;
-  display: block;
-  object-fit: contain;
-  border-radius: 8px;
-}
+.logo-img { height: 84px; width: 84px; display: block; object-fit: contain; border-radius: 8px; }
 
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; }
 ul { list-style: none; margin: 0; padding: 0; }
 
-.wrap {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 32px;
-}
+.wrap { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
 
-:focus-visible {
-  outline: 3px solid var(--marigold-dk);
-  outline-offset: 2px;
-}
+:focus-visible { outline: 3px solid var(--marigold-dk); outline-offset: 2px; }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
 
-/* ---------- Signature: chic geometric mark ---------- */
-.chic-mark {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.chic-mark::before {
-  content: "◆";
-  color: var(--marigold);
-  font-size: 10px;
-  flex: none;
-}
+.chic-mark { display: inline-flex; align-items: center; gap: 6px; }
+.chic-mark::before { content: "◆"; color: var(--marigold); font-size: 10px; flex: none; }
 
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--marigold-dk);
-  font-weight: 600;
-}
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--marigold-dk); font-weight: 600; }
 
-/* ---------- Utility bar ---------- */
-.utility-bar {
-  background: var(--ink);
-  color: #d8d3c8;
-  font-size: 12.5px;
-}
-.utility-bar .wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 38px;
-}
-.utility-bar select {
-  background: transparent;
-  color: inherit;
-  border: none;
-  font-size: 12.5px;
-  font-family: inherit;
-}
+.utility-bar { background: var(--ink); color: #d8d3c8; font-size: 12.5px; }
+.utility-bar .wrap { display: flex; justify-content: space-between; align-items: center; height: 38px; }
+.utility-bar select { background: transparent; color: inherit; border: none; font-size: 12.5px; font-family: inherit; }
 .utility-bar .links { display: flex; gap: 18px; }
 .utility-bar .links a:hover { color: var(--marigold-pale); }
 
-/* ---------- Header ---------- */
-.site-header {
-  background: var(--white);
-  border-bottom: 1px solid var(--line);
-  position: sticky;
-  top: 0;
-  z-index: 40;
-}
-.site-header .wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 84px;
-  gap: 24px;
-}
-.logo {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 26px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--ink);
-  white-space: nowrap;
-  letter-spacing: -0.5px;
-}
-.main-nav {
-  display: flex;
-  gap: 30px;
-  font-weight: 600;
-  font-size: 14.5px;
-}
-.main-nav a {
-  position: relative;
-  padding: 6px 0;
-}
-.main-nav a.active,
-.main-nav a:hover { color: var(--marigold-dk); }
-.main-nav a.active::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: -3px;
-  height: 3px;
-  background: var(--marigold);
-  border-radius: 3px;
-}
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-.icon-btn {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 1px solid transparent;
-  background: transparent;
-  color: var(--ink);
-}
+.site-header { background: var(--white); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 40; }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; gap: 24px; }
+.logo { font-family: var(--font-display); font-weight: 700; font-size: 26px; display: flex; align-items: center; gap: 10px; color: var(--ink); white-space: nowrap; letter-spacing: -0.5px; }
+.main-nav { display: flex; gap: 30px; font-weight: 600; font-size: 14.5px; }
+.main-nav a { position: relative; padding: 6px 0; }
+.main-nav a.active, .main-nav a:hover { color: var(--marigold-dk); }
+.main-nav a.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 3px; background: var(--marigold); border-radius: 3px; }
+.header-actions { display: flex; align-items: center; gap: 18px; }
+.icon-btn { position: relative; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid transparent; background: transparent; color: var(--ink); }
 .icon-btn:hover { background: var(--cream-deep); }
 .icon-btn svg { width: 20px; height: 20px; }
-.cart-count {
-  position: absolute;
-  top: -2px; right: -2px;
-  background: var(--marigold);
-  color: var(--white);
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 600;
-  width: 18px; height: 18px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-}
+.cart-count { position: absolute; top: -2px; right: -2px; background: var(--marigold); color: var(--white); font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 .burger { display: none; }
 
-/* ---------- Buttons ---------- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 30px;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  font-size: 13.5px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border: 2px solid var(--ink);
-  background: transparent;
-  color: var(--ink);
-  transition: background .18s ease, color .18s ease, transform .18s ease;
-}
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: var(--radius-sm); font-weight: 600; font-size: 13.5px; letter-spacing: 0.06em; text-transform: uppercase; border: 2px solid var(--ink); background: transparent; color: var(--ink); transition: background .18s ease, color .18s ease, transform .18s ease; }
 .btn:hover { background: var(--ink); color: var(--white); transform: translateY(-1px); }
-.btn-solid {
-  background: var(--marigold);
-  border-color: var(--marigold);
-  color: var(--ink);
-}
+.btn-solid { background: var(--marigold); border-color: var(--marigold); color: var(--ink); }
 .btn-solid:hover { background: var(--marigold-dk); border-color: var(--marigold-dk); color: var(--white); }
 .btn-block { width: 100%; justify-content: center; }
 .btn-sm { padding: 10px 18px; font-size: 12px; }
+.btn:disabled { opacity: .55; cursor: not-allowed; }
 
-/* ---------- Footer ---------- */
 .site-footer { background: var(--cream-deep); border-top: 1px solid var(--line); }
-.footer-top {
-  padding: 64px 0 40px;
-  display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
-  gap: 40px;
-}
-.footer-top h4 {
-  font-family: var(--font-display);
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  margin: 0 0 18px;
-}
+.footer-top { padding: 64px 0 40px; display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.2fr; gap: 40px; }
+.footer-top h4 { font-family: var(--font-display); font-size: 15px; text-transform: uppercase; letter-spacing: .05em; margin: 0 0 18px; }
 .footer-about .logo { margin-bottom: 14px; }
 .footer-about p { color: var(--ink-soft); font-size: 13.5px; line-height: 1.6; margin: 4px 0; }
 .tag-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-.tag-pills a {
-  border: 1px solid var(--line);
-  padding: 7px 14px;
-  border-radius: 20px;
-  font-size: 12.5px;
-  background: var(--white);
-}
+.tag-pills a { border: 1px solid var(--line); padding: 7px 14px; border-radius: 20px; font-size: 12.5px; background: var(--white); }
 .tag-pills a:hover { border-color: var(--marigold); color: var(--marigold-dk); }
 .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.brand-grid div {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  height: 50px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--ink-soft);
-}
+.brand-grid div { background: var(--white); border: 1px solid var(--line); border-radius: 8px; height: 50px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; color: var(--ink-soft); }
 .social-row { display: flex; gap: 10px; margin-bottom: 20px; }
-.social-row a {
-  width: 34px; height: 34px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  display: flex; align-items: center; justify-content: center;
-  background: var(--white);
-  font-size: 13px;
-}
+.social-row a { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; background: var(--white); font-size: 13px; }
 .social-row a:hover { background: var(--marigold); border-color: var(--marigold); }
 .newsletter-form { display: flex; gap: 0; border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; background: var(--white); }
-.newsletter-form input {
-  border: none; padding: 12px 14px; flex: 1; font-family: inherit; font-size: 13px; background: transparent;
-}
+.newsletter-form input { border: none; padding: 12px 14px; flex: 1; font-family: inherit; font-size: 13px; background: transparent; }
 .newsletter-form input:focus { outline: none; }
-.newsletter-form button {
-  border: none; background: var(--marigold); color: var(--ink); padding: 0 18px; font-weight: 700;
-}
+.newsletter-form button { border: none; background: var(--marigold); color: var(--ink); padding: 0 18px; font-weight: 700; }
 .newsletter-form button:hover { background: var(--marigold-dk); color: var(--white); }
 
-.footer-links {
-  border-top: 1px solid var(--line);
-  padding: 22px 0;
-  font-size: 12.5px;
-  color: var(--ink-soft);
-  display: flex; flex-wrap: wrap; gap: 6px 14px;
-}
+.footer-links { border-top: 1px solid var(--line); padding: 22px 0; font-size: 12.5px; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 6px 14px; }
 .footer-links a:hover { color: var(--marigold-dk); }
-.footer-bottom {
-  border-top: 1px solid var(--line);
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12.5px;
-  color: var(--ink-soft);
-}
-.payments {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 12px;
-  color: #333;
-}
-.payments img {
-  height: 24px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
+.footer-bottom { border-top: 1px solid var(--line); padding: 20px 0; display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: var(--ink-soft); }
+.payments { display: flex; align-items: center; gap: 12px; font-size: 12px; color: #333; }
+.payments img { height: 24px; width: auto; display: block; object-fit: contain; }
 
-/* ============================================================
-   CHECKOUT PAGE
-   ============================================================ */
-.breadcrumb {
-  padding: 18px 0;
-  font-size: 13px;
-  color: var(--ink-soft);
-}
+.breadcrumb { padding: 18px 0; font-size: 13px; color: var(--ink-soft); }
 .breadcrumb a:hover { color: var(--marigold-dk); }
 .breadcrumb .sep { margin: 0 6px; opacity: .5; }
 
-.page-head {
-  padding: 44px 0 8px;
-}
-.page-head h1 {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 3.4vw, 40px);
-  font-weight: 700;
-  margin: 6px 0 6px;
-}
+.page-head { padding: 44px 0 8px; }
+.page-head h1 { font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 40px); font-weight: 700; margin: 6px 0 6px; }
 .page-head p { color: var(--ink-soft); margin: 0 0 10px; }
 
-.step-track {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 20px 0 40px;
-  flex-wrap: wrap;
-}
-.step-track .step {
-  display: flex; align-items: center; gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--ink-soft);
-}
-.step-track .step .num {
-  width: 26px; height: 26px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  display: flex; align-items: center; justify-content: center;
-  background: var(--white);
-}
+.step-track { display: flex; align-items: center; gap: 8px; margin: 20px 0 40px; flex-wrap: wrap; }
+.step-track .step { display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12.5px; font-weight: 600; color: var(--ink-soft); }
+.step-track .step .num { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; background: var(--white); }
 .step-track .step.active { color: var(--ink); }
 .step-track .step.active .num { background: var(--marigold); border-color: var(--marigold); }
 .step-track .step.done .num { background: var(--sage); border-color: var(--sage); color: var(--white); }
 .step-track .divider { width: 30px; height: 1px; background: var(--line); }
 
 .form-field { margin-bottom: 16px; }
-.form-field label {
-  display: block;
-  font-size: 12.5px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: var(--ink-soft);
-}
-.form-field input,
-.form-field select,
-.form-field textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  font-family: inherit;
-  font-size: 14px;
-  background: var(--white);
-}
-.form-field input:focus,
-.form-field select:focus,
-.form-field textarea:focus { border-color: var(--marigold); outline: none; }
+.form-field label { display: block; font-size: 12.5px; font-weight: 600; margin-bottom: 6px; color: var(--ink-soft); }
+.form-field input, .form-field select, .form-field textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 9px; font-family: inherit; font-size: 14px; background: var(--white); }
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--marigold); outline: none; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
-.filter-option {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 13.5px;
-  padding: 6px 0;
-  cursor: pointer;
-  color: var(--ink);
-}
+.filter-option { display: flex; align-items: center; gap: 9px; font-size: 13.5px; padding: 6px 0; cursor: pointer; color: var(--ink); }
 
-.checkout-layout {
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 44px;
-  padding-bottom: 90px;
-  align-items: start;
-}
-.checkout-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 28px;
-  margin-bottom: 24px;
-}
-.checkout-card h3 {
-  font-family: var(--font-display);
-  font-size: 18px;
-  margin: 0 0 20px;
-  display: flex; align-items: center; gap: 8px;
-}
+.checkout-layout { display: grid; grid-template-columns: 1fr 400px; gap: 44px; padding-bottom: 90px; align-items: start; }
+.checkout-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 28px; margin-bottom: 24px; }
+.checkout-card h3 { font-family: var(--font-display); font-size: 18px; margin: 0 0 20px; display: flex; align-items: center; gap: 8px; }
 
-.order-summary {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 26px;
-  position: sticky;
-  top: 100px;
-}
+.order-summary { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 26px; position: sticky; top: 100px; }
 .order-summary h3 { font-family: var(--font-display); font-size: 17px; margin: 0 0 18px; }
-.summary-line-item {
-  display: flex;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--line);
-  align-items: center;
-}
+.summary-line-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); align-items: center; }
 .summary-line-item img { width: 52px; height: 62px; border-radius: 8px; object-fit: cover; flex: none; }
 .summary-line-item .info { flex: 1; }
 .summary-line-item .info .name { font-size: 13px; font-weight: 600; }
@@ -453,61 +155,20 @@ ul { list-style: none; margin: 0; padding: 0; }
 .summary-line-item .price { font-family: var(--font-mono); font-size: 13px; font-weight: 600; }
 
 .summary-totals { padding-top: 16px; }
-.summary-totals .row {
-  display: flex; justify-content: space-between;
-  font-size: 13.5px; padding: 6px 0; color: var(--ink-soft);
-}
-.summary-totals .row.grand {
-  color: var(--ink);
-  font-weight: 700;
-  font-size: 16px;
-  border-top: 1px solid var(--line);
-  margin-top: 8px;
-  padding-top: 14px;
-}
+.summary-totals .row { display: flex; justify-content: space-between; font-size: 13.5px; padding: 6px 0; color: var(--ink-soft); }
+.summary-totals .row.grand { color: var(--ink); font-weight: 700; font-size: 16px; border-top: 1px solid var(--line); margin-top: 8px; padding-top: 14px; }
 .promo-row { display: flex; gap: 8px; margin: 16px 0; }
-.promo-row input {
-  flex: 1;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  font-size: 13px;
-  font-family: inherit;
-}
+.promo-row input { flex: 1; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font-size: 13px; font-family: inherit; }
 
-/* Mobile nav drawer */
-.mobile-nav {
-  position: fixed; inset: 0; z-index: 70;
-  display: none;
-}
+.mobile-nav { position: fixed; inset: 0; z-index: 70; display: none; }
 .mobile-nav.open { display: block; }
 .mobile-nav .backdrop { position: absolute; inset: 0; background: rgba(43,42,40,.45); }
-.mobile-nav .panel {
-  position: absolute; top: 0; left: 0; bottom: 0;
-  width: 280px; max-width: 84vw;
-  background: var(--white);
-  padding: 26px;
-  overflow-y: auto;
-}
-.mobile-nav .panel a {
-  display: block;
-  padding: 12px 0;
-  font-weight: 600;
-  border-bottom: 1px solid var(--line);
-}
+.mobile-nav .panel { position: absolute; top: 0; left: 0; bottom: 0; width: 280px; max-width: 84vw; background: var(--white); padding: 26px; overflow-y: auto; }
+.mobile-nav .panel a { display: block; padding: 12px 0; font-weight: 600; border-bottom: 1px solid var(--line); }
 .mobile-nav-close { background: none; border: none; font-size: 22px; margin-bottom: 16px; }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 980px) {
-  .footer-top { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 900px) {
-  .checkout-layout { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .order-summary { position: static; }
-}
-
+@media (max-width: 980px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 900px) { .checkout-layout { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } .order-summary { position: static; } }
 @media (max-width: 720px) {
   .wrap { padding: 0 18px; }
   .utility-bar .links a:not(:first-child) { display: none; }
@@ -516,7 +177,6 @@ ul { list-style: none; margin: 0; padding: 0; }
   .footer-top { grid-template-columns: 1fr; padding: 44px 0 30px; }
   .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
 }
-
 </style>
 </head>
 <body>
@@ -656,16 +316,19 @@ ul { list-style: none; margin: 0; padding: 0; }
       <div class="checkout-card">
         <h3><span class="chic-mark"></span>Delivery Method</h3>
         <label class="filter-option" style="padding:10px 0;">
-          <input type="radio" name="delivery" checked style="accent-color:var(--marigold-dk);">
+          <input type="radio" name="delivery" value="standard" checked style="accent-color:var(--marigold-dk);">
           Standard Shipping (3–5 business days) <span class="count" style="margin-left:auto; font-family:var(--font-mono);">Free</span>
         </label>
         <label class="filter-option" style="padding:10px 0;">
-          <input type="radio" name="delivery" style="accent-color:var(--marigold-dk);">
+          <input type="radio" name="delivery" value="express" style="accent-color:var(--marigold-dk);">
           Express Shipping (1–2 business days) <span class="count" style="margin-left:auto; font-family:var(--font-mono);">₦12,000.00</span>
         </label>
       </div>
 
-      <a href="payment.html" class="btn btn-solid btn-block">Continue to Payment →</a>
+      <button type="button" id="continue-to-payment-btn" class="btn btn-solid btn-block">Continue to Payment →</button>
+      <p id="checkout-error" style="display:none; color:#c0392b; font-size:13px; margin-top:10px;">
+        Please fill in your email and all required shipping fields before continuing.
+      </p>
     </div>
 
     <aside class="order-summary">
@@ -741,11 +404,14 @@ ul { list-style: none; margin: 0; padding: 0; }
 
   <script>
 /* ============================================================
-   CHIC DISTRICT & CO. — product data loader (Google Sheet-backed)
+   CHIC DISTRICT & CO. — product data loader
+   FIX: now points at the ONE unified Apps Script backend (Code.gs),
+   same deployment used by account.html for profiles/orders.
    ============================================================ */
 (function () {
   "use strict";
   const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbwst6GwoVOFi4aRZ9lhn7bEMCwW9IWvXtHTc_9xstgEgBpCQLmweKnjJKuo0UeMmzd3/exec";
+  window.CHIC_API_URL = SHEET_API_URL; // shared with the checkout script below
 
   const FALLBACK_PRODUCTS = [
     { id: 1, name: "Sunlit Linen Dress", description: "A breezy linen midi dress with a soft floral print.", category: "Dresses", ageGroup: "XS-XL", ageGroupLabel: "XS–XL", color: "Blush", colorHex: "e7a9a0", price: 89.99, salePrice: null, isNew: true, rating: 4.7, reviews: 58, sizes: "XS,S,M,L,XL", sku: "CC-00001", imageSrc: "images/girls-1.jpg" },
@@ -783,9 +449,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   window.CHIC_READY = (async function loadProducts() {
     let usingFallback = false;
     try {
-      if (!SHEET_API_URL || SHEET_API_URL.indexOf("PASTE_YOUR") === 0) throw new Error("Sheet not connected");
-      const res = await fetch(SHEET_API_URL, { cache: "no-store" });
-      if (!res.ok) throw new Error("Sheet fetch failed");
+      const url = SHEET_API_URL + "?action=getProducts";
+      const res = await fetch(url, { method: "GET", redirect: "follow", cache: "no-store" });
+      if (!res.ok) throw new Error("Sheet fetch failed: HTTP " + res.status);
       const raw = await res.json();
       if (raw && raw.error) throw new Error(raw.error);
       const products = (Array.isArray(raw) ? raw : []).map(normalizeProduct).filter((p) => p.id);
@@ -866,6 +532,13 @@ ul { list-style: none; margin: 0; padding: 0; }
 </script>
 
 <script>
+  /* ==========================================================================
+     CHIC DISTRICT & CO. — checkout summary + shipping persistence
+     FIX: "Continue to Payment" now validates the shipping form and saves it
+     to localStorage (chic_shipping_v1) so payment.html can attach it to the
+     order. Previously this was a plain <a href="payment.html"> and the form
+     data was discarded entirely.
+     ========================================================================== */
   (async function () {
     await window.CHIC_READY;
 
@@ -876,34 +549,79 @@ ul { list-style: none; margin: 0; padding: 0; }
     if (!cart.length) {
       itemsEl.innerHTML = `<p style="color:var(--ink-soft); font-size:13.5px; padding:10px 0;">Your cart is empty. <a href="shop.html" style="color:var(--marigold-dk); font-weight:600;">Browse the shop →</a></p>`;
       totalsEl.innerHTML = "";
-      return;
+    } else {
+      itemsEl.innerHTML = cart.map(({ product: p, qty }) => {
+        const unit = p.salePrice ?? p.price;
+        return `
+          <div class="summary-line-item">
+            <img src="${window.chicProductImage(p)}" alt="${p.name}"
+                 onerror="this.onerror=null;this.src='${window.chicProductImageFallback(p)}';">
+            <div class="info">
+              <div class="name">${p.name}</div>
+              <div class="meta">${p.ageGroupLabel} · Qty ${qty}</div>
+            </div>
+            <div class="price">₦${(unit * qty).toFixed(2)}</div>
+          </div>`;
+      }).join("");
+
+      const subtotal = cart.reduce((sum, { product: p, qty }) => sum + (p.salePrice ?? p.price) * qty, 0);
+      const shipping = 0;
+      const tax = subtotal * 0.075;
+      const total = subtotal + shipping + tax;
+
+      totalsEl.innerHTML = `
+        <div class="row"><span>Subtotal</span><span>₦${subtotal.toFixed(2)}</span></div>
+        <div class="row"><span>Shipping</span><span>${shipping === 0 ? "Free" : "₦" + shipping.toFixed(2)}</span></div>
+        <div class="row"><span>Estimated tax</span><span>₦${tax.toFixed(2)}</span></div>
+        <div class="row grand"><span>Total</span><span>₦${total.toFixed(2)}</span></div>
+      `;
     }
 
-    itemsEl.innerHTML = cart.map(({ product: p, qty }) => {
-      const unit = p.salePrice ?? p.price;
-      return `
-        <div class="summary-line-item">
-          <img src="${window.chicProductImage(p)}" alt="${p.name}"
-               onerror="this.onerror=null;this.src='${window.chicProductImageFallback(p)}';">
-          <div class="info">
-            <div class="name">${p.name}</div>
-            <div class="meta">${p.ageGroupLabel} · Qty ${qty}</div>
-          </div>
-          <div class="price">₦${(unit * qty).toFixed(2)}</div>
-        </div>`;
-    }).join("");
+    // ---- prefill from a logged-in profile, if any ----
+    try {
+      const profileRaw = localStorage.getItem("chic_profile_v1");
+      if (profileRaw) {
+        const profile = JSON.parse(profileRaw);
+        if (profile.email) document.getElementById("co-email").value = profile.email;
+        if (profile.firstName) document.getElementById("co-first").value = profile.firstName;
+        if (profile.lastName) document.getElementById("co-last").value = profile.lastName;
+        if (profile.address) document.getElementById("co-address").value = profile.address;
+        if (profile.city) document.getElementById("co-city").value = profile.city;
+        if (profile.postalCode) document.getElementById("co-zip").value = profile.postalCode;
+        if (profile.phone) document.getElementById("co-phone").value = profile.phone;
+      }
+    } catch (e) { /* no saved profile, ignore */ }
 
-    const subtotal = cart.reduce((sum, { product: p, qty }) => sum + (p.salePrice ?? p.price) * qty, 0);
-    const shipping = 0;
-    const tax = subtotal * 0.075;
-    const total = subtotal + shipping + tax;
+    // ---- validate + persist shipping info, then move to payment ----
+    document.getElementById("continue-to-payment-btn").addEventListener("click", () => {
+      const errorEl = document.getElementById("checkout-error");
+      const fields = {
+        email: document.getElementById("co-email").value.trim(),
+        firstName: document.getElementById("co-first").value.trim(),
+        lastName: document.getElementById("co-last").value.trim(),
+        address: document.getElementById("co-address").value.trim(),
+        city: document.getElementById("co-city").value.trim(),
+        postalCode: document.getElementById("co-zip").value.trim(),
+        country: document.getElementById("co-country").value,
+        phone: document.getElementById("co-phone").value.trim(),
+      };
+      const delivery = document.querySelector('input[name="delivery"]:checked');
+      fields.deliveryMethod = delivery ? delivery.value : "standard";
 
-    totalsEl.innerHTML = `
-      <div class="row"><span>Subtotal</span><span>₦${subtotal.toFixed(2)}</span></div>
-      <div class="row"><span>Shipping</span><span>${shipping === 0 ? "Free" : "₦" + shipping.toFixed(2)}</span></div>
-      <div class="row"><span>Estimated tax</span><span>₦${tax.toFixed(2)}</span></div>
-      <div class="row grand"><span>Total</span><span>₦${total.toFixed(2)}</span></div>
-    `;
+      const required = ["email", "firstName", "lastName", "address", "city", "postalCode", "phone"];
+      const missing = required.some((k) => !fields[k]);
+      if (missing || !cart.length) {
+        errorEl.style.display = "block";
+        return;
+      }
+      errorEl.style.display = "none";
+
+      try {
+        localStorage.setItem("chic_shipping_v1", JSON.stringify(fields));
+      } catch (e) { /* storage unavailable — payment.html will fall back to blank fields */ }
+
+      window.location.href = "payment.html";
+    });
   })();
 </script>
 </body>
