@@ -242,68 +242,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 
       <div class="auth-panels">
         <!-- Sign In -->
-        <!-- Sign Up -->
-<form class="auth-panel" id="signup-panel" onsubmit="return false;">
-  <div class="form-row">
-    <div class="form-field">
-      <label for="su-first">First name *</label>
-      <input type="text" id="su-first" placeholder="Amara" required>
-    </div>
-    <div class="form-field">
-      <label for="su-last">Last name *</label>
-      <input type="text" id="su-last" placeholder="Okafor" required>
-    </div>
-  </div>
-  <div class="form-field">
-    <label for="su-email">Email address *</label>
-    <input type="email" id="su-email" placeholder="you@example.com" required>
-  </div>
-  <div class="form-field">
-    <label for="su-password">Password *</label>
-    <input type="password" id="su-password" placeholder="At least 8 characters" required minlength="8">
-  </div>
-  <div class="form-field">
-    <label for="su-phone">Phone number</label>
-    <input type="tel" id="su-phone" placeholder="+234 800 000 0000">
-  </div>
-  <div class="form-field">
-    <label for="su-address">Street address</label>
-    <input type="text" id="su-address" placeholder="14 Palm Grove Close">
-  </div>
-  <div class="form-row">
-    <div class="form-field">
-      <label for="su-city">City</label>
-      <input type="text" id="su-city" placeholder="Lagos">
-    </div>
-    <div class="form-field">
-      <label for="su-postal">Postal code</label>
-      <input type="text" id="su-postal" placeholder="100001">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-field">
-      <label for="su-country">Country</label>
-      <select id="su-country">
-        <option>Nigeria</option>
-        <option>Ghana</option>
-        <option>Kenya</option>
-        <option>South Africa</option>
-        <option>United States</option>
-        <option>United Kingdom</option>
-        <option>Canada</option>
-      </select>
-    </div>
-    <div class="form-field" style="display:flex; align-items:flex-end;">
-      <!-- spacer to balance the row -->
-    </div>
-  </div>
-  <p class="form-error" id="signup-error">An account with this email already exists.</p>
-  <p class="form-success" id="signup-success">Account created! A confirmation email has been sent. You can now sign in.</p>
-  <button type="submit" class="btn btn-solid btn-block" id="signup-btn">
-    Create Account <span class="spinner" id="signup-spinner"></span>
-  </button>
-  <p class="form-note">By creating an account you agree to our Terms &amp; Privacy Policy.</p>
-</form>
+        <form class="auth-panel active" id="signin-panel" onsubmit="return false;">
           <div class="form-field">
             <label for="si-email">Email address</label>
             <input type="email" id="si-email" placeholder="you@example.com" required>
@@ -323,24 +262,59 @@ ul { list-style: none; margin: 0; padding: 0; }
         <form class="auth-panel" id="signup-panel" onsubmit="return false;">
           <div class="form-row">
             <div class="form-field">
-              <label for="su-first">First name</label>
+              <label for="su-first">First name *</label>
               <input type="text" id="su-first" placeholder="Amara" required>
             </div>
             <div class="form-field">
-              <label for="su-last">Last name</label>
+              <label for="su-last">Last name *</label>
               <input type="text" id="su-last" placeholder="Okafor" required>
             </div>
           </div>
           <div class="form-field">
-            <label for="su-email">Email address</label>
+            <label for="su-email">Email address *</label>
             <input type="email" id="su-email" placeholder="you@example.com" required>
           </div>
           <div class="form-field">
-            <label for="su-password">Password</label>
-            <input type="password" id="su-password" placeholder="At least 8 characters" required>
+            <label for="su-password">Password *</label>
+            <input type="password" id="su-password" placeholder="At least 8 characters" required minlength="8">
+          </div>
+          <div class="form-field">
+            <label for="su-phone">Phone number</label>
+            <input type="tel" id="su-phone" placeholder="+234 800 000 0000">
+          </div>
+          <div class="form-field">
+            <label for="su-address">Street address</label>
+            <input type="text" id="su-address" placeholder="14 Palm Grove Close">
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="su-city">City</label>
+              <input type="text" id="su-city" placeholder="Lagos">
+            </div>
+            <div class="form-field">
+              <label for="su-postal">Postal code</label>
+              <input type="text" id="su-postal" placeholder="100001">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="su-country">Country</label>
+              <select id="su-country">
+                <option>Nigeria</option>
+                <option>Ghana</option>
+                <option>Kenya</option>
+                <option>South Africa</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+                <option>Canada</option>
+              </select>
+            </div>
+            <div class="form-field" style="display:flex; align-items:flex-end;">
+              <!-- spacer to balance the row -->
+            </div>
           </div>
           <p class="form-error" id="signup-error">An account with this email already exists.</p>
-          <p class="form-success" id="signup-success">Account created! You can now sign in.</p>
+          <p class="form-success" id="signup-success">Account created! A confirmation email has been sent. You can now sign in.</p>
           <button type="submit" class="btn btn-solid btn-block" id="signup-btn">
             Create Account <span class="spinner" id="signup-spinner"></span>
           </button>
@@ -488,17 +462,27 @@ ul { list-style: none; margin: 0; padding: 0; }
   // API helpers
   async function apiGet(params) {
     const url = API_URL + "?" + new URLSearchParams(params).toString();
-    const res = await fetch(url, { cache: "no-store" });
+    const res = await fetch(url, { method: "GET", redirect: "follow", cache: "no-store" });
+    if (!res.ok) throw new Error("Request failed: HTTP " + res.status);
     return res.json();
   }
 
+  // FIX: use Content-Type "text/plain" instead of "application/json".
+  // Apps Script Web Apps have no doOptions() handler, so a real
+  // application/json POST triggers a CORS preflight that Apps Script can't
+  // answer — the browser silently blocks the request and fetch() rejects,
+  // which (with no try/catch) left the spinner running forever and nothing
+  // reaching the sheet. text/plain avoids the preflight entirely; Code.gs
+  // still JSON.parses the body correctly regardless of the declared header.
   async function apiPost(type, data) {
-    const url = API_URL + "?type=" + type;
+    const url = API_URL + "?type=" + encodeURIComponent(type);
     const res = await fetch(url, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      redirect: "follow",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify(data),
     });
+    if (!res.ok) throw new Error("Request failed: HTTP " + res.status);
     return res.json();
   }
 
@@ -517,20 +501,27 @@ ul { list-style: none; margin: 0; padding: 0; }
     const btn = document.getElementById("signin-btn");
     btn.disabled = true;
 
-    const result = await apiGet({ type: "profiles", email, password });
-    hideSpinner("signin-spinner");
-    btn.disabled = false;
+    try {
+      const result = await apiGet({ action: "login", email, password });
 
-    if (result.error) {
+      if (result.error) {
+        errorEl.textContent = result.error;
+        errorEl.style.display = "block";
+        return;
+      }
+
+      saveProfile(result);
+      showDashboard(result);
+    } catch (err) {
+      errorEl.textContent = "Something went wrong connecting to the server. Please try again.";
       errorEl.style.display = "block";
-      return;
+      console.error("Sign in failed:", err);
+    } finally {
+      hideSpinner("signin-spinner");
+      btn.disabled = false;
     }
-
-    saveProfile(result);
-    showDashboard(result);
   });
 
-  // ========== SIGN UP ==========
   // ========== SIGN UP ==========
   document.getElementById("signup-btn").addEventListener("click", async () => {
     const firstName = document.getElementById("su-first").value.trim();
@@ -563,39 +554,45 @@ ul { list-style: none; margin: 0; padding: 0; }
     const btn = document.getElementById("signup-btn");
     btn.disabled = true;
 
-    const result = await apiPost("createProfile", {
-      firstName, lastName, email, password,
-      phone, address, city, country, postalCode,
-    });
+    try {
+      const result = await apiPost("createProfile", {
+        firstName, lastName, email, password,
+        phone, address, city, country, postalCode,
+      });
 
-    hideSpinner("signup-spinner");
-    btn.disabled = false;
+      if (result.error) {
+        errorEl.textContent = result.error;
+        errorEl.style.display = "block";
+        return;
+      }
 
-    if (result.error) {
-      errorEl.textContent = result.error;
+      successEl.textContent = result.message || "Account created! A confirmation email has been sent. You can now sign in.";
+      successEl.style.display = "block";
+
+      // Clear form
+      document.getElementById("su-first").value = "";
+      document.getElementById("su-last").value = "";
+      document.getElementById("su-email").value = "";
+      document.getElementById("su-password").value = "";
+      document.getElementById("su-phone").value = "";
+      document.getElementById("su-address").value = "";
+      document.getElementById("su-city").value = "";
+      document.getElementById("su-postal").value = "";
+
+      // Switch to sign-in tab after 2s
+      setTimeout(() => {
+        document.querySelector(".tab-btn[data-tab='signin']").click();
+        document.getElementById("si-email").value = email;
+        successEl.style.display = "none";
+      }, 2000);
+    } catch (err) {
+      errorEl.textContent = "Something went wrong connecting to the server. Please try again.";
       errorEl.style.display = "block";
-      return;
+      console.error("Create account failed:", err);
+    } finally {
+      hideSpinner("signup-spinner");
+      btn.disabled = false;
     }
-
-    successEl.textContent = result.message || "Account created! A confirmation email has been sent. You can now sign in.";
-    successEl.style.display = "block";
-
-    // Clear form
-    document.getElementById("su-first").value = "";
-    document.getElementById("su-last").value = "";
-    document.getElementById("su-email").value = "";
-    document.getElementById("su-password").value = "";
-    document.getElementById("su-phone").value = "";
-    document.getElementById("su-address").value = "";
-    document.getElementById("su-city").value = "";
-    document.getElementById("su-postal").value = "";
-
-    // Switch to sign-in tab after 2s
-    setTimeout(() => {
-      document.querySelector(".tab-btn[data-tab='signin']").click();
-      document.getElementById("si-email").value = email;
-      successEl.style.display = "none";
-    }, 2000);
   });
 
   // ========== TAB SWITCHING ==========
@@ -629,7 +626,15 @@ ul { list-style: none; margin: 0; padding: 0; }
     const countEl = document.getElementById("order-count");
     if (!profileId) return;
 
-    const orders = await apiGet({ type: "orders", profileId });
+    let orders;
+    try {
+      orders = await apiGet({ action: "getOrders", profileId });
+    } catch (err) {
+      container.innerHTML = "<p style='color:var(--ink-soft);'>Could not load orders.</p>";
+      console.error("Load orders failed:", err);
+      return;
+    }
+
     if (orders.error) {
       container.innerHTML = "<p style='color:var(--ink-soft);'>No orders found.</p>";
       if (countEl) countEl.textContent = "0";
