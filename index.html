@@ -221,95 +221,32 @@
 
     @media (max-width: 480px) {
       .product-grid { grid-template-columns: 1fr 1fr; }
-      /* ============================================================
-   MOBILE ENHANCEMENTS — touch targets, breakpoints, typography
-   ------------------------------------------------------------
-   Paste this block right before the closing </style> tag on
-   every page (index.html, shop.html, checkout.html, payment.html,
-   wishlist.html, account.html). It only adds/overrides rules —
-   nothing above it needs to change.
-   ============================================================ */
+    }
 
-/* ---- Requirement 5: safety net against horizontal overflow ---- */
-html, body { overflow-x: hidden; }
+    /* ============================================================
+       MOBILE ENHANCEMENTS — touch targets, breakpoints, typography
+       ============================================================ */
+    html, body { overflow-x: hidden; }
 
-/* ---- Requirement 4: touch targets — minimum ~48px tap area ---- */
-.icon-btn, .burger, .mobile-nav-close {
-  min-width: 48px;
-  min-height: 48px;
-}
-.wishlist-btn {
-  width: 44px;
-  height: 44px;
-}
-.btn {
-  min-height: 48px;
-}
-.btn-sm {
-  min-height: 44px;
-  padding: 12px 18px; /* was 10px 18px */
-}
-.page-btn {
-  min-width: 44px;
-  min-height: 44px;
-}
-.color-swatch {
-  width: 32px;   /* was 26px */
-  height: 32px;
-}
-.mobile-nav .panel a {
-  min-height: 48px;
-  display: flex;
-  align-items: center;
-}
-.account-menu a {
-  min-height: 48px;
-}
-.filter-option {
-  min-height: 44px;
-}
-.age-pill {
-  min-height: 40px;
-  display: inline-flex;
-  align-items: center;
-}
-.form-field input,
-.form-field select,
-.form-field textarea {
-  min-height: 48px;
-}
-/* give adjacent tap targets breathing room so fingers don't mis-tap */
-.header-actions { gap: 12px; }
-.social-row a {
-  width: 44px;
-  height: 44px;
-}
+    .icon-btn, .burger, .mobile-nav-close { min-width: 48px; min-height: 48px; }
+    .wishlist-btn { width: 44px; height: 44px; }
+    .btn { min-height: 48px; }
+    .btn-sm { min-height: 44px; padding: 12px 18px; }
+    .mobile-nav .panel a { min-height: 48px; display: flex; align-items: center; }
+    .header-actions { gap: 12px; }
+    .social-row a { width: 44px; height: 44px; }
 
-/* ---- Requirement 2: explicit 768px breakpoint tier ---- */
-@media (max-width: 768px) {
-  .wrap { padding: 0 20px; }
-  section.band { padding: 48px 0; }
-  .checkout-layout,
-  .shop-layout,
-  .account-layout,
-  .promo-grid {
-    grid-template-columns: 1fr;
-  }
-}
+    @media (max-width: 768px) {
+      .wrap { padding: 0 20px; }
+      section.band { padding: 48px 0; }
+      .promo-grid { grid-template-columns: 1fr; }
+    }
 
-/* ---- Requirement 6: legible small-screen typography ---- */
-@media (max-width: 480px) {
-  body { font-size: 15px; line-height: 1.6; }
-  .product-name,
-  .product-price { font-size: 15px; }
-  .product-desc,
-  .product-cat { font-size: 12.5px; }
-  .btn { font-size: 13px; padding: 14px 22px; }
-  .page-head h1 { font-size: 26px; }
-  .checkout-card h3,
-  .order-summary h3 { font-size: 16px; }
-  .form-field label { font-size: 13px; }
-}
+    @media (max-width: 480px) {
+      body { font-size: 15px; line-height: 1.6; }
+      .product-name, .product-price { font-size: 15px; }
+      .product-desc, .product-cat { font-size: 12.5px; }
+      .btn { font-size: 13px; padding: 14px 22px; }
     }
   </style>
 </head>
