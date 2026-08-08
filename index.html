@@ -7,24 +7,6 @@
  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    /* ==========================================================================
-       CHIC DISTRICT & CO. — Women's clothing shop
-       Design tokens
-       Color:
-         --cream        #FBF7F0  page background
-         --ink          #2B2A28  primary text
-         --marigold     #D9A441  primary brand accent
-         --marigold-dk  #B87F2A  hover / pressed accent
-         --blush        #E7A9A0  secondary accent (sale tags)
-         --sage         #93A67F  secondary accent (new tags)
-         --line         #E7E0D2  hairline borders
-         --white        #FFFFFF
-       Type:
-         --font-display "Playfair Display"  elegant headlines
-         --font-body    "Inter"             body copy
-         --font-mono    "IBM Plex Mono"     prices, SKUs
-       Signature element: chic geometric mark and refined aesthetic
-       ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&display=swap');
     
     :root {
@@ -50,12 +32,8 @@
       --container: 1240px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -74,54 +52,21 @@
   border-radius: 8px;
 }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    button {
-      font-family: inherit;
-      cursor: pointer;
-    }
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; }
+    ul { list-style: none; margin: 0; padding: 0; }
 
-    .wrap {
-      max-width: var(--container);
-      margin: 0 auto;
-      padding: 0 32px;
-    }
+    .wrap { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
 
-    :focus-visible {
-      outline: 3px solid var(--marigold-dk);
-      outline-offset: 2px;
-    }
+    :focus-visible { outline: 3px solid var(--marigold-dk); outline-offset: 2px; }
 
     @media (prefers-reduced-motion: reduce) {
-      * {
-        animation: none !important;
-        transition: none !important;
-      }
+      * { animation: none !important; transition: none !important; }
     }
 
-    /* ---------- Signature: chic geometric mark ---------- */
-    .chic-mark {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .chic-mark::before {
-      content: "◆";
-      color: var(--marigold);
-      font-size: 10px;
-      flex: none;
-    }
+    .chic-mark { display: inline-flex; align-items: center; gap: 6px; }
+    .chic-mark::before { content: "◆"; color: var(--marigold); font-size: 10px; flex: none; }
 
     .eyebrow {
       font-family: var(--font-mono);
@@ -132,768 +77,154 @@
       font-weight: 600;
     }
 
-    /* ---------- Utility bar ---------- */
-    .utility-bar {
-      background: var(--ink);
-      color: #d8d3c8;
-      font-size: 12.5px;
-    }
-    .utility-bar .wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 38px;
-    }
-    .utility-bar select {
-      background: transparent;
-      color: inherit;
-      border: none;
-      font-size: 12.5px;
-      font-family: inherit;
-    }
-    .utility-bar .links {
-      display: flex;
-      gap: 18px;
-    }
-    .utility-bar .links a:hover {
-      color: var(--marigold-pale);
-    }
+    .utility-bar { background: var(--ink); color: #d8d3c8; font-size: 12.5px; }
+    .utility-bar .wrap { display: flex; justify-content: space-between; align-items: center; height: 38px; }
+    .utility-bar select { background: transparent; color: inherit; border: none; font-size: 12.5px; font-family: inherit; }
+    .utility-bar .links { display: flex; gap: 18px; }
+    .utility-bar .links a:hover { color: var(--marigold-pale); }
 
-    /* ---------- Header ---------- */
-    .site-header {
-      background: var(--white);
-      border-bottom: 1px solid var(--line);
-      position: sticky;
-      top: 0;
-      z-index: 40;
-    }
-    .site-header .wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 84px;
-      gap: 24px;
-    }
-    .logo {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 26px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--ink);
-      white-space: nowrap;
-      letter-spacing: -0.5px;
-    }
-    .logo-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--marigold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-size: 16px;
-      font-weight: 700;
-    }
-    .main-nav {
-      display: flex;
-      gap: 30px;
-      font-weight: 600;
-      font-size: 14.5px;
-    }
-    .main-nav a {
-      position: relative;
-      padding: 6px 0;
-    }
-    .main-nav a.active,
-    .main-nav a:hover {
-      color: var(--marigold-dk);
-    }
-    .main-nav a.active::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -3px;
-      height: 3px;
-      background: var(--marigold);
-      border-radius: 3px;
-    }
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-    .icon-btn {
-      position: relative;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      border: 1px solid transparent;
-      background: transparent;
-      color: var(--ink);
-    }
-    .icon-btn:hover {
-      background: var(--cream-deep);
-    }
-    .icon-btn svg {
-      width: 20px;
-      height: 20px;
-    }
-    .cart-count {
-      position: absolute;
-      top: -2px;
-      right: -2px;
-      background: var(--marigold);
-      color: var(--white);
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      font-weight: 600;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .burger {
-      display: none;
-    }
+    .site-header { background: var(--white); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 40; }
+    .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; gap: 24px; }
+    .logo { font-family: var(--font-display); font-weight: 700; font-size: 26px; display: flex; align-items: center; gap: 10px; color: var(--ink); white-space: nowrap; letter-spacing: -0.5px; }
+    .logo-mark { width: 38px; height: 38px; border-radius: 50%; background: var(--marigold); display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 16px; font-weight: 700; }
+    .main-nav { display: flex; gap: 30px; font-weight: 600; font-size: 14.5px; }
+    .main-nav a { position: relative; padding: 6px 0; }
+    .main-nav a.active, .main-nav a:hover { color: var(--marigold-dk); }
+    .main-nav a.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 3px; background: var(--marigold); border-radius: 3px; }
+    .header-actions { display: flex; align-items: center; gap: 18px; }
+    .icon-btn { position: relative; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid transparent; background: transparent; color: var(--ink); }
+    .icon-btn:hover { background: var(--cream-deep); }
+    .icon-btn svg { width: 20px; height: 20px; }
+    .cart-count { position: absolute; top: -2px; right: -2px; background: var(--marigold); color: var(--white); font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .burger { display: none; }
 
-    /* ---------- Buttons ---------- */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 30px;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      font-size: 13.5px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      border: 2px solid var(--ink);
-      background: transparent;
-      color: var(--ink);
-      transition: background .18s ease, color .18s ease, transform .18s ease;
-    }
-    .btn:hover {
-      background: var(--ink);
-      color: var(--white);
-      transform: translateY(-1px);
-    }
-    .btn-solid {
-      background: var(--marigold);
-      border-color: var(--marigold);
-      color: var(--ink);
-    }
-    .btn-solid:hover {
-      background: var(--marigold-dk);
-      border-color: var(--marigold-dk);
-      color: var(--white);
-    }
-    .btn-block {
-      width: 100%;
-      justify-content: center;
-    }
-    .btn-sm {
-      padding: 10px 18px;
-      font-size: 12px;
-    }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: var(--radius-sm); font-weight: 600; font-size: 13.5px; letter-spacing: 0.06em; text-transform: uppercase; border: 2px solid var(--ink); background: transparent; color: var(--ink); transition: background .18s ease, color .18s ease, transform .18s ease; }
+    .btn:hover { background: var(--ink); color: var(--white); transform: translateY(-1px); }
+    .btn-solid { background: var(--marigold); border-color: var(--marigold); color: var(--ink); }
+    .btn-solid:hover { background: var(--marigold-dk); border-color: var(--marigold-dk); color: var(--white); }
+    .btn-block { width: 100%; justify-content: center; }
+    .btn-sm { padding: 10px 18px; font-size: 12px; }
 
-    /* ---------- Hero ---------- */
-    .hero {
-      background: linear-gradient(180deg, var(--cream-deep), var(--cream) 70%);
-      overflow: hidden;
-    }
-    .hero .wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 40px;
-      min-height: 520px;
-    }
-    .hero-copy .eyebrow {
-      margin-bottom: 14px;
-      display: block;
-    }
-    .hero-copy h1 {
-      font-family: var(--font-display);
-      font-size: clamp(42px, 5vw, 64px);
-      line-height: 1.05;
-      margin: 0 0 6px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-    .hero-copy h1 span {
-      color: var(--marigold-dk);
-      display: block;
-      font-style: italic;
-    }
-    .hero-copy p {
-      color: var(--ink-soft);
-      max-width: 40ch;
-      line-height: 1.7;
-      margin: 18px 0 30px;
-      font-weight: 300;
-      font-size: 18px;
-    }
-    .hero-visual {
-      position: relative;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      aspect-ratio: 4/5;
-      box-shadow: var(--shadow-card-hover);
-    }
-    .hero-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .hero-visual::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(0deg, rgba(43,42,40,.25), transparent 40%);
-    }
-    .hero-dots {
-      position: absolute;
-      right: 18px;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 2;
-    }
-    .hero-dots span {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.55);
-      border: 1px solid rgba(255,255,255,.8);
-    }
-    .hero-dots span.active {
-      background: var(--marigold);
-      border-color: var(--marigold);
-    }
+    .hero { background: linear-gradient(180deg, var(--cream-deep), var(--cream) 70%); overflow: hidden; }
+    .hero .wrap { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; min-height: 520px; }
+    .hero-copy .eyebrow { margin-bottom: 14px; display: block; }
+    .hero-copy h1 { font-family: var(--font-display); font-size: clamp(42px, 5vw, 64px); line-height: 1.05; margin: 0 0 6px; font-weight: 700; letter-spacing: -0.5px; }
+    .hero-copy h1 span { color: var(--marigold-dk); display: block; font-style: italic; }
+    .hero-copy p { color: var(--ink-soft); max-width: 40ch; line-height: 1.7; margin: 18px 0 30px; font-weight: 300; font-size: 16px; }
+    .hero-visual { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/5; box-shadow: var(--shadow-card-hover); }
+    .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(43,42,40,.25), transparent 40%); }
+    .hero-dots { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px; z-index: 2; }
+    .hero-dots span { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,.55); border: 1px solid rgba(255,255,255,.8); }
+    .hero-dots span.active { background: var(--marigold); border-color: var(--marigold); }
 
-    /* ---------- Section heading ---------- */
-    .section-head {
-      text-align: center;
-      margin: 0 0 44px;
-    }
-    .section-head .eyebrow {
-      justify-content: center;
-    }
-    .section-head h2 {
-      font-family: var(--font-display);
-      font-size: clamp(28px, 3.5vw, 40px);
-      margin: 10px 0 8px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-    .section-head p {
-      color: var(--ink-soft);
-      margin: 0;
-      font-weight: 300;
-      font-size: 15px;
-    }
+    .section-head { text-align: center; margin: 0 0 44px; }
+    .section-head .eyebrow { justify-content: center; }
+    .section-head h2 { font-family: var(--font-display); font-size: clamp(28px, 3.5vw, 40px); margin: 10px 0 8px; font-weight: 700; letter-spacing: -0.5px; }
+    .section-head p { color: var(--ink-soft); margin: 0; font-weight: 300; font-size: 15px; }
 
-    section.band {
-      padding: 76px 0;
-    }
+    section.band { padding: 76px 0; }
 
-    /* ---------- Product grid / carousel row ---------- */
-    .product-row {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .row-arrow {
-      flex: none;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      background: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow-card);
-    }
-    .row-arrow:hover {
-      border-color: var(--marigold);
-      color: var(--marigold-dk);
-    }
+    .product-row { position: relative; display: flex; align-items: center; gap: 14px; }
+    .row-arrow { flex: none; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--white); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-card); }
+    .row-arrow:hover { border-color: var(--marigold); color: var(--marigold-dk); }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 26px;
-      flex: 1;
-    }
+    .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; flex: 1; }
 
-    .product-card {
-      position: relative;
-      background: var(--white);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: var(--shadow-card);
-      transition: box-shadow .2s ease, transform .2s ease;
-      display: flex;
-      flex-direction: column;
-    }
-    .product-card:hover {
-      box-shadow: var(--shadow-card-hover);
-      transform: translateY(-3px);
-    }
-    .product-media {
-      position: relative;
-      aspect-ratio: 4/5;
-      background: var(--cream-deep);
-      overflow: hidden;
-    }
-    .product-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .4s ease;
-    }
-    .product-card:hover .product-media img {
-      transform: scale(1.05);
-    }
-    .product-tag {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      font-weight: 600;
-      letter-spacing: .05em;
-      padding: 4px 9px;
-      border-radius: 20px;
-      color: var(--white);
-    }
-    .product-tag.new {
-      background: var(--sage);
-    }
-    .product-tag.sale {
-      background: var(--blush);
-      color: var(--ink);
-    }
+    .product-card { position: relative; background: var(--white); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-card); transition: box-shadow .2s ease, transform .2s ease; display: flex; flex-direction: column; }
+    .product-card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-3px); }
+    .product-media { position: relative; aspect-ratio: 4/5; background: var(--cream-deep); overflow: hidden; }
+    .product-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+    .product-card:hover .product-media img { transform: scale(1.05); }
+    .product-tag { position: absolute; top: 10px; left: 10px; font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; letter-spacing: .05em; padding: 4px 9px; border-radius: 20px; color: var(--white); }
+    .product-tag.new { background: var(--sage); }
+    .product-tag.sale { background: var(--blush); color: var(--ink); }
 
-    .wishlist-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.92);
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--ink-soft);
-      box-shadow: var(--shadow-card);
-      z-index: 2;
-    }
-    .wishlist-btn svg {
-      width: 17px;
-      height: 17px;
-    }
-    .wishlist-btn:hover {
-      color: var(--blush);
-    }
-    .wishlist-btn.active {
-      color: var(--blush);
-    }
-    .wishlist-btn.active svg {
-      fill: var(--blush);
-    }
+    .wishlist-btn { position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,.92); border: none; display: flex; align-items: center; justify-content: center; color: var(--ink-soft); box-shadow: var(--shadow-card); z-index: 2; }
+    .wishlist-btn svg { width: 17px; height: 17px; }
+    .wishlist-btn:hover { color: var(--blush); }
+    .wishlist-btn.active { color: var(--blush); }
+    .wishlist-btn.active svg { fill: var(--blush); }
 
-    .product-body {
-      padding: 16px 16px 18px;
-      text-align: center;
-      position: relative;
-    }
-    .product-desc {
-      font-size: 12px;
-      color: var(--ink-soft);
-      line-height: 1.4;
-      margin: 0 0 8px;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-    .product-cat {
-      font-family: var(--font-mono);
-      font-size: 10.5px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin: 0 0 4px;
-    }
-    .product-name {
-      font-weight: 600;
-      font-size: 14.5px;
-      margin: 0 0 8px;
-      line-height: 1.3;
-      font-family: var(--font-display);
-      letter-spacing: -0.2px;
-    }
-    .product-price {
-      font-family: var(--font-mono);
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--marigold-dk);
-    }
-    .product-price .was {
-      color: var(--ink-soft);
-      text-decoration: line-through;
-      font-weight: 500;
-      margin-right: 6px;
-    }
+    .product-body { padding: 16px 16px 18px; text-align: center; position: relative; }
+    .product-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.4; margin: 0 0 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .product-cat { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 4px; }
+    .product-name { font-weight: 600; font-size: 14.5px; margin: 0 0 8px; line-height: 1.3; font-family: var(--font-display); letter-spacing: -0.2px; }
+    .product-price { font-family: var(--font-mono); font-weight: 600; font-size: 14px; color: var(--marigold-dk); }
+    .product-price .was { color: var(--ink-soft); text-decoration: line-through; font-weight: 500; margin-right: 6px; }
 
-    /* ---------- Promo banners ---------- */
-    .promo-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 26px;
-    }
-    .promo-stack {
-      display: grid;
-      gap: 26px;
-    }
-    .promo-panel {
-      position: relative;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      min-height: 260px;
-      display: flex;
-      align-items: center;
-      padding: 40px;
-    }
-    .promo-panel.tall {
-      min-height: 546px;
-    }
-    .promo-panel img.bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-    .promo-panel .scrim {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(251,247,240,.94) 38%, rgba(251,247,240,.15));
-      z-index: 1;
-    }
-    .promo-panel .content {
-      position: relative;
-      z-index: 2;
-      max-width: 260px;
-    }
-    .promo-panel .eyebrow {
-      display: block;
-      margin-bottom: 8px;
-    }
-    .promo-panel h3 {
-      font-family: var(--font-display);
-      font-size: 30px;
-      margin: 0 0 4px;
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.5px;
-    }
-    .promo-panel h3.accent {
-      color: var(--marigold-dk);
-      font-style: italic;
-    }
-    .promo-panel a.shop-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 14px;
-      font-weight: 700;
-      font-size: 13px;
-      border-bottom: 2px solid var(--ink);
-      padding-bottom: 2px;
-    }
-    .promo-watermark {
-      position: absolute;
-      bottom: -18px;
-      left: 20px;
-      font-family: var(--font-display);
-      font-size: 74px;
-      font-weight: 800;
-      color: rgba(43,42,40,.05);
-      z-index: 1;
-      white-space: nowrap;
-    }
+    .promo-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 26px; }
+    .promo-stack { display: grid; gap: 26px; }
+    .promo-panel { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 260px; display: flex; align-items: center; padding: 40px; }
+    .promo-panel.tall { min-height: 546px; }
+    .promo-panel img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .promo-panel .scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(251,247,240,.94) 38%, rgba(251,247,240,.15)); z-index: 1; }
+    .promo-panel .content { position: relative; z-index: 2; max-width: 260px; }
+    .promo-panel .eyebrow { display: block; margin-bottom: 8px; }
+    .promo-panel h3 { font-family: var(--font-display); font-size: 30px; margin: 0 0 4px; font-weight: 700; line-height: 1.1; letter-spacing: -0.5px; }
+    .promo-panel h3.accent { color: var(--marigold-dk); font-style: italic; }
+    .promo-panel a.shop-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-weight: 700; font-size: 13px; border-bottom: 2px solid var(--ink); padding-bottom: 2px; }
+    .promo-watermark { position: absolute; bottom: -18px; left: 20px; font-family: var(--font-display); font-size: 74px; font-weight: 800; color: rgba(43,42,40,.05); z-index: 1; white-space: nowrap; }
 
-    /* ---------- Footer ---------- */
-    .site-footer {
-      background: var(--cream-deep);
-      border-top: 1px solid var(--line);
-    }
-    .footer-top {
-      padding: 64px 0 40px;
-      display: grid;
-      grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
-      gap: 40px;
-    }
-    .footer-top h4 {
-      font-family: var(--font-display);
-      font-size: 15px;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      margin: 0 0 18px;
-    }
-    .footer-about .logo {
-      margin-bottom: 14px;
-    }
-    .footer-about p {
-      color: var(--ink-soft);
-      font-size: 13.5px;
-      line-height: 1.6;
-      margin: 4px 0;
-    }
-    .tag-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .tag-pills a {
-      border: 1px solid var(--line);
-      padding: 7px 14px;
-      border-radius: 20px;
-      font-size: 12.5px;
-      background: var(--white);
-    }
-    .tag-pills a:hover {
-      border-color: var(--marigold);
-      color: var(--marigold-dk);
-    }
-    .brand-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .brand-grid div {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--ink-soft);
-    }
-    .social-row {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .social-row a {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--white);
-      font-size: 13px;
-    }
-    .social-row a:hover {
-      background: var(--marigold);
-      border-color: var(--marigold);
-    }
-    .newsletter-form {
-      display: flex;
-      gap: 0;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      background: var(--white);
-    }
-    .newsletter-form input {
-      border: none;
-      padding: 12px 14px;
-      flex: 1;
-      font-family: inherit;
-      font-size: 13px;
-      background: transparent;
-    }
-    .newsletter-form input:focus {
-      outline: none;
-    }
-    .newsletter-form button {
-      border: none;
-      background: var(--marigold);
-      color: var(--ink);
-      padding: 0 18px;
-      font-weight: 700;
-    }
-    .newsletter-form button:hover {
-      background: var(--marigold-dk);
-      color: var(--white);
-    }
+    .site-footer { background: var(--cream-deep); border-top: 1px solid var(--line); }
+    .footer-top { padding: 64px 0 40px; display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.2fr; gap: 40px; }
+    .footer-top h4 { font-family: var(--font-display); font-size: 15px; text-transform: uppercase; letter-spacing: .05em; margin: 0 0 18px; }
+    .footer-about .logo { margin-bottom: 14px; }
+    .footer-about p { color: var(--ink-soft); font-size: 13.5px; line-height: 1.6; margin: 4px 0; }
+    .tag-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-pills a { border: 1px solid var(--line); padding: 7px 14px; border-radius: 20px; font-size: 12.5px; background: var(--white); }
+    .tag-pills a:hover { border-color: var(--marigold); color: var(--marigold-dk); }
+    .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .brand-grid div { background: var(--white); border: 1px solid var(--line); border-radius: 8px; height: 50px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; color: var(--ink-soft); }
+    .social-row { display: flex; gap: 10px; margin-bottom: 20px; }
+    .social-row a { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; background: var(--white); font-size: 13px; }
+    .social-row a:hover { background: var(--marigold); border-color: var(--marigold); }
+    .newsletter-form { display: flex; gap: 0; border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; background: var(--white); }
+    .newsletter-form input { border: none; padding: 12px 14px; flex: 1; font-family: inherit; font-size: 13px; background: transparent; }
+    .newsletter-form input:focus { outline: none; }
+    .newsletter-form button { border: none; background: var(--marigold); color: var(--ink); padding: 0 18px; font-weight: 700; }
+    .newsletter-form button:hover { background: var(--marigold-dk); color: var(--white); }
 
-    .footer-links {
-      border-top: 1px solid var(--line);
-      padding: 22px 0;
-      font-size: 12.5px;
-      color: var(--ink-soft);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px 14px;
-    }
-    .footer-links a:hover {
-      color: var(--marigold-dk);
-    }
-    .footer-bottom {
-      border-top: 1px solid var(--line);
-      padding: 20px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12.5px;
-      color: var(--ink-soft);
-    }
-    .payments {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 12px;
-      color: #333;
-    }
-    .payments img {
-      height: 24px;
-      width: auto;
-      display: block;
-      object-fit: contain;
-    }
+    .footer-links { border-top: 1px solid var(--line); padding: 22px 0; font-size: 12.5px; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 6px 14px; }
+    .footer-links a:hover { color: var(--marigold-dk); }
+    .footer-bottom { border-top: 1px solid var(--line); padding: 20px 0; display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: var(--ink-soft); }
+    .payments { display: flex; align-items: center; gap: 12px; font-size: 12px; color: #333; }
+    .payments img { height: 24px; width: auto; display: block; object-fit: contain; }
 
-    /* Mobile nav drawer */
-    .mobile-nav {
-      position: fixed;
-      inset: 0;
-      z-index: 70;
-      display: none;
-    }
-    .mobile-nav.open {
-      display: block;
-    }
-    .mobile-nav .backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(43,42,40,.45);
-    }
-    .mobile-nav .panel {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: 280px;
-      max-width: 84vw;
-      background: var(--white);
-      padding: 26px;
-      overflow-y: auto;
-    }
-    .mobile-nav .panel a {
-      display: block;
-      padding: 12px 0;
-      font-weight: 600;
-      border-bottom: 1px solid var(--line);
-    }
-    .mobile-nav-close {
-      background: none;
-      border: none;
-      font-size: 22px;
-      margin-bottom: 16px;
-    }
+    .mobile-nav { position: fixed; inset: 0; z-index: 70; display: none; }
+    .mobile-nav.open { display: block; }
+    .mobile-nav .backdrop { position: absolute; inset: 0; background: rgba(43,42,40,.45); }
+    .mobile-nav .panel { position: absolute; top: 0; left: 0; bottom: 0; width: 280px; max-width: 84vw; background: var(--white); padding: 26px; overflow-y: auto; }
+    .mobile-nav .panel a { display: block; padding: 12px 0; font-weight: 600; border-bottom: 1px solid var(--line); }
+    .mobile-nav-close { background: none; border: none; font-size: 22px; margin-bottom: 16px; }
 
-    /* ---------- Responsive ---------- */
     @media (max-width: 980px) {
-      .hero .wrap {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        padding-top: 40px;
-      }
-      .hero-visual {
-        aspect-ratio: 16/10;
-        order: -1;
-      }
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .promo-grid {
-        grid-template-columns: 1fr;
-      }
-      .promo-panel.tall {
-        min-height: 320px;
-      }
-      .footer-top {
-        grid-template-columns: 1fr 1fr;
-      }
+      .hero .wrap { grid-template-columns: 1fr; min-height: auto; padding-top: 40px; }
+      .hero-visual { aspect-ratio: 16/10; order: -1; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .promo-grid { grid-template-columns: 1fr; }
+      .promo-panel.tall { min-height: 320px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 720px) {
-      .wrap {
-        padding: 0 18px;
-      }
-      .utility-bar .links a:not(:first-child) {
-        display: none;
-      }
-      .main-nav {
-        display: none;
-      }
-      .burger {
-        display: flex;
-      }
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-      .footer-top {
-        grid-template-columns: 1fr;
-        padding: 44px 0 30px;
-      }
-      .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-      }
-      section.band {
-        padding: 52px 0;
-      }
-      .row-arrow {
-        display: none;
-      }
+      .wrap { padding: 0 18px; }
+      .utility-bar .links a:not(:first-child) { display: none; }
+      .main-nav { display: none; }
+      .burger { display: flex; }
+      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .footer-top { grid-template-columns: 1fr; padding: 44px 0 30px; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+      section.band { padding: 52px 0; }
+      .row-arrow { display: none; }
     }
 
     @media (max-width: 480px) {
-      .product-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .product-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
-  <!-- Utility bar -->
   <div class="utility-bar">
     <div class="wrap">
       <div class="links">
@@ -909,7 +240,6 @@
     </div>
   </div>
 
-  <!-- Header --->
   <header class="site-header">
     <div class="wrap">
       <button class="burger icon-btn" aria-label="Open menu">
@@ -940,7 +270,6 @@
     </div>
   </header>
 
-  <!-- Mobile nav drawer -->
   <div class="mobile-nav">
     <div class="backdrop"></div>
     <div class="panel">
@@ -955,7 +284,6 @@
     </div>
   </div>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="wrap">
       <div class="hero-copy">
@@ -974,7 +302,6 @@
     </div>
   </section>
 
-  <!-- New Arrivals -->
   <section class="band" id="new-arrivals">
     <div class="wrap">
       <div class="section-head">
@@ -994,7 +321,6 @@
     </div>
   </section>
 
-  <!-- Promo panels -->
   <section class="band" style="padding-top:0;">
     <div class="wrap">
       <div class="promo-grid">
@@ -1035,7 +361,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="site-footer" id="contact">
     <div class="wrap footer-top">
       <div class="footer-about">
@@ -1099,25 +424,17 @@
   <script>
     /* ============================================================
        CHIC DISTRICT & CO. — product data loader
-       ------------------------------------------------------------
-       Fetches your product catalog from a Google Apps Script Web App
-       that reads the "Products" tab of your Google Sheet. Every page
-       awaits window.CHIC_READY before rendering, so this works
-       even though the fetch is asynchronous.
-
-       >>> PASTE YOUR DEPLOYED WEB APP URL BELOW <<<
-       (Apps Script → Deploy → Web app → copy the URL ending in /exec)
+       FIX: now points at the ONE unified Apps Script backend
+       (Code.gs) — same deployment used by account.html, checkout.html
+       and payment.html — instead of a separate products-only script.
        ============================================================ */
 
     (function () {
       "use strict";
 
-      // ---- CONFIGURE THIS ----
       const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbwst6GwoVOFi4aRZ9lhn7bEMCwW9IWvXtHTc_9xstgEgBpCQLmweKnjJKuo0UeMmzd3/exec";
-      // e.g. "https://script.google.com/macros/s/AKfycb.../exec"
+      window.CHIC_API_URL = SHEET_API_URL; // shared with the landing loader below
 
-      // ---- small built-in sample so the site still renders something
-      //      useful before you've connected a sheet ----
       const FALLBACK_PRODUCTS = [
         { id: 1, name: "Sunlit Linen Dress", description: "A breezy linen midi dress with a soft floral print, perfect for warm afternoons.", category: "Dresses", ageGroup: "XS-XL", ageGroupLabel: "XS–XL", color: "Blush", colorHex: "e7a9a0", price: 89.99, salePrice: null, isNew: true, rating: 4.7, reviews: 58, sizes: "XS,S,M,L,XL", sku: "CC-00001", imageSrc: "images/girls-1.jpg" },
         { id: 2, name: "Tailored Crop Trouser", description: "A sharp, cropped silhouette in seasonless wool crepe. Sits high on the waist.", category: "Bottoms", ageGroup: "XS-XL", ageGroupLabel: "XS–XL", color: "Sage", colorHex: "93a67f", price: 110.00, salePrice: 88.00, isNew: false, rating: 4.5, reviews: 34, sizes: "XS,S,M,L,XL", sku: "CC-00002", imageSrc: "images/boys-1.jpg" },
@@ -1127,7 +444,6 @@
         { id: 6, name: "Pleated Midi Skirt", description: "Twirl-ready knife pleats over a silky lining — party-perfect and office-appropriate.", category: "Bottoms", ageGroup: "XS-XL", ageGroupLabel: "XS–XL", color: "Blush", colorHex: "e7a9a0", price: 95.00, salePrice: null, isNew: false, rating: 4.8, reviews: 64, sizes: "XS,S,M,L,XL", sku: "CC-00006", imageSrc: "images/girls-2.jpg" },
       ];
 
-      // ---- turn a raw sheet row (or fallback object) into a clean product ----
       function normalizeProduct(raw) {
         const sizes = String(raw.sizes || "")
           .split(",")
@@ -1174,18 +490,22 @@
         return `https://placehold.co/${w}x${h}/${hex}/2b2a28?font=playfair-display&text=${encodeURIComponent(label)}`;
       }
 
+      // FIX: shared price formatter — renders 15679.99 as "15,679.99"
+      // (thousands comma separator + fixed 2 decimals).
+      function formatPrice(n) {
+        const num = Number(n) || 0;
+        return num.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+
       window.chicProductImage = productImage;
       window.chicProductImageFallback = productImageFallback;
+      window.chicFormatPrice = formatPrice;
 
-      // ---- CHIC_READY: every page's render script does
-      //      `await window.CHIC_READY;` before touching CHIC_PRODUCTS ----
       window.CHIC_READY = (async function loadProducts() {
         let usingFallback = false;
         try {
-          if (!SHEET_API_URL || SHEET_API_URL.indexOf("PASTE_YOUR") === 0) {
-            throw new Error("Google Sheet not connected yet (SHEET_API_URL not set)");
-          }
-          const res = await fetch(SHEET_API_URL, { cache: "no-store" });
+          const url = SHEET_API_URL + "?action=getProducts";
+          const res = await fetch(url, { method: "GET", redirect: "follow", cache: "no-store" });
           if (!res.ok) throw new Error("Sheet fetch failed: HTTP " + res.status);
           const raw = await res.json();
           if (raw && raw.error) throw new Error(raw.error);
@@ -1200,12 +520,11 @@
 
         window.CHIC_SOURCE = usingFallback ? "fallback" : "sheet";
 
-        // small, unobtrusive heads-up banner while you're setting the sheet up
         if (usingFallback) {
           document.addEventListener("DOMContentLoaded", () => {
             const bar = document.createElement("div");
             bar.textContent =
-              "Showing sample data — connect your Google Sheet in js/products-data.js (SHEET_API_URL) to go live.";
+              "Showing sample data — check your Apps Script deployment to go live.";
             bar.style.cssText =
               "background:#F2D98A;color:#2B2A28;font-size:12.5px;font-weight:600;text-align:center;padding:8px 12px;";
             document.body.prepend(bar);
@@ -1219,23 +538,20 @@
   <script>
     /* ============================================================
        CHIC DISTRICT & CO. — landing content loader
-       ------------------------------------------------------------
-       Fetches the "Landing" tab (simple key | value rows) from the
-       same Apps Script Web App as products-data.js, using ?type=landing.
-       Controls: hero image, the 3 homepage promo images, and the
-       4 footer payment icons.
-
-       >>> PASTE YOUR DEPLOYED WEB APP URL BELOW (same URL as in
-           products-data.js) <<<
+       FIX: was left on the "PASTE_YOUR..." placeholder (never
+       actually connected), so it silently ran on fallback content
+       forever. Now points at the same unified backend and reads
+       action=getLanding, which returns { rows, map } — we use
+       `map` (elementId -> value) since chicLanding() below does
+       flat key lookups like "hero.image".
        ============================================================ */
 
     (function () {
       "use strict";
 
-      // ---- CONFIGURE THIS (same URL you used in products-data.js) ----
-      const SHEET_API_URL = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+      const SHEET_API_URL = window.CHIC_API_URL ||
+        "https://script.google.com/macros/s/AKfycbwst6GwoVOFi4aRZ9lhn7bEMCwW9IWvXtHTc_9xstgEgBpCQLmweKnjJKuo0UeMmzd3/exec";
 
-      // ---- sample content shown until a sheet is connected ----
       const FALLBACK_LANDING = {
         "hero.image": "images/hero.jpg",
         "hero.alt": "Spring 2026 women's lookbook cover art",
@@ -1258,18 +574,16 @@
       window.CHIC_LANDING_READY = (async function loadLanding() {
         let usingFallback = false;
         try {
-          if (!SHEET_API_URL || SHEET_API_URL.indexOf("PASTE_YOUR") === 0) {
-            throw new Error("Google Sheet not connected yet (SHEET_API_URL not set)");
-          }
-          const url = SHEET_API_URL + (SHEET_API_URL.indexOf("?") === -1 ? "?" : "&") + "type=landing";
-          const res = await fetch(url, { cache: "no-store" });
+          const url = SHEET_API_URL + "?action=getLanding";
+          const res = await fetch(url, { method: "GET", redirect: "follow", cache: "no-store" });
           if (!res.ok) throw new Error("Landing fetch failed: HTTP " + res.status);
           const raw = await res.json();
           if (raw && raw.error) throw new Error(raw.error);
-          if (!raw || typeof raw !== "object" || Array.isArray(raw) || !Object.keys(raw).length) {
+          const map = raw && raw.map ? raw.map : null;
+          if (!map || typeof map !== "object" || !Object.keys(map).length) {
             throw new Error("Landing tab returned no rows");
           }
-          window.CHIC_LANDING = raw;
+          window.CHIC_LANDING = map;
         } catch (err) {
           console.warn("Chic District: landing images using sample data —", err.message);
           window.CHIC_LANDING = FALLBACK_LANDING;
@@ -1279,7 +593,6 @@
         return window.CHIC_LANDING;
       })();
 
-      // Look up a key from the Landing sheet, with a fallback if blank/missing.
       window.chicLanding = function (key, fallback) {
         const data = window.CHIC_LANDING || {};
         const v = data[key];
@@ -1290,7 +603,6 @@
   <script>
     /* ==========================================================================
        CHIC DISTRICT & CO. — shared behaviors, cart + wishlist (localStorage-backed)
-       NOTE: this is a static site meant to be hosted on GitHub Pages.
        ========================================================================== */
     (function () {
       "use strict";
@@ -1316,7 +628,6 @@
         }
       }
 
-      // ---------------- cart ----------------
       function getCart() {
         return readJSON(CART_KEY, []); // [{id, qty}]
       }
@@ -1338,7 +649,6 @@
         return getCart().reduce((sum, c) => sum + c.qty, 0);
       }
 
-      // ---------------- wishlist ----------------
       function getWishlist() {
         return readJSON(WISHLIST_KEY, []); // [id, id, ...]
       }
@@ -1356,7 +666,6 @@
         return !has;
       }
 
-      // ---------------- badge + shared UI wiring ----------------
       function updateCartBadge() {
         document.querySelectorAll(".cart-count").forEach((el) => (el.textContent = cartCount()));
       }
@@ -1374,7 +683,6 @@
         updateCartBadge, refreshWishlistIcons,
       };
 
-      // ---------------- landing images: hero, promo panels, payment icons ----------------
       function applyLandingImages() {
         const heroImg = document.getElementById("hero-image");
         if (heroImg) {
@@ -1432,7 +740,6 @@
       }
 
       document.addEventListener("DOMContentLoaded", () => {
-        // Mobile nav toggle
         const burger = document.querySelector(".burger");
         const mobileNav = document.querySelector(".mobile-nav");
         const mobileClose = document.querySelector(".mobile-nav-close");
@@ -1445,7 +752,6 @@
         updateCartBadge();
         refreshWishlistIcons();
 
-        // Add to cart (delegated)
         document.body.addEventListener("click", (e) => {
           const btn = e.target.closest("[data-add-to-cart]");
           if (!btn) return;
@@ -1457,7 +763,6 @@
           setTimeout(() => (btn.textContent = original), 1200);
         });
 
-        // Wishlist heart toggle (delegated)
         document.body.addEventListener("click", (e) => {
           const btn = e.target.closest("[data-wishlist-toggle]");
           if (!btn) return;
@@ -1466,7 +771,6 @@
           btn.classList.toggle("active", nowActive);
         });
 
-        // Product row arrows (homepage "New Arrivals")
         document.querySelectorAll(".product-row").forEach((row) => {
           const grid = row.querySelector(".product-grid");
           const prev = row.querySelector(".row-arrow.prev");
@@ -1480,7 +784,6 @@
     })();
   </script>
   <script>
-    // Render 8 "new arrivals" — waits for the Google Sheet fetch to finish
     (async function () {
       await window.CHIC_READY;
       const grid = document.getElementById("new-arrivals-grid");
@@ -1491,8 +794,8 @@
 
       function cardHTML(p) {
         const price = p.salePrice
-        ? `<span class="was">₦${p.price.toFixed(2)}</span>₦${p.salePrice.toFixed(2)}`
-        : `₦${p.price.toFixed(2)}`;
+        ? `<span class="was">₦${window.chicFormatPrice(p.price)}</span>₦${window.chicFormatPrice(p.salePrice)}`
+        : `₦${window.chicFormatPrice(p.price)}`;
         const tag = p.salePrice
           ? `<span class="product-tag sale">Sale</span>`
           : p.isNew ? `<span class="product-tag new">New</span>` : "";
