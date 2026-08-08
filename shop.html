@@ -974,8 +974,17 @@ section.band { padding: 76px 0; }
     return `https://placehold.co/${w}x${h}/${hex}/2b2a28?font=playfair-display&text=${encodeURIComponent(label)}`;
   }
 
+  // FIX: shared price formatter — renders 15679.99 as "15,679.99"
+  // (thousands comma separator + fixed 2 decimals), used anywhere a
+  // price or salePrice is displayed on this page.
+  function formatPrice(n) {
+    const num = Number(n) || 0;
+    return num.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
   window.chicProductImage = productImage;
   window.chicProductImageFallback = productImageFallback;
+  window.chicFormatPrice = formatPrice;
 
   window.CHIC_READY = (async function loadProducts() {
     let usingFallback = false;
@@ -1177,9 +1186,11 @@ section.band { padding: 76px 0; }
   }
 
   function cardHTML(p) {
+    // FIX: comma-separated thousands via chicFormatPrice() instead of
+    // raw .toFixed(2), so e.g. 15679.99 renders as "15,679.99".
     const price = p.salePrice
-      ? `<span class="was">₦${p.price.toFixed(2)}</span>₦${p.salePrice.toFixed(2)}`
-      : `₦${p.price.toFixed(2)}`;
+      ? `<span class="was">₦${window.chicFormatPrice(p.price)}</span>₦${window.chicFormatPrice(p.salePrice)}`
+      : `₦${window.chicFormatPrice(p.price)}`;
     const tag = p.salePrice ? `<span class="product-tag sale">Sale</span>` : p.isNew ? `<span class="product-tag new">New</span>` : "";
     return `
       <article class="product-card">
