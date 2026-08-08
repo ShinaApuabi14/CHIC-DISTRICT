@@ -7,24 +7,6 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-/* ==========================================================================
-   CHIC DISTRICT & CO. — Women's clothing shop
-   Design tokens
-   Color:
-     --cream        #FBF7F0  page background
-     --ink          #555350  primary text
-     --marigold     #D9A441  primary brand accent
-     --marigold-dk  #B87F2A  hover / pressed accent
-     --blush        #E7A9A0  secondary accent (sale tags)
-     --sage         #93A67F  secondary accent (new tags)
-     --line         #E7E0D2  hairline borders
-     --white        #FFFFFF
-   Type:
-     --font-display 'Lato'  headlines
-     --font-body    'Lato'  body copy
-     --font-mono    'Lato'  prices, SKUs
-   ========================================================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&display=swap');
 
 :root {
@@ -62,432 +44,120 @@ body {
   line-height: 1.5;
 }
 
-.logo-img {
-  height: 84px;
-  width: 84px;
-  display: block;
-  object-fit: contain;
-  border-radius: 8px;
-}
+.logo-img { height: 84px; width: 84px; display: block; object-fit: contain; border-radius: 8px; }
 
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; }
 ul { list-style: none; margin: 0; padding: 0; }
 
-.wrap {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 32px;
-}
+.wrap { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
 
-:focus-visible {
-  outline: 3px solid var(--marigold-dk);
-  outline-offset: 2px;
-}
+:focus-visible { outline: 3px solid var(--marigold-dk); outline-offset: 2px; }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
 
-/* ---------- Signature: chic geometric mark ---------- */
-.chic-mark {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.chic-mark::before {
-  content: "◆";
-  color: var(--marigold);
-  font-size: 10px;
-  flex: none;
-}
+.chic-mark { display: inline-flex; align-items: center; gap: 6px; }
+.chic-mark::before { content: "◆"; color: var(--marigold); font-size: 10px; flex: none; }
 
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--marigold-dk);
-  font-weight: 600;
-}
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--marigold-dk); font-weight: 600; }
 
-/* ---------- Utility bar ---------- */
-.utility-bar {
-  background: var(--ink);
-  color: #d8d3c8;
-  font-size: 12.5px;
-}
-.utility-bar .wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 38px;
-}
-.utility-bar select {
-  background: transparent;
-  color: inherit;
-  border: none;
-  font-size: 12.5px;
-  font-family: inherit;
-}
+.utility-bar { background: var(--ink); color: #d8d3c8; font-size: 12.5px; }
+.utility-bar .wrap { display: flex; justify-content: space-between; align-items: center; height: 38px; }
+.utility-bar select { background: transparent; color: inherit; border: none; font-size: 12.5px; font-family: inherit; }
 .utility-bar .links { display: flex; gap: 18px; }
 .utility-bar .links a:hover { color: var(--marigold-pale); }
 
-/* ---------- Header ---------- */
-.site-header {
-  background: var(--white);
-  border-bottom: 1px solid var(--line);
-  position: sticky;
-  top: 0;
-  z-index: 40;
-}
-.site-header .wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 84px;
-  gap: 24px;
-}
-.logo {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 26px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--ink);
-  white-space: nowrap;
-  letter-spacing: -0.5px;
-}
-.main-nav {
-  display: flex;
-  gap: 30px;
-  font-weight: 600;
-  font-size: 14.5px;
-}
-.main-nav a {
-  position: relative;
-  padding: 6px 0;
-}
-.main-nav a.active,
-.main-nav a:hover { color: var(--marigold-dk); }
-.main-nav a.active::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: -3px;
-  height: 3px;
-  background: var(--marigold);
-  border-radius: 3px;
-}
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-.icon-btn {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 1px solid transparent;
-  background: transparent;
-  color: var(--ink);
-}
+.site-header { background: var(--white); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 40; }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; gap: 24px; }
+.logo { font-family: var(--font-display); font-weight: 700; font-size: 26px; display: flex; align-items: center; gap: 10px; color: var(--ink); white-space: nowrap; letter-spacing: -0.5px; }
+.main-nav { display: flex; gap: 30px; font-weight: 600; font-size: 14.5px; }
+.main-nav a { position: relative; padding: 6px 0; }
+.main-nav a.active, .main-nav a:hover { color: var(--marigold-dk); }
+.main-nav a.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 3px; background: var(--marigold); border-radius: 3px; }
+.header-actions { display: flex; align-items: center; gap: 18px; }
+.icon-btn { position: relative; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid transparent; background: transparent; color: var(--ink); }
 .icon-btn:hover { background: var(--cream-deep); }
 .icon-btn svg { width: 20px; height: 20px; }
-.cart-count {
-  position: absolute;
-  top: -2px; right: -2px;
-  background: var(--marigold);
-  color: var(--white);
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 600;
-  width: 18px; height: 18px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-}
+.cart-count { position: absolute; top: -2px; right: -2px; background: var(--marigold); color: var(--white); font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 .burger { display: none; }
 
-/* ---------- Buttons ---------- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 30px;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  font-size: 13.5px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border: 2px solid var(--ink);
-  background: transparent;
-  color: var(--ink);
-  transition: background .18s ease, color .18s ease, transform .18s ease;
-}
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: var(--radius-sm); font-weight: 600; font-size: 13.5px; letter-spacing: 0.06em; text-transform: uppercase; border: 2px solid var(--ink); background: transparent; color: var(--ink); transition: background .18s ease, color .18s ease, transform .18s ease; }
 .btn:hover { background: var(--ink); color: var(--white); transform: translateY(-1px); }
-.btn-solid {
-  background: var(--marigold);
-  border-color: var(--marigold);
-  color: var(--ink);
-}
+.btn-solid { background: var(--marigold); border-color: var(--marigold); color: var(--ink); }
 .btn-solid:hover { background: var(--marigold-dk); border-color: var(--marigold-dk); color: var(--white); }
 .btn-block { width: 100%; justify-content: center; }
 .btn-sm { padding: 10px 18px; font-size: 12px; }
 
-/* ---------- Product grid ---------- */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 26px;
-  flex: 1;
-}
+.product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; flex: 1; }
 
-.product-card {
-  position: relative;
-  background: var(--white);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  transition: box-shadow .2s ease, transform .2s ease;
-  display: flex;
-  flex-direction: column;
-}
+.product-card { position: relative; background: var(--white); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-card); transition: box-shadow .2s ease, transform .2s ease; display: flex; flex-direction: column; }
 .product-card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-3px); }
-.product-media {
-  position: relative;
-  aspect-ratio: 4/5;
-  background: var(--cream-deep);
-  overflow: hidden;
-}
-.product-media img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform .4s ease;
-}
+.product-media { position: relative; aspect-ratio: 4/5; background: var(--cream-deep); overflow: hidden; }
+.product-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
 .product-card:hover .product-media img { transform: scale(1.05); }
-.product-tag {
-  position: absolute;
-  top: 10px; left: 10px;
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: .05em;
-  padding: 4px 9px;
-  border-radius: 20px;
-  color: var(--white);
-}
+.product-tag { position: absolute; top: 10px; left: 10px; font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; letter-spacing: .05em; padding: 4px 9px; border-radius: 20px; color: var(--white); }
 .product-tag.new { background: var(--sage); }
 .product-tag.sale { background: var(--blush); color: var(--ink); }
 
-.product-body {
-  padding: 16px 16px 18px;
-  text-align: center;
-  position: relative;
-}
-.product-desc {
-  font-size: 12px;
-  color: var(--ink-soft);
-  line-height: 1.4;
-  margin: 0 0 8px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.product-cat {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  margin: 0 0 4px;
-}
-.product-name {
-  font-weight: 600;
-  font-size: 14.5px;
-  margin: 0 0 8px;
-  line-height: 1.3;
-  font-family: var(--font-display);
-  letter-spacing: -0.2px;
-}
-.product-price {
-  font-family: var(--font-mono);
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--marigold-dk);
-}
-.product-price .was {
-  color: var(--ink-soft);
-  text-decoration: line-through;
-  font-weight: 500;
-  margin-right: 6px;
-}
+.product-body { padding: 16px 16px 18px; text-align: center; position: relative; }
+.product-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.4; margin: 0 0 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.product-cat { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 4px; }
+.product-name { font-weight: 600; font-size: 14.5px; margin: 0 0 8px; line-height: 1.3; font-family: var(--font-display); letter-spacing: -0.2px; }
+.product-price { font-family: var(--font-mono); font-weight: 600; font-size: 14px; color: var(--marigold-dk); }
+.product-price .was { color: var(--ink-soft); text-decoration: line-through; font-weight: 500; margin-right: 6px; }
 
-/* ---------- Footer ---------- */
 .site-footer { background: var(--cream-deep); border-top: 1px solid var(--line); }
-.footer-top {
-  padding: 64px 0 40px;
-  display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
-  gap: 40px;
-}
-.footer-top h4 {
-  font-family: var(--font-display);
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  margin: 0 0 18px;
-}
+.footer-top { padding: 64px 0 40px; display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.2fr; gap: 40px; }
+.footer-top h4 { font-family: var(--font-display); font-size: 15px; text-transform: uppercase; letter-spacing: .05em; margin: 0 0 18px; }
 .footer-about .logo { margin-bottom: 14px; }
 .footer-about p { color: var(--ink-soft); font-size: 13.5px; line-height: 1.6; margin: 4px 0; }
 .tag-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-.tag-pills a {
-  border: 1px solid var(--line);
-  padding: 7px 14px;
-  border-radius: 20px;
-  font-size: 12.5px;
-  background: var(--white);
-}
+.tag-pills a { border: 1px solid var(--line); padding: 7px 14px; border-radius: 20px; font-size: 12.5px; background: var(--white); }
 .tag-pills a:hover { border-color: var(--marigold); color: var(--marigold-dk); }
 .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.brand-grid div {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  height: 50px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--ink-soft);
-}
+.brand-grid div { background: var(--white); border: 1px solid var(--line); border-radius: 8px; height: 50px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; color: var(--ink-soft); }
 .social-row { display: flex; gap: 10px; margin-bottom: 20px; }
-.social-row a {
-  width: 34px; height: 34px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  display: flex; align-items: center; justify-content: center;
-  background: var(--white);
-  font-size: 13px;
-}
+.social-row a { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; background: var(--white); font-size: 13px; }
 .social-row a:hover { background: var(--marigold); border-color: var(--marigold); }
 .newsletter-form { display: flex; gap: 0; border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; background: var(--white); }
-.newsletter-form input {
-  border: none; padding: 12px 14px; flex: 1; font-family: inherit; font-size: 13px; background: transparent;
-}
+.newsletter-form input { border: none; padding: 12px 14px; flex: 1; font-family: inherit; font-size: 13px; background: transparent; }
 .newsletter-form input:focus { outline: none; }
-.newsletter-form button {
-  border: none; background: var(--marigold); color: var(--ink); padding: 0 18px; font-weight: 700;
-}
+.newsletter-form button { border: none; background: var(--marigold); color: var(--ink); padding: 0 18px; font-weight: 700; }
 .newsletter-form button:hover { background: var(--marigold-dk); color: var(--white); }
 
-.footer-links {
-  border-top: 1px solid var(--line);
-  padding: 22px 0;
-  font-size: 12.5px;
-  color: var(--ink-soft);
-  display: flex; flex-wrap: wrap; gap: 6px 14px;
-}
+.footer-links { border-top: 1px solid var(--line); padding: 22px 0; font-size: 12.5px; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 6px 14px; }
 .footer-links a:hover { color: var(--marigold-dk); }
-.footer-bottom {
-  border-top: 1px solid var(--line);
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12.5px;
-  color: var(--ink-soft);
-}
-.payments {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 12px;
-  color: #333;
-}
-.payments img {
-  height: 24px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
+.footer-bottom { border-top: 1px solid var(--line); padding: 20px 0; display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: var(--ink-soft); }
+.payments { display: flex; align-items: center; gap: 12px; font-size: 12px; color: #333; }
+.payments img { height: 24px; width: auto; display: block; object-fit: contain; }
 
-/* ============================================================
-   WISHLIST PAGE
-   ============================================================ */
-.breadcrumb {
-  padding: 18px 0;
-  font-size: 13px;
-  color: var(--ink-soft);
-}
+.breadcrumb { padding: 18px 0; font-size: 13px; color: var(--ink-soft); }
 .breadcrumb a:hover { color: var(--marigold-dk); }
 .breadcrumb .sep { margin: 0 6px; opacity: .5; }
 
-.page-head {
-  padding: 44px 0 8px;
-}
-.page-head h1 {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 3.4vw, 40px);
-  font-weight: 700;
-  margin: 6px 0 6px;
-}
+.page-head { padding: 44px 0 8px; }
+.page-head h1 { font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 40px); font-weight: 700; margin: 6px 0 6px; }
 .page-head p { color: var(--ink-soft); margin: 0 0 10px; }
 
-.catalog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
-}
+.catalog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
 .catalog-grid .product-card { height: 100%; }
-.empty-state {
-  text-align: center;
-  padding: 80px 20px;
-  color: var(--ink-soft);
-}
+.empty-state { text-align: center; padding: 80px 20px; color: var(--ink-soft); }
 .empty-state .chic-mark { justify-content: center; margin-bottom: 10px; }
 
 .wishlist-card { position: relative; }
-.wishlist-remove {
-  position: absolute;
-  top: 10px; right: 10px;
-  width: 30px; height: 30px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.92);
-  border: none;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 15px;
-  z-index: 2;
-  box-shadow: var(--shadow-card);
-}
+.wishlist-remove { position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,.92); border: none; display: flex; align-items: center; justify-content: center; font-size: 15px; z-index: 2; box-shadow: var(--shadow-card); }
 .wishlist-remove:hover { background: var(--blush); }
 
-/* Mobile nav drawer */
-.mobile-nav {
-  position: fixed; inset: 0; z-index: 70;
-  display: none;
-}
+.mobile-nav { position: fixed; inset: 0; z-index: 70; display: none; }
 .mobile-nav.open { display: block; }
 .mobile-nav .backdrop { position: absolute; inset: 0; background: rgba(43,42,40,.45); }
-.mobile-nav .panel {
-  position: absolute; top: 0; left: 0; bottom: 0;
-  width: 280px; max-width: 84vw;
-  background: var(--white);
-  padding: 26px;
-  overflow-y: auto;
-}
-.mobile-nav .panel a {
-  display: block;
-  padding: 12px 0;
-  font-weight: 600;
-  border-bottom: 1px solid var(--line);
-}
+.mobile-nav .panel { position: absolute; top: 0; left: 0; bottom: 0; width: 280px; max-width: 84vw; background: var(--white); padding: 26px; overflow-y: auto; }
+.mobile-nav .panel a { display: block; padding: 12px 0; font-weight: 600; border-bottom: 1px solid var(--line); }
 .mobile-nav-close { background: none; border: none; font-size: 22px; margin-bottom: 16px; }
 
-/* ---------- Responsive ---------- */
 @media (max-width: 980px) {
   .product-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-top { grid-template-columns: 1fr 1fr; }
@@ -509,7 +179,6 @@ ul { list-style: none; margin: 0; padding: 0; }
   .catalog-grid { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: 1fr 1fr; }
 }
-
 </style>
 </head>
 <body>
@@ -654,18 +323,19 @@ ul { list-style: none; margin: 0; padding: 0; }
 
   <script>
 /* ============================================================
-   CHIC DISTRICT & CO. — product data loader (Google Sheet-backed)
+   CHIC DISTRICT & CO. — product data loader
+   FIX: now points at the ONE unified Apps Script backend (Code.gs).
    ============================================================ */
 (function () {
   "use strict";
   const SHEET_API_URL = "https://script.google.com/macros/s/AKfycbwst6GwoVOFi4aRZ9lhn7bEMCwW9IWvXtHTc_9xstgEgBpCQLmweKnjJKuo0UeMmzd3/exec";
 
   const FALLBACK_PRODUCTS = [
-    { id: 1, name: "Sunlit Linen Dress", description: "A breezy linen midi dress with a soft floral print, perfect for warm afternoons.", category: "Dresses", ageGroup: "XS-XL", ageGroupLabel: "XS–XL", color: "Blush", colorHex: "e7a9a0", price: 89.99, salePrice: null, isNew: true, rating: 4.7, reviews: 58, sizes: "XS,S,M,L,XL", sku: "CC-00001", imageSrc: "images/girls-1.jpg" },
+    { id: 1, name: "Sunlit Linen Dress", description: "A breezy linen midi dress with a soft floral print.", category: "Dresses", ageGroup: "XS-XL", ageGroupLabel: "XS–XL", color: "Blush", colorHex: "e7a9a0", price: 89.99, salePrice: null, isNew: true, rating: 4.7, reviews: 58, sizes: "XS,S,M,L,XL", sku: "CC-00001", imageSrc: "images/girls-1.jpg" },
     { id: 2, name: "Tailored Crop Trouser", description: "A sharp, cropped silhouette in seasonless wool crepe.", category: "Bottoms", ageGroup: "XS-XL", ageGroupLabel: "XS–XL", color: "Sage", colorHex: "93a67f", price: 110.00, salePrice: 88.00, isNew: false, rating: 4.5, reviews: 34, sizes: "XS,S,M,L,XL", sku: "CC-00002", imageSrc: "images/boys-1.jpg" },
-    { id: 3, name: "Cashmere Crewneck", description: "Lightweight, ultra-soft cashmere knit with a relaxed fit.", category: "Tops", ageGroup: "XS-XL", ageGroupLabel: "XS–XL", color: "Cream", colorHex: "f6efe2", price: 145.00, salePrice: null, isNew: true, rating: 4.9, reviews: 112, sizes: "XS,S,M,L", sku: "CC-00003", imageSrc: "images/baby-1.jpg" },
-    { id: 4, name: "Block Heel Mule", description: "A sculptural heel adds modern edge to a classic slip-on mule.", category: "Shoes", ageGroup: "36-41", ageGroupLabel: "36–41", color: "Marigold", colorHex: "d9a441", price: 130.00, salePrice: null, isNew: false, rating: 4.6, reviews: 89, sizes: "36,37,38,39,40,41", sku: "CC-00004", imageSrc: "images/shoes-1.jpg" },
-    { id: 5, name: "Silk Twill Scarf", description: "Pure silk twill scarf — small details, beautifully made.", category: "Accessories", ageGroup: "One Size", ageGroupLabel: "One Size", color: "Butter", colorHex: "f2d98a", price: 65.00, salePrice: 45.00, isNew: true, rating: 4.4, reviews: 21, sizes: "One Size", sku: "CC-00005", imageSrc: "images/accessories-1.jpg" },
+    { id: 3, name: "Cashmere Crewneck", description: "Lightweight, ultra-soft cashmere knit.", category: "Tops", ageGroup: "XS-XL", ageGroupLabel: "XS–XL", color: "Cream", colorHex: "f6efe2", price: 145.00, salePrice: null, isNew: true, rating: 4.9, reviews: 112, sizes: "XS,S,M,L", sku: "CC-00003", imageSrc: "images/baby-1.jpg" },
+    { id: 4, name: "Block Heel Mule", description: "A sculptural heel adds modern edge.", category: "Shoes", ageGroup: "36-41", ageGroupLabel: "36–41", color: "Marigold", colorHex: "d9a441", price: 130.00, salePrice: null, isNew: false, rating: 4.6, reviews: 89, sizes: "36,37,38,39,40,41", sku: "CC-00004", imageSrc: "images/shoes-1.jpg" },
+    { id: 5, name: "Silk Twill Scarf", description: "Pure silk twill — small details, beautifully made.", category: "Accessories", ageGroup: "One Size", ageGroupLabel: "One Size", color: "Butter", colorHex: "f2d98a", price: 65.00, salePrice: 45.00, isNew: true, rating: 4.4, reviews: 21, sizes: "One Size", sku: "CC-00005", imageSrc: "images/accessories-1.jpg" },
     { id: 6, name: "Pleated Midi Skirt", description: "Twirl-ready knife pleats over a silky lining.", category: "Bottoms", ageGroup: "XS-XL", ageGroupLabel: "XS–XL", color: "Blush", colorHex: "e7a9a0", price: 95.00, salePrice: null, isNew: false, rating: 4.8, reviews: 64, sizes: "XS,S,M,L,XL", sku: "CC-00006", imageSrc: "images/girls-2.jpg" },
   ];
 
@@ -690,14 +360,22 @@ ul { list-style: none; margin: 0; padding: 0; }
     return `https://placehold.co/${w}x${h}/${hex}/2b2a28?font=playfair-display&text=${encodeURIComponent((p && p.category) || "Product")}`;
   }
 
+  // FIX: shared price formatter — renders 15679.99 as "15,679.99"
+  // (thousands comma separator + fixed 2 decimals).
+  function formatPrice(n) {
+    const num = Number(n) || 0;
+    return num.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
   window.chicProductImage = productImage;
   window.chicProductImageFallback = productImageFallback;
+  window.chicFormatPrice = formatPrice;
 
   window.CHIC_READY = (async function loadProducts() {
     let usingFallback = false;
     try {
-      if (!SHEET_API_URL || SHEET_API_URL.indexOf("PASTE_YOUR") === 0) throw new Error("Sheet not connected");
-      const res = await fetch(SHEET_API_URL, { cache: "no-store" });
+      const url = SHEET_API_URL + "?action=getProducts";
+      const res = await fetch(url, { method: "GET", redirect: "follow", cache: "no-store" });
       if (!res.ok) throw new Error("Sheet fetch failed");
       const raw = await res.json();
       if (raw && raw.error) throw new Error(raw.error);
@@ -788,9 +466,11 @@ ul { list-style: none; margin: 0; padding: 0; }
     const countLine = document.getElementById("wishlist-count-line");
 
     function cardHTML(p) {
+      // FIX: comma-separated thousands via chicFormatPrice() instead of
+      // raw .toFixed(2), so e.g. 15679.99 renders as "15,679.99".
       const price = p.salePrice
-        ? `<span class="was">₦${p.price.toFixed(2)}</span>₦${p.salePrice.toFixed(2)}`
-        : `₦${p.price.toFixed(2)}`;
+        ? `<span class="was">₦${window.chicFormatPrice(p.price)}</span>₦${window.chicFormatPrice(p.salePrice)}`
+        : `₦${window.chicFormatPrice(p.price)}`;
       return `
         <article class="product-card wishlist-card" data-id="${p.id}">
           <button class="wishlist-remove" aria-label="Remove from wishlist" data-remove="${p.id}">✕</button>
