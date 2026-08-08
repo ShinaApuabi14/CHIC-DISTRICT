@@ -658,7 +658,7 @@ ul { list-style: none; margin: 0; padding: 0; }
               <td>${o.orderId || "—"}</td>
               <td>${(o.createdAt || "").slice(0, 10)}</td>
               <td>${Array.isArray(o.items) ? o.items.length : 0}</td>
-              <td>₦${Number(o.total || 0).toFixed(2)}</td>
+              <td>₦${Number(o.total || 0).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
               <td><span class="status-pill ${o.paymentStatus === 'paid' ? 'delivered' : o.paymentStatus === 'pending' ? 'pending' : 'processing'}">${o.paymentStatus || "—"}</span></td>
               <td><span class="status-pill ${o.orderStatus === 'delivered' ? 'delivered' : o.orderStatus === 'shipped' ? 'shipped' : 'processing'}">${o.orderStatus || "—"}</span></td>
             </tr>
