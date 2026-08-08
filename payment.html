@@ -447,8 +447,16 @@ ul { list-style: none; margin: 0; padding: 0; }
     return `https://placehold.co/${w}x${h}/${hex}/2b2a28?font=playfair-display&text=${encodeURIComponent((p && p.category) || "Product")}`;
   }
 
+  // FIX: shared price formatter — renders 15679.99 as "15,679.99"
+  // (thousands comma separator + fixed 2 decimals).
+  function formatPrice(n) {
+    const num = Number(n) || 0;
+    return num.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
   window.chicProductImage = productImage;
   window.chicProductImageFallback = productImageFallback;
+  window.chicFormatPrice = formatPrice;
 
   window.CHIC_READY = (async function loadProducts() {
     let usingFallback = false;
@@ -593,7 +601,7 @@ ul { list-style: none; margin: 0; padding: 0; }
               <div class="name">${p.name}</div>
               <div class="meta">${p.ageGroupLabel} · Qty ${qty}</div>
             </div>
-            <div class="price">₦${(unit * qty).toFixed(2)}</div>
+            <div class="price">₦${window.chicFormatPrice(unit * qty)}</div>
           </div>`;
       }).join("");
 
@@ -603,10 +611,10 @@ ul { list-style: none; margin: 0; padding: 0; }
       total = subtotal + shippingCost + tax;
 
       totalsEl.innerHTML = `
-        <div class="row"><span>Subtotal</span><span>₦${subtotal.toFixed(2)}</span></div>
-        <div class="row"><span>Shipping</span><span>${shippingCost === 0 ? "Free" : "₦" + shippingCost.toFixed(2)}</span></div>
-        <div class="row"><span>Estimated tax</span><span>₦${tax.toFixed(2)}</span></div>
-        <div class="row grand"><span>Total</span><span>₦${total.toFixed(2)}</span></div>
+        <div class="row"><span>Subtotal</span><span>₦${window.chicFormatPrice(subtotal)}</span></div>
+        <div class="row"><span>Shipping</span><span>${shippingCost === 0 ? "Free" : "₦" + window.chicFormatPrice(shippingCost)}</span></div>
+        <div class="row"><span>Estimated tax</span><span>₦${window.chicFormatPrice(tax)}</span></div>
+        <div class="row grand"><span>Total</span><span>₦${window.chicFormatPrice(total)}</span></div>
       `;
 
       if (!customerEmail) {
