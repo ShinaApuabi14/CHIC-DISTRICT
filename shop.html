@@ -750,6 +750,30 @@ html, body { overflow-x: hidden; }
   .logo-img { height: 36px; width: 36px; border-radius: 6px; }
   .logo span { display: none; }
 }
+
+/* ============================================================
+   MOBILE MENU RESTRUCTURE — logo pinned top-left, search/cart
+   pinned top-right, and the account links (My Account, Wishlist,
+   Checkout, Login) relocated into the hamburger drawer beneath
+   the main nav links, left-aligned near the bottom of the panel.
+   The currency selector stays in the utility bar (NGN default),
+   now with room to display clearly since the account links row
+   is removed from the utility bar on mobile.
+   ============================================================ */
+@media (max-width: 720px) {
+  .site-header .wrap { justify-content: flex-start; }
+  .header-actions { margin-left: auto; }
+  .utility-bar .links:last-of-type { display: none; }
+}
+
+.mobile-nav-account-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 20px 0 2px;
+}
 </style>
 </head>
 <body>
@@ -813,6 +837,11 @@ html, body { overflow-x: hidden; }
       <a href="shop.html?category=Bottoms">Bottoms</a>
       <a href="shop.html?category=Outerwear">Outerwear</a>
       <a href="index.html#contact">Contact</a>
+      <div class="mobile-nav-account-label">My Account</div>
+      <a href="account.html">My Account</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="account.html">Login</a>
     </div>
   </div>
 
